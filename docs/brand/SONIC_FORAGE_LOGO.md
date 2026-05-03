@@ -2,6 +2,9 @@
 
 Primary assets:
 
+- `assets/brand/sonic-forage-banner.png` - recommended GitHub README/org profile banner with embedded strawberry mascot and exact text.
+- `assets/brand/sonic-forage-strawberry-avatar.png` - generated AGI strawberry DJ avatar/logo concept.
+
 - `assets/brand/sonic-forage-logo.svg` - README/org-profile banner with exact vector text.
 - `assets/brand/sonic-forage-logo.png` - PNG banner fallback.
 - `assets/brand/sonic-forage-mark.svg` - square mark/avatar candidate.
