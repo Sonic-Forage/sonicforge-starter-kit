@@ -1,0 +1,25 @@
+name: Bug report
+description: Something in setup, docs, verifier, cockpit, or workflow binding broke
+title: "[bug]: "
+labels: [bug, needs-triage]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Tell us what you tried and what broke.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Clone/fork repo
+        2. Run ...
+        3. See ...
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Redact secrets before pasting.

@@ -1,0 +1,21 @@
+name: Creator idea / performer concept
+description: Share a SonicForge persona, workflow, or hackathon project idea
+title: "[idea]: "
+labels: [idea, hackathon]
+body:
+  - type: input
+    id: project-name
+    attributes:
+      label: Project / performer name
+  - type: textarea
+    id: concept
+    attributes:
+      label: What are you building?
+      placeholder: AI DJ, radio host, visual agent, party tool, workflow adapter...
+    validations:
+      required: true
+  - type: textarea
+    id: help
+    attributes:
+      label: What help do you want?
+      placeholder: Setup, workflow binding, docs, safety gates, frontend, audio, visuals...
