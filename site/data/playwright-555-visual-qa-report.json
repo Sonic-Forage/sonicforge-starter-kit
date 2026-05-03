@@ -1,0 +1,135 @@
+{
+  "ok": true,
+  "checks": 34,
+  "base_url": "http://127.0.0.1:8788",
+  "browser": "Playwright Chromium / Chrome for Testing 147 headless",
+  "screenshots_captured_locally": [
+    "01_home_loaded",
+    "02_culture_hype_preview",
+    "03_next_segment_planned",
+    "04_sample_pads",
+    "05_visualizer_loaded",
+    "06_visualizer_asic_code_spell"
+  ],
+  "screenshots_committed": false,
+  "screenshot_policy": "large PNG evidence kept out of git to avoid repository bloat; rerun scripts/playwright_555_visual_qa.py to regenerate locally",
+  "passed_checks": [
+    "collective ecosystem strip visible",
+    "collective first headline rendered",
+    "ecosystem roles rendered from /api/ecosystem",
+    "backend status lanes rendered",
+    "MC preview rendered",
+    "culture mode selector updates hype preview",
+    "MC status says text-first/fail-closed",
+    "Deck B generated_mock/dry-run status visible after next segment",
+    "program truth status visible after next segment",
+    "ComfyUI dry-run copy visible",
+    "sample pad HYDRATE updates status",
+    "sample pad BUDDY updates status",
+    "sample pad DROP updates status",
+    "sample pad PORTAL updates status",
+    "sample pad CHILL updates status",
+    "timeline preview renders three plans",
+    "timeline remains local plan only",
+    "browser fetch: all health approval flags false",
+    "browser fetch: ecosystem trains_models false",
+    "browser fetch: program publishes_stream false",
+    "browser fetch: backends starts_gpu false",
+    "visualizer switches to ASIC code spell mode",
+    "visualizer HUD reflects ASIC_CODE_SPELL",
+    "browser fetch: /api/comfy/prompt blocked 403",
+    "browser fetch: /api/comfy/prompt blocked by fail-closed policy",
+    "browser fetch: /api/model-download blocked 403",
+    "browser fetch: /api/model-download blocked by fail-closed policy",
+    "browser fetch: /api/stream/publish blocked 403",
+    "browser fetch: /api/stream/publish blocked by fail-closed policy",
+    "browser fetch: /api/record blocked 403",
+    "browser fetch: /api/record blocked by fail-closed policy",
+    "browser fetch: /api/upload blocked 403",
+    "browser fetch: /api/upload blocked by fail-closed policy",
+    "no unexpected browser console/page errors (0 found)"
+  ],
+  "errors": [],
+  "blocked_routes": {
+    "/api/comfy/prompt": {
+      "status": 403,
+      "body": {
+        "ok": false,
+        "status": "blocked_by_server_enforced_fail_closed_policy",
+        "path": "/api/comfy/prompt",
+        "reason": "ComfyUI prompt execution must be explicitly approved.",
+        "approval_flag": "SONICFORGE_ALLOW_COMFY_PROMPT",
+        "starts_gpu": false,
+        "starts_paid_api": false,
+        "publishes_stream": false,
+        "records_audio": false,
+        "uploads_private_media": false
+      }
+    },
+    "/api/model-download": {
+      "status": 403,
+      "body": {
+        "ok": false,
+        "status": "blocked_by_server_enforced_fail_closed_policy",
+        "path": "/api/model-download",
+        "reason": "Model downloads require a reviewed ledger entry and explicit approval.",
+        "approval_flag": "SONICFORGE_ALLOW_MODEL_DOWNLOADS",
+        "starts_gpu": false,
+        "starts_paid_api": false,
+        "publishes_stream": false,
+        "records_audio": false,
+        "uploads_private_media": false
+      }
+    },
+    "/api/stream/publish": {
+      "status": 403,
+      "body": {
+        "ok": false,
+        "status": "blocked_by_server_enforced_fail_closed_policy",
+        "path": "/api/stream/publish",
+        "reason": "Public stream publishing requires explicit approval.",
+        "approval_flag": "SONICFORGE_ALLOW_PUBLIC_STREAM",
+        "starts_gpu": false,
+        "starts_paid_api": false,
+        "publishes_stream": false,
+        "records_audio": false,
+        "uploads_private_media": false
+      }
+    },
+    "/api/record": {
+      "status": 403,
+      "body": {
+        "ok": false,
+        "status": "blocked_by_server_enforced_fail_closed_policy",
+        "path": "/api/record",
+        "reason": "Recording requires explicit approval.",
+        "approval_flag": "SONICFORGE_ALLOW_RECORDING",
+        "starts_gpu": false,
+        "starts_paid_api": false,
+        "publishes_stream": false,
+        "records_audio": false,
+        "uploads_private_media": false
+      }
+    },
+    "/api/upload": {
+      "status": 403,
+      "body": {
+        "ok": false,
+        "status": "blocked_by_server_enforced_fail_closed_policy",
+        "path": "/api/upload",
+        "reason": "Uploads require explicit approval.",
+        "approval_flag": "SONICFORGE_ALLOW_UPLOADS",
+        "starts_gpu": false,
+        "starts_paid_api": false,
+        "publishes_stream": false,
+        "records_audio": false,
+        "uploads_private_media": false
+      }
+    }
+  },
+  "unexpected_console_errors": [],
+  "visual_qa_notes": {
+    "home_after_next_segment": "Page loaded in real Chromium; continuous segment, Deck A/B handoff, sample pads, program audio truth, backend status, and dry-run/provider-closed content visible. Main issue: page is intentionally dense/long.",
+    "asic_code_spell": "Mode selected/readable; lower title/status area improved with dark backing panel; center labels readable; remaining issue: cyberpunk density and small HUD microtext."
+  }
+}

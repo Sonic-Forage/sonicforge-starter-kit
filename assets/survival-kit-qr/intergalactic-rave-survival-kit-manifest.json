@@ -1,0 +1,19 @@
+{
+  "schema": "sonicforge.survival_kit_qr_artifact.v1",
+  "status": "verified_scannable",
+  "generated_at": "2026-05-01T11:53:16.587452+00:00",
+  "purpose": "Intergalactic Rave Survival Kit QR prop-art card for local hackathon demo / house-party operator handout.",
+  "payload_path": "assets/survival-kit-qr/intergalactic-rave-survival-kit-payload.txt",
+  "clean_qr_path": "assets/survival-kit-qr/intergalactic-rave-survival-kit-clean-qr.png",
+  "poster_path": "assets/survival-kit-qr/intergalactic-rave-survival-kit-card.png",
+  "decoded_payload_sha256_hint": "verify exact payload by OpenCV decode in scripts/verify_survival_kit_qr_artifact.py",
+  "opencv_clean_decode_matches_payload": true,
+  "opencv_poster_decode_matches_payload": true,
+  "safe_scope": "community-care reminder only; not medical/legal/drug-use advice",
+  "starts_gpu": false,
+  "starts_paid_api": false,
+  "publishes_stream": false,
+  "records_audio": false,
+  "uploads_private_media": false,
+  "requires_human_approval_before_public_use": true
+}

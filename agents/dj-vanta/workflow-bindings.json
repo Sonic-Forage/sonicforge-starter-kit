@@ -1,0 +1,8 @@
+{
+  "bindings": [
+    "visual-spell-portal-v1",
+    "survival-overlay-v1",
+    "agent-id-badge-v1"
+  ],
+  "comfyui_mode": "dry_run_until_human_approval"
+}

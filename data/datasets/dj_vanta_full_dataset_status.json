@@ -1,0 +1,16 @@
+{
+  "status": "uploaded_private_verified",
+  "run_id": "20260502T175939Z",
+  "album_slug": "dj-vanta-no-velvet-rope-in-the-node-graph",
+  "local_album_root": "datasets/synthetic_audio/dj-vanta-no-golden-ticket-required/generated_albums/20260502T175939Z/",
+  "hf_repo_id": "TheMindExpansionNetwork/dj-vanta-no-velvet-rope-in-the-node-graph-synthetic-audio",
+  "hf_url": "https://huggingface.co/datasets/TheMindExpansionNetwork/dj-vanta-no-velvet-rope-in-the-node-graph-synthetic-audio",
+  "private": true,
+  "track_count": 18,
+  "track_audio_files_verified": 18,
+  "duration_seconds_each": 120.024,
+  "local_audio_mb": 62.74,
+  "hf_file_count": 131,
+  "training_started": false,
+  "human_listening_review": "pending"
+}

@@ -1,0 +1,43 @@
+{
+  "1": {
+    "inputs": {
+      "model": "OmniVoice (auto download)",
+      "text": "Why does this not work",
+      "voice_instruct": "female, low pitch, british accent",
+      "steps": 32,
+      "guidance_scale": 2,
+      "t_shift": 0.1,
+      "speed": 1,
+      "duration": 0,
+      "device": "auto",
+      "dtype": "auto",
+      "attention": "auto",
+      "seed": 347000456,
+      "position_temperature": 5,
+      "class_temperature": 0,
+      "layer_penalty_factor": 5,
+      "denoise": true,
+      "postprocess_output": true,
+      "keep_model_loaded": false
+    },
+    "class_type": "OmniVoiceVoiceDesignTTS",
+    "_meta": {
+      "title": "OmniVoice Voice Design TTS"
+    }
+  },
+  "2": {
+    "inputs": {
+      "filename_prefix": "audio/ComfyUI",
+      "quality": "V0",
+      "audioUI": "/api/view?filename=ComfyUI_00012_.mp3&type=output&subfolder=audio&rand=0.4563809405587278",
+      "audio": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "SaveAudioMP3",
+    "_meta": {
+      "title": "Save Audio (MP3)"
+    }
+  }
+}

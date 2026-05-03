@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Acquire Signal — DJ VANTA Station</title>
+  <style>
+    :root{color-scheme:dark;--bg:#020004;--ink:#fff8ff;--muted:rgba(255,248,255,.72);--line:rgba(255,255,255,.14);--hot:#ff2bd6;--cyan:#12f7ff;--gold:#ffd166;--green:#98ffbf;--panel:rgba(13,7,30,.78);--danger:#ff667d}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% -10%,rgba(255,43,214,.28),transparent 32%),radial-gradient(circle at 90% 0,rgba(18,247,255,.18),transparent 34%),linear-gradient(180deg,#020004,#080113 58%,#020004);color:var(--ink);font:16px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(#000,transparent 88%)}.wrap{max-width:1260px;margin:0 auto;padding:22px 18px 70px}.top{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-bottom:14px}.brand{display:flex;gap:12px;align-items:center}.brand img{width:72px;height:72px;border-radius:18px;object-fit:cover;border:1px solid rgba(18,247,255,.28);box-shadow:0 0 22px rgba(255,43,214,.28)}.eyebrow{color:var(--cyan);letter-spacing:.22em;text-transform:uppercase;font-size:12px;font-weight:800}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav a,.button,button{min-height:44px;border:1px solid rgba(18,247,255,.35);border-radius:999px;padding:11px 14px;background:linear-gradient(135deg,rgba(18,247,255,.13),rgba(255,43,214,.10));color:var(--ink);text-decoration:none;font-weight:800;cursor:pointer}button.danger{border-color:rgba(255,102,125,.45);background:rgba(255,102,125,.12)}.hero{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:14px;align-items:stretch}.signal-stage{position:relative;min-height:560px;border:1px solid rgba(18,247,255,.18);border-radius:32px;padding:28px;background:radial-gradient(circle at 50% 44%,rgba(18,247,255,.12),transparent 32%),linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018));overflow:hidden;box-shadow:0 40px 140px rgba(0,0,0,.35)}.signal-stage:before{content:"";position:absolute;inset:9%;border-radius:50%;border:2px solid rgba(18,247,255,.22);box-shadow:0 0 80px rgba(18,247,255,.12),inset 0 0 90px rgba(255,43,214,.1);animation:pulse 3s ease-in-out infinite}.signal-stage:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 5px);opacity:.16;pointer-events:none}.status{position:relative;z-index:1;text-align:center;display:grid;place-items:center;min-height:500px}.status h1{font-size:clamp(48px,7vw,108px);line-height:.88;margin:10px 0;text-shadow:0 0 28px var(--hot),0 0 80px rgba(18,247,255,.22)}.station-code{font:900 clamp(28px,4vw,56px)/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--gold);letter-spacing:.08em}.scanner{width:min(560px,86%);height:14px;border-radius:999px;margin:22px auto;background:rgba(255,255,255,.08);overflow:hidden;border:1px solid rgba(255,255,255,.12)}.scanner span{display:block;width:34%;height:100%;background:linear-gradient(90deg,transparent,var(--cyan),var(--hot),transparent);animation:scan 1.35s linear infinite}.disclaimer{max-width:780px;margin:20px auto 0;color:var(--muted);font-size:15px}.panel,.card{border:1px solid var(--line);border-radius:24px;padding:18px;background:var(--panel);backdrop-filter:blur(10px)}.panel{display:grid;gap:12px}label{display:grid;gap:7px;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.12em}input,select,textarea{width:100%;border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:12px 13px;background:rgba(0,0,0,.34);color:var(--ink);font:inherit}textarea{min-height:86px;resize:vertical}.toggles{display:grid;grid-template-columns:1fr 1fr;gap:10px}.toggles label{border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:12px;background:rgba(0,0,0,.22);text-transform:none;letter-spacing:0;display:flex;gap:8px;align-items:flex-start}.toggles input{width:auto;margin-top:3px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:14px}.steps{display:grid;gap:9px}.step{border:1px solid rgba(18,247,255,.14);border-radius:16px;padding:12px;background:rgba(0,0,0,.2)}.step b{display:block;color:var(--cyan);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.step.active{border-color:rgba(255,209,102,.5);box-shadow:0 0 24px rgba(255,209,102,.12)}.segments{display:grid;gap:10px}.segments article{border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:12px;background:rgba(0,0,0,.22)}.segments b,.segments span,.segments small{display:block}.segments span{color:var(--gold)}.safe{color:var(--green)}.blocked{color:var(--danger)}pre{white-space:pre-wrap;overflow:auto;font-size:12px;color:rgba(255,248,255,.76)}@keyframes scan{0%{transform:translateX(-110%)}100%{transform:translateX(310%)}}@keyframes pulse{0%,100%{transform:scale(.98);opacity:.82}50%{transform:scale(1.02);opacity:1}}@media(max-width:980px){.hero{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}.signal-stage{min-height:460px}.status{min-height:400px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <div class="brand"><img src="/static/assets/dj-vanta-gpt-image-2-hero.png" alt="DJ VANTA"><div><div class="eyebrow">Always-on station display</div><strong>DJ VANTA / Acquire Signal</strong><div class="muted">Serverless autonomous DJ set launcher · dry-run safe by default</div></div></div>
+      <nav class="nav"><a href="/">Deck</a><a href="/vanta">Lore</a><a href="/about">Explainer</a><a href="/visualizer" target="_blank">VJ</a></nav>
+    </header>
+
+    <section class="hero">
+      <div class="signal-stage">
+        <div class="status">
+          <div>
+            <div class="eyebrow" id="stationStatus">Awaiting signal code</div>
+            <h1>ACQUIRE SIGNAL</h1>
+            <div class="station-code" id="stationCode">VANTA-LOCAL-128</div>
+            <div class="scanner"><span></span></div>
+            <p class="disclaimer" id="signalCopy">Enter a station signal ID, choose local / RunPod / Modal / custom endpoint, then acquire. VANTA will warm up with disclaimers, creator-intro mode, human override, and serverless scale-down rules before any real backend can be armed.</p>
+          </div>
+        </div>
+      </div>
+      <form class="panel" id="signalForm">
+        <label>Station Signal ID<input id="stationSignalId" value="VANTA-LOCAL-128" autocomplete="off"></label>
+        <label>Endpoint Lane<select id="endpointKind"><option value="local">local computer server</option><option value="runpod">RunPod serverless / pod endpoint</option><option value="modal">Modal scale-to-zero endpoint</option><option value="custom">custom endpoint</option></select></label>
+        <label>Endpoint URL / Host<input id="endpointUrl" placeholder="http://127.0.0.1:8788 or https://... (optional)"></label>
+        <label>Set Mode<select id="setMode"><option value="intergalactic_mix">Intergalactic Mix — VANTA host between creator tracks</option><option value="single_dj">Single DJ — one continuous custom DJ persona</option></select></label>
+        <label>Set Duration<select id="setMinutes"><option>20</option><option selected>30</option><option>45</option><option>60</option></select></label>
+        <label>DJ Profile<input id="djProfile" value="DJ VANTA"></label>
+        <label>Opening guide<textarea id="stationGuide">Acquire station signal. Build a cyber-rave set with creator intros, clean transitions, survival-kit reminders, and a big outro. Keep every live backend closed until approved.</textarea></label>
+        <div class="toggles"><label><input id="creatorIntroMode" type="checkbox" checked> Creator intro / radio-host breaks</label><label><input id="allowRealGeneration" type="checkbox"> Request real generation lane (requires env approval)</label><label><input id="allowPublicStream" type="checkbox"> Request public stream (requires env approval)</label><label><input id="textFirstVoice" type="checkbox" checked> Text-first voice, TTS closed</label></div>
+        <button type="submit">Acquire Signal</button>
+        <button type="button" id="buildSession">Build Session Plan</button>
+        <button type="button" class="danger" id="stopTransmission">Stop / Chill Mode</button>
+      </form>
+    </section>
+
+    <section class="grid">
+      <article class="card"><div class="eyebrow">Warmup ladder</div><div class="steps" id="warmupSteps"><div class="step"><b>WAITING</b>Station receiver idle.</div></div></article>
+      <article class="card"><div class="eyebrow">Session segments</div><div class="segments" id="segments">Acquire a signal, then build the dry-run set plan.</div></article>
+      <article class="card"><div class="eyebrow">Safety + serverless truth</div><p id="safetyTruth" class="safe">No GPU, no paid API, no public stream, no recording, no provider call.</p><pre id="rawSignal">{}</pre></article>
+    </section>
+  </main>
+  <script>
+    const $ = id => document.getElementById(id);
+    let lastPayload = null;
+    function payload(){return {station_signal_id:$('stationSignalId').value,endpoint_kind:$('endpointKind').value,endpoint_url:$('endpointUrl').value,mode:$('setMode').value,set_minutes:+$('setMinutes').value,dj_profile:$('djProfile').value,guide:$('stationGuide').value,creator_intro_mode:$('creatorIntroMode').checked,allow_real_generation:$('allowRealGeneration').checked,allow_public_stream:$('allowPublicStream').checked,voice_host:$('textFirstVoice').checked?'text_first':'tts_requested'};}
+    function render(data){lastPayload=data;$('stationCode').textContent=data.station_signal_id||'VANTA';$('stationStatus').textContent=(data.status||'acquiring').replaceAll('_',' ').toUpperCase();$('signalCopy').textContent=(data.warmup_steps||[]).at(-1)?.copy||data.disclaimer||'Signal acquired.';$('safetyTruth').textContent=`starts_gpu=${data.starts_gpu} · starts_paid_api=${data.starts_paid_api} · publishes_stream=${data.publishes_stream} · records_audio=${data.records_audio} · ${data.serverless_note||''}`;$('safetyTruth').className=(data.starts_gpu||data.publishes_stream)?'blocked':'safe';$('rawSignal').textContent=JSON.stringify(data,null,2);const steps=data.warmup_steps||[];$('warmupSteps').innerHTML=steps.map((s,i)=>`<div class="step ${i===steps.length-1?'active':''}"><b>${String(s.step).padStart(2,'0')} // ${s.code}</b>${s.copy}</div>`).join('')||'<div class="step">No warmup steps.</div>';if(data.segments){$('segments').innerHTML=data.segments.map(s=>`<article><b>${s.index}. ${s.mode}</b><span>${s.minute_mark} min · ${s.generation_lane}</span><small>${s.host_line}<br>${s.visual_spell}<br>${s.safety_ping}</small></article>`).join('');}}
+    async function post(url, body){const r=await fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)});const j=await r.json();render(j);return j;}
+    $('signalForm').onsubmit=e=>{e.preventDefault();post('/api/signal/acquire',payload());};
+    $('buildSession').onclick=()=>post('/api/signal/session',lastPayload||payload());
+    $('stopTransmission').onclick=()=>{ $('stationStatus').textContent='STOP / CHILL MODE'; $('signalCopy').textContent='Transmission paused. Human override is active. No backend, recording, stream, or provider lane is running.'; $('safetyTruth').textContent='STOP SET active · browser-side only · no external lane running'; $('safetyTruth').className='safe'; };
+  </script>
+</body>
+</html>

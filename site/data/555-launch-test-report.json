@@ -1,0 +1,649 @@
+{
+  "routes": {
+    "/": 200,
+    "/about": 200,
+    "/vanta": 200,
+    "/station": 200,
+    "/parallel-party": 200,
+    "/setup": 200,
+    "/agents": 200,
+    "/workflows": 200,
+    "/terminal-visuals": 200,
+    "/visualizer": 200,
+    "/health": 200,
+    "/api/ecosystem": 200,
+    "/api/backends": 200,
+    "/api/program-status": 200,
+    "/api/mc-breaks/preview": 200,
+    "/api/dj-brain/state": 200,
+    "POST /api/guide": 200,
+    "POST /api/next-segment": 200,
+    "POST /api/sample-pad": 200,
+    "/api/timeline": 200,
+    "POST /api/timeline/build": 200,
+    "POST /api/signal/acquire": 200,
+    "POST /api/signal/session": 200,
+    "POST /api/comfy/prompt": 403,
+    "POST /api/model-download": 403,
+    "POST /api/stream/publish": 403,
+    "POST /api/record": 403,
+    "POST /api/upload": 403
+  },
+  "checks": [
+    {
+      "ok": true,
+      "message": "GET / returns 200"
+    },
+    {
+      "ok": true,
+      "message": "GET /about returns 200"
+    },
+    {
+      "ok": true,
+      "message": "GET /vanta returns 200"
+    },
+    {
+      "ok": true,
+      "message": "GET /station returns 200"
+    },
+    {
+      "ok": true,
+      "message": "GET /parallel-party returns 200"
+    },
+    {
+      "ok": true,
+      "message": "GET /setup returns 200"
+    },
+    {
+      "ok": true,
+      "message": "GET /agents returns 200"
+    },
+    {
+      "ok": true,
+      "message": "GET /workflows returns 200"
+    },
+    {
+      "ok": true,
+      "message": "GET /terminal-visuals returns 200"
+    },
+    {
+      "ok": true,
+      "message": "GET /visualizer returns 200"
+    },
+    {
+      "ok": true,
+      "message": "index contains UI needle: Intergalactic DJs is the team. SonicForge Live is the universe. DJ VANTA is the first clone."
+    },
+    {
+      "ok": true,
+      "message": "index contains UI needle: collective-ecosystem-strip"
+    },
+    {
+      "ok": true,
+      "message": "index contains UI needle: ecosystemRoleList"
+    },
+    {
+      "ok": true,
+      "message": "index contains UI needle: Plan Next Continuous Segment"
+    },
+    {
+      "ok": true,
+      "message": "index contains UI needle: Text-first MC break generator"
+    },
+    {
+      "ok": true,
+      "message": "index contains UI needle: Program audio truth panel"
+    },
+    {
+      "ok": true,
+      "message": "index contains UI needle: Provider lanes stay closed until a human says yes"
+    },
+    {
+      "ok": true,
+      "message": "visualizer contains UI needle: asic_code_spell"
+    },
+    {
+      "ok": true,
+      "message": "visualizer contains UI needle: ASIC code spell"
+    },
+    {
+      "ok": true,
+      "message": "visualizer contains UI needle: INTERGALACTIC DJ ASIC-CODE VISUAL SPELL"
+    },
+    {
+      "ok": true,
+      "message": "visualizer contains UI needle: browser-only shader illusion"
+    },
+    {
+      "ok": true,
+      "message": "GET /health returns 200"
+    },
+    {
+      "ok": true,
+      "message": "health ok"
+    },
+    {
+      "ok": true,
+      "message": "all health approval flags false by default"
+    },
+    {
+      "ok": true,
+      "message": "GET /api/ecosystem returns 200"
+    },
+    {
+      "ok": true,
+      "message": "ecosystem status correct"
+    },
+    {
+      "ok": true,
+      "message": "ecosystem positions Intergalactic DJs first"
+    },
+    {
+      "ok": true,
+      "message": "ecosystem includes gated custom model training path"
+    },
+    {
+      "ok": true,
+      "message": "ecosystem trains_models=false"
+    },
+    {
+      "ok": true,
+      "message": "ecosystem: starts_gpu=false"
+    },
+    {
+      "ok": true,
+      "message": "ecosystem: starts_paid_api=false"
+    },
+    {
+      "ok": true,
+      "message": "ecosystem: publishes_stream=false"
+    },
+    {
+      "ok": true,
+      "message": "ecosystem: records_audio=false"
+    },
+    {
+      "ok": true,
+      "message": "ecosystem: uploads_private_media=false"
+    },
+    {
+      "ok": true,
+      "message": "GET /api/backends returns 200"
+    },
+    {
+      "ok": true,
+      "message": "backend status includes expected provider lanes"
+    },
+    {
+      "ok": true,
+      "message": "all backend lanes closed by default"
+    },
+    {
+      "ok": true,
+      "message": "backends: starts_gpu=false"
+    },
+    {
+      "ok": true,
+      "message": "backends: starts_paid_api=false"
+    },
+    {
+      "ok": true,
+      "message": "backends: publishes_stream=false"
+    },
+    {
+      "ok": true,
+      "message": "backends: records_audio=false"
+    },
+    {
+      "ok": true,
+      "message": "backends: uploads_private_media=false"
+    },
+    {
+      "ok": true,
+      "message": "GET /api/program-status returns 200"
+    },
+    {
+      "ok": true,
+      "message": "program status is honest no rendered program"
+    },
+    {
+      "ok": true,
+      "message": "program: starts_gpu=false"
+    },
+    {
+      "ok": true,
+      "message": "program: starts_paid_api=false"
+    },
+    {
+      "ok": true,
+      "message": "program: publishes_stream=false"
+    },
+    {
+      "ok": true,
+      "message": "program: records_audio=false"
+    },
+    {
+      "ok": true,
+      "message": "program: uploads_private_media=false"
+    },
+    {
+      "ok": true,
+      "message": "GET /api/mc-breaks/preview returns 200"
+    },
+    {
+      "ok": true,
+      "message": "MC preview exposes all five modes"
+    },
+    {
+      "ok": true,
+      "message": "mc: starts_gpu=false"
+    },
+    {
+      "ok": true,
+      "message": "mc: starts_paid_api=false"
+    },
+    {
+      "ok": true,
+      "message": "mc: publishes_stream=false"
+    },
+    {
+      "ok": true,
+      "message": "mc: records_audio=false"
+    },
+    {
+      "ok": true,
+      "message": "mc: uploads_private_media=false"
+    },
+    {
+      "ok": true,
+      "message": "MC mode survival stays text-first"
+    },
+    {
+      "ok": true,
+      "message": "MC mode survival sends_voice_message=false"
+    },
+    {
+      "ok": true,
+      "message": "MC mode survival records_audio=false"
+    },
+    {
+      "ok": true,
+      "message": "MC mode history stays text-first"
+    },
+    {
+      "ok": true,
+      "message": "MC mode history sends_voice_message=false"
+    },
+    {
+      "ok": true,
+      "message": "MC mode history records_audio=false"
+    },
+    {
+      "ok": true,
+      "message": "MC mode hype stays text-first"
+    },
+    {
+      "ok": true,
+      "message": "MC mode hype sends_voice_message=false"
+    },
+    {
+      "ok": true,
+      "message": "MC mode hype records_audio=false"
+    },
+    {
+      "ok": true,
+      "message": "MC mode lore stays text-first"
+    },
+    {
+      "ok": true,
+      "message": "MC mode lore sends_voice_message=false"
+    },
+    {
+      "ok": true,
+      "message": "MC mode lore records_audio=false"
+    },
+    {
+      "ok": true,
+      "message": "MC mode technical stays text-first"
+    },
+    {
+      "ok": true,
+      "message": "MC mode technical sends_voice_message=false"
+    },
+    {
+      "ok": true,
+      "message": "MC mode technical records_audio=false"
+    },
+    {
+      "ok": true,
+      "message": "GET /api/dj-brain/state returns 200"
+    },
+    {
+      "ok": true,
+      "message": "DJ brain is read-only preview"
+    },
+    {
+      "ok": true,
+      "message": "dj_brain: starts_gpu=false"
+    },
+    {
+      "ok": true,
+      "message": "dj_brain: starts_paid_api=false"
+    },
+    {
+      "ok": true,
+      "message": "dj_brain: publishes_stream=false"
+    },
+    {
+      "ok": true,
+      "message": "dj_brain: records_audio=false"
+    },
+    {
+      "ok": true,
+      "message": "dj_brain: uploads_private_media=false"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/guide returns 200"
+    },
+    {
+      "ok": true,
+      "message": "guide update event returned"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/next-segment returns 200"
+    },
+    {
+      "ok": true,
+      "message": "next segment payload contains track"
+    },
+    {
+      "ok": true,
+      "message": "next segment payload contains talk"
+    },
+    {
+      "ok": true,
+      "message": "next segment payload contains visual"
+    },
+    {
+      "ok": true,
+      "message": "next segment payload contains mix"
+    },
+    {
+      "ok": true,
+      "message": "next segment payload contains transition"
+    },
+    {
+      "ok": true,
+      "message": "next segment payload contains deck_a"
+    },
+    {
+      "ok": true,
+      "message": "next segment payload contains deck_b"
+    },
+    {
+      "ok": true,
+      "message": "next segment payload contains visual_spell"
+    },
+    {
+      "ok": true,
+      "message": "next segment payload contains comfyui_visual_spell"
+    },
+    {
+      "ok": true,
+      "message": "next segment payload contains crate_selection"
+    },
+    {
+      "ok": true,
+      "message": "next segment payload contains survival_kit"
+    },
+    {
+      "ok": true,
+      "message": "next segment payload contains culture_cue"
+    },
+    {
+      "ok": true,
+      "message": "next segment payload contains mc_break"
+    },
+    {
+      "ok": true,
+      "message": "next segment payload contains program_status"
+    },
+    {
+      "ok": true,
+      "message": "next segment payload contains program_manifest"
+    },
+    {
+      "ok": true,
+      "message": "next segment ComfyUI spell stays dry_run"
+    },
+    {
+      "ok": true,
+      "message": "next segment program status remains honest"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/sample-pad returns 200"
+    },
+    {
+      "ok": true,
+      "message": "sample pad VANTA is metadata-only"
+    },
+    {
+      "ok": true,
+      "message": "sample pad VANTA safe flags false"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/sample-pad returns 200"
+    },
+    {
+      "ok": true,
+      "message": "sample pad HYDRATE is metadata-only"
+    },
+    {
+      "ok": true,
+      "message": "sample pad HYDRATE safe flags false"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/sample-pad returns 200"
+    },
+    {
+      "ok": true,
+      "message": "sample pad BUDDY is metadata-only"
+    },
+    {
+      "ok": true,
+      "message": "sample pad BUDDY safe flags false"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/sample-pad returns 200"
+    },
+    {
+      "ok": true,
+      "message": "sample pad DROP is metadata-only"
+    },
+    {
+      "ok": true,
+      "message": "sample pad DROP safe flags false"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/sample-pad returns 200"
+    },
+    {
+      "ok": true,
+      "message": "sample pad PORTAL is metadata-only"
+    },
+    {
+      "ok": true,
+      "message": "sample pad PORTAL safe flags false"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/sample-pad returns 200"
+    },
+    {
+      "ok": true,
+      "message": "sample pad CHILL is metadata-only"
+    },
+    {
+      "ok": true,
+      "message": "sample pad CHILL safe flags false"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/sample-pad returns 200"
+    },
+    {
+      "ok": true,
+      "message": "sample pad AIRHORN is metadata-only"
+    },
+    {
+      "ok": true,
+      "message": "sample pad AIRHORN safe flags false"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/sample-pad returns 200"
+    },
+    {
+      "ok": true,
+      "message": "sample pad RECORD is metadata-only"
+    },
+    {
+      "ok": true,
+      "message": "sample pad RECORD safe flags false"
+    },
+    {
+      "ok": true,
+      "message": "GET /api/timeline returns 200"
+    },
+    {
+      "ok": true,
+      "message": "timeline GET fail-closed"
+    },
+    {
+      "ok": true,
+      "message": "timeline: starts_gpu=false"
+    },
+    {
+      "ok": true,
+      "message": "timeline: starts_paid_api=false"
+    },
+    {
+      "ok": true,
+      "message": "timeline: publishes_stream=false"
+    },
+    {
+      "ok": true,
+      "message": "timeline: records_audio=false"
+    },
+    {
+      "ok": true,
+      "message": "timeline: uploads_private_media=false"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/timeline/build returns 200"
+    },
+    {
+      "ok": true,
+      "message": "timeline build fail-closed"
+    },
+    {
+      "ok": true,
+      "message": "timeline_build: starts_gpu=false"
+    },
+    {
+      "ok": true,
+      "message": "timeline_build: starts_paid_api=false"
+    },
+    {
+      "ok": true,
+      "message": "timeline_build: publishes_stream=false"
+    },
+    {
+      "ok": true,
+      "message": "timeline_build: records_audio=false"
+    },
+    {
+      "ok": true,
+      "message": "timeline_build: uploads_private_media=false"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/signal/acquire returns 200"
+    },
+    {
+      "ok": true,
+      "message": "station acquire is safe"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/signal/session returns 200"
+    },
+    {
+      "ok": true,
+      "message": "station session is safe"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/comfy/prompt blocked with 403"
+    },
+    {
+      "ok": true,
+      "message": "/api/comfy/prompt blocked by fail-closed policy"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/model-download blocked with 403"
+    },
+    {
+      "ok": true,
+      "message": "/api/model-download blocked by fail-closed policy"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/stream/publish blocked with 403"
+    },
+    {
+      "ok": true,
+      "message": "/api/stream/publish blocked by fail-closed policy"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/record blocked with 403"
+    },
+    {
+      "ok": true,
+      "message": "/api/record blocked by fail-closed policy"
+    },
+    {
+      "ok": true,
+      "message": "POST /api/upload blocked with 403"
+    },
+    {
+      "ok": true,
+      "message": "/api/upload blocked by fail-closed policy"
+    },
+    {
+      "ok": true,
+      "message": "doc exists: docs/product/INTERGALACTIC_DJS_COLLECTIVE_ECOSYSTEM.md"
+    },
+    {
+      "ok": true,
+      "message": "doc exists: docs/testing/HOW_TO_TEST_555_LAUNCH.md"
+    },
+    {
+      "ok": true,
+      "message": "doc exists: docs/planning/LAUNCH_555_PACIFIC_CHECKLIST.md"
+    }
+  ],
+  "ok": true,
+  "failure_count": 0,
+  "failures": []
+}

@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "action": "small_introductions_channel_created_or_reused",
+  "guild_id": "1465968549226090629",
+  "category_id": "1497891361742000169",
+  "category_name": "\ud83e\udec2 HUMAN LOUNGE",
+  "channel_id": "1500312490800582746",
+  "channel_name": "introductions",
+  "created": true,
+  "intro_message_id": "1500312491492769793",
+  "non_destructive": true
+}

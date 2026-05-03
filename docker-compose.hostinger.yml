@@ -1,0 +1,27 @@
+services:
+  sonicforge-live:
+    build: .
+    image: sonicforge-live:launch-cockpit
+    container_name: sonicforge-live
+    restart: unless-stopped
+    environment:
+      SONICFORGE_WORKSPACE_ROOT: /workspace
+      SONICFORGE_FUNK_REPO_PATH: /workspace/projects/dj-vanta-funk-glitch-bass-album-dataset
+      SONICFORGE_FUNK_RUN_PATH: /workspace/projects/dj-vanta-funk-glitch-bass-album-dataset/generated/20260502T185849Z
+      SONICFORGE_DATASET_STATUS_PATH: /app/data/datasets/dj_vanta_full_dataset_status.json
+    ports:
+      - "8788:8788"
+    volumes:
+      - ./workspace:/workspace:ro
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.sonicforge.rule=Host(`sonicforge.srv1600947.hstgr.cloud`)
+      - traefik.http.routers.sonicforge.entrypoints=websecure
+      - traefik.http.routers.sonicforge.tls=true
+      - traefik.http.routers.sonicforge.tls.certresolver=letsencrypt
+      - traefik.http.services.sonicforge.loadbalancer.server.port=8788
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8788/api/launch-status', timeout=5).read()"]
+      interval: 30s
+      timeout: 5s
+      retries: 5

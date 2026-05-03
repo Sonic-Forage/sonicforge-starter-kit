@@ -1,0 +1,50 @@
+{
+  "generated_at_utc": "2026-05-02T23:29:21.458949+00:00",
+  "status": "private_demo_playlist_ready_for_continuous_play",
+  "backend": "comfyui_generated_assets_cached_locally",
+  "continuous_play_default": "FULL_space_juice_rave_rescue_intro_song_outro",
+  "items": [
+    {
+      "id": "01_space_juice_intro",
+      "role": "intro",
+      "local_path": "/opt/data/audio_cache/sonicforge_space_juice/20260502T232445Z/01_space_juice_intro.mp3",
+      "duration_seconds": 15.168,
+      "bytes": 200214,
+      "sha256": "27e2966da00da5d073fb8875e64fd091569655d167d0e6ed648e90b83db7137f",
+      "approved_for_demo": true
+    },
+    {
+      "id": "02_space_juice_rave_rescue_song",
+      "role": "song",
+      "local_path": "/opt/data/audio_cache/sonicforge_space_juice/20260502T232445Z/02_space_juice_rave_rescue_song.mp3",
+      "duration_seconds": 45.024,
+      "bytes": 1447072,
+      "sha256": "c5856f59bc0fbe247957436761f2eba22adaff4ba6c186eb0770747c96f3a610",
+      "approved_for_demo": true
+    },
+    {
+      "id": "03_space_juice_outro",
+      "role": "outro",
+      "local_path": "/opt/data/audio_cache/sonicforge_space_juice/20260502T232445Z/03_space_juice_outro.mp3",
+      "duration_seconds": 13.008,
+      "bytes": 157216,
+      "sha256": "f39fba5f874a92d7d6fee7376354f9b1b5ae03f9e077d17044dcf68e3ab24ffd",
+      "approved_for_demo": true
+    },
+    {
+      "id": "FULL_space_juice_rave_rescue_intro_song_outro",
+      "role": "full",
+      "local_path": "/opt/data/audio_cache/sonicforge_space_juice/20260502T232445Z/FULL_space_juice_rave_rescue_intro_song_outro.mp3",
+      "duration_seconds": 73.116735,
+      "bytes": 1472903,
+      "sha256": "7c424e55a237af29c8d8facf87c3bef28f40823add178e73e03077d9e7cb36da",
+      "approved_for_demo": true
+    }
+  ],
+  "safety": {
+    "starts_gpu": false,
+    "starts_paid_api": false,
+    "uses_cached_audio_only": true,
+    "requires_human_approval_for_new_generation": true
+  }
+}

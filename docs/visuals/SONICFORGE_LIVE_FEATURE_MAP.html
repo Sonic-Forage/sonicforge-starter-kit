@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SonicForge Live — Feature Map</title>
+<style>
+:root{
+  --bg:#020617;--panel:#0f172a;--ink:#e2e8f0;--muted:#94a3b8;--cyan:#22d3ee;--pink:#ff2bd6;--amber:#fbbf24;--green:#34d399;--violet:#a78bfa;--rose:#fb7185;--orange:#fb923c;
+}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0%,rgba(255,43,214,.22),transparent 36%),radial-gradient(circle at 86% 20%,rgba(34,211,238,.2),transparent 30%),linear-gradient(180deg,#020617,#070014 62%,#020617);color:var(--ink);font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(148,163,184,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.08) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,black,transparent 86%)}
+.wrap{position:relative;max-width:1440px;margin:auto;padding:34px 24px 44px}.top{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:stretch}.hero,.card,.lane,.footer{border:1px solid rgba(34,211,238,.28);background:linear-gradient(180deg,rgba(15,23,42,.88),rgba(2,6,23,.88));box-shadow:0 0 40px rgba(34,211,238,.08),inset 0 0 0 1px rgba(255,255,255,.03);border-radius:24px}.hero{padding:30px;min-height:360px;position:relative;overflow:hidden}.hero:after{content:"VANTA";position:absolute;right:-22px;bottom:-28px;font-size:148px;font-weight:1000;color:rgba(255,43,214,.075);letter-spacing:-10px}.eyebrow{color:var(--cyan);letter-spacing:.22em;text-transform:uppercase;font-size:13px}.title{font-size:clamp(42px,7vw,92px);line-height:.9;margin:18px 0 14px;font-weight:1000;letter-spacing:-.07em}.title span{display:block;color:var(--pink);text-shadow:0 0 26px rgba(255,43,214,.35)}.subtitle{font-size:20px;line-height:1.45;color:#dbeafe;max-width:900px}.mantra{margin-top:24px;padding:18px;border-left:4px solid var(--amber);background:rgba(251,191,36,.08);border-radius:14px;color:#fff7ed;font-size:18px}.quick{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.card{padding:20px}.card h3,.lane h3{margin:0 0 12px;font-size:17px;color:white}.big{font-size:30px;font-weight:1000;color:var(--amber)}.pill{display:inline-flex;align-items:center;gap:8px;margin:5px 6px 0 0;border:1px solid rgba(148,163,184,.32);border-radius:999px;padding:7px 10px;color:#dbeafe;background:rgba(15,23,42,.65);font-size:12px}.dot{width:9px;height:9px;border-radius:99px;background:var(--cyan);box-shadow:0 0 18px currentColor}.dot.pink{background:var(--pink)}.dot.green{background:var(--green)}.dot.amber{background:var(--amber)}.diagram{margin-top:18px;border:1px solid rgba(255,255,255,.08);border-radius:28px;background:rgba(2,6,23,.72);overflow:hidden}.diagram svg{width:100%;height:auto;display:block}.section-title{display:flex;align-items:center;gap:12px;margin:30px 0 16px}.section-title h2{font-size:28px;margin:0}.section-title:before{content:"";width:14px;height:14px;border-radius:50%;background:var(--pink);box-shadow:0 0 24px var(--pink)}.lanes{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.lane{padding:18px;min-height:220px}.lane .tag{font-size:11px;color:var(--cyan);text-transform:uppercase;letter-spacing:.14em}.lane p{color:#cbd5e1;line-height:1.45}.lane ul{margin:12px 0 0;padding:0;list-style:none}.lane li{margin:8px 0;color:#e2e8f0}.lane li:before{content:"✦";color:var(--pink);margin-right:8px}.safe{border-color:rgba(52,211,153,.34)}.future{border-color:rgba(251,191,36,.34)}.blocked{border-color:rgba(251,113,133,.35)}.flow{display:grid;grid-template-columns:repeat(9,1fr);gap:8px}.step{border:1px solid rgba(34,211,238,.3);background:rgba(8,51,68,.36);border-radius:16px;padding:12px;text-align:center;font-size:12px;min-height:76px;display:flex;align-items:center;justify-content:center}.footer{margin-top:18px;padding:20px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#cbd5e1}.legend{display:flex;gap:10px;flex-wrap:wrap}.watermark{color:rgba(226,232,240,.6)}@media(max-width:980px){.top,.lanes{grid-template-columns:1fr}.flow{grid-template-columns:repeat(3,1fr)}.quick{grid-template-columns:1fr}.title{font-size:54px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="top">
+    <div class="hero">
+      <div class="eyebrow">Intergalactic DJs // SonicForge Live // DJ VANTA</div>
+      <h1 class="title">WORLD’S FIRST <span>FORKABLE PARTY AI OS</span></h1>
+      <p class="subtitle">A local-first autonomous party operating system: DJ brain, VJ visual spells, text-first MC, safety gates, cloneable agents, ComfyUI workflow station, Kandi/PLUR layer, archive engine, and future gated model customization.</p>
+      <div class="mantra">The machine keeps the set alive. The people keep the room human.</div>
+      <p class="subtitle" style="margin-top:18px;color:#a5f3fc">Intergalactic DJs is the team. SonicForge Live is the universe. DJ VANTA is the first clone.</p>
+    </div>
+    <div class="quick">
+      <div class="card"><h3>Launch Proof</h3><div class="big">187 checks</div><span class="pill"><i class="dot green"></i>153 API/safety</span><span class="pill"><i class="dot green"></i>34 real Chrome</span></div>
+      <div class="card"><h3>Safety Posture</h3><div class="big">Fail‑closed</div><span class="pill"><i class="dot amber"></i>No GPU</span><span class="pill"><i class="dot amber"></i>No stream</span><span class="pill"><i class="dot amber"></i>No recording</span></div>
+      <div class="card"><h3>Core Demo</h3><div class="big">Plan Segment</div><span class="pill"><i class="dot pink"></i>Deck A/B</span><span class="pill"><i class="dot pink"></i>Sample pads</span><span class="pill"><i class="dot pink"></i>Audio truth</span></div>
+      <div class="card"><h3>Movement Line</h3><div class="big">Fork Station</div><span class="pill"><i class="dot cyan"></i>No golden ticket</span><span class="pill"><i class="dot cyan"></i>Builder party</span></div>
+    </div>
+  </section>
+
+  <div class="diagram">
+    <svg viewBox="0 0 1440 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SonicForge Live feature map architecture diagram">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#22d3ee"/></marker>
+        <linearGradient id="core" x1="0" x2="1"><stop stop-color="#ff2bd6"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+        <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <rect width="1440" height="760" fill="#020617"/>
+      <g opacity=".28"><path d="M0 80H1440M0 160H1440M0 240H1440M0 320H1440M0 400H1440M0 480H1440M0 560H1440M0 640H1440M120 0V760M240 0V760M360 0V760M480 0V760M600 0V760M720 0V760M840 0V760M960 0V760M1080 0V760M1200 0V760M1320 0V760" stroke="#1e293b"/></g>
+      <g stroke="#22d3ee" stroke-width="2" fill="none" marker-end="url(#arrow)" opacity=".72">
+        <path d="M720 210 C500 250 390 300 250 370"/><path d="M720 210 C940 250 1050 300 1190 370"/><path d="M720 210 C700 310 585 390 500 500"/><path d="M720 210 C740 310 855 390 940 500"/><path d="M720 315 V455"/><path d="M250 430 C380 560 525 620 720 620"/><path d="M1190 430 C1060 560 915 620 720 620"/>
+      </g>
+      <g filter="url(#glow)"><circle cx="720" cy="250" r="112" fill="rgba(255,43,214,.13)" stroke="url(#core)" stroke-width="4"/><text x="720" y="225" text-anchor="middle" fill="#fff" font-size="28" font-weight="900">SONICFORGE LIVE</text><text x="720" y="257" text-anchor="middle" fill="#a5f3fc" font-size="16">Forkable Party AI Operating System</text><text x="720" y="292" text-anchor="middle" fill="#fbbf24" font-size="15">DJ VANTA = first clone</text></g>
+      <g font-family="monospace" font-size="16" fill="#e2e8f0">
+        <g><rect x="60" y="330" width="380" height="115" rx="18" fill="rgba(8,51,68,.55)" stroke="#22d3ee"/><text x="250" y="365" text-anchor="middle" font-size="22" font-weight="900">LIVE DJ BRAIN</text><text x="250" y="394" text-anchor="middle">continuous segment planner</text><text x="250" y="420" text-anchor="middle" fill="#fbbf24">Deck A/B · BPM · energy · cue notes</text></g>
+        <g><rect x="1000" y="330" width="380" height="115" rx="18" fill="rgba(76,29,149,.5)" stroke="#a78bfa"/><text x="1190" y="365" text-anchor="middle" font-size="22" font-weight="900">VJ / VISUAL SPELLS</text><text x="1190" y="394" text-anchor="middle">ASIC code spell + terminal visuals</text><text x="1190" y="420" text-anchor="middle" fill="#fbbf24">browser-only · no provider call</text></g>
+        <g><rect x="310" y="485" width="380" height="115" rx="18" fill="rgba(6,78,59,.52)" stroke="#34d399"/><text x="500" y="520" text-anchor="middle" font-size="22" font-weight="900">TEXT-FIRST MC / TTS</text><text x="500" y="549" text-anchor="middle">hype · lore · survival · history</text><text x="500" y="575" text-anchor="middle" fill="#fbbf24">voice output only when approved</text></g>
+        <g><rect x="750" y="485" width="380" height="115" rx="18" fill="rgba(120,53,15,.38)" stroke="#fbbf24"/><text x="940" y="520" text-anchor="middle" font-size="22" font-weight="900">COMFY / WORKFLOWS</text><text x="940" y="549" text-anchor="middle">workflow cards + model ledger</text><text x="940" y="575" text-anchor="middle" fill="#fbbf24">dry-run until armed</text></g>
+        <g><rect x="510" y="620" width="420" height="88" rx="18" fill="rgba(136,19,55,.45)" stroke="#fb7185"/><text x="720" y="655" text-anchor="middle" font-size="22" font-weight="900">SERVER SAFETY POLICY</text><text x="720" y="684" text-anchor="middle">blocks GPU · prompt · download · stream · record · upload</text></g>
+      </g>
+      <g font-family="monospace" font-size="14" fill="#e2e8f0">
+        <rect x="80" y="60" width="255" height="78" rx="14" fill="rgba(15,23,42,.88)" stroke="#fb923c"/><text x="207" y="92" text-anchor="middle" font-weight="900">PARTY MODE</text><text x="207" y="118" text-anchor="middle">theme · supplies · care · archive</text>
+        <rect x="420" y="60" width="255" height="78" rx="14" fill="rgba(15,23,42,.88)" stroke="#22d3ee"/><text x="548" y="92" text-anchor="middle" font-weight="900">AGENT FACTORY</text><text x="548" y="118" text-anchor="middle">clone DJ/VJ agents + manifests</text>
+        <rect x="765" y="60" width="255" height="78" rx="14" fill="rgba(15,23,42,.88)" stroke="#34d399"/><text x="893" y="92" text-anchor="middle" font-weight="900">KANDI / PLUR</text><text x="893" y="118" text-anchor="middle">opt-in friendship tokens</text>
+        <rect x="1105" y="60" width="255" height="78" rx="14" fill="rgba(15,23,42,.88)" stroke="#a78bfa"/><text x="1233" y="92" text-anchor="middle" font-weight="900">FESTIVAL 2045</text><text x="1233" y="118" text-anchor="middle">birthday → eclipse archive</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="section-title"><h2>Feature Lanes We Created</h2></div>
+  <section class="lanes">
+    <article class="lane"><div class="tag">01 // Identity</div><h3>DJ VANTA Lore + Logo</h3><p>VANTA became a real autonomous performer identity: Virtual Autonomous Nocturnal Transmission Artist.</p><ul><li>Lore sheet</li><li>Hero art</li><li>Dedicated /vanta page</li><li>First clone framing</li></ul></article>
+    <article class="lane"><div class="tag">02 // Station</div><h3>Autonomous DJ Interface</h3><p>Station Signal gives the show a “signal acquired” control surface without claiming unsafe real execution.</p><ul><li>/station route</li><li>Acquire signal</li><li>Session dry-run</li><li>Endpoint readiness</li></ul></article>
+    <article class="lane"><div class="tag">03 // Audio Truth</div><h3>Continuous Segment Planner</h3><p>Plans the next DJ segment with honest metadata: crate memory, Deck A/B handoff, BPM, energy and cue notes.</p><ul><li>Plan next segment</li><li>Program run sheet</li><li>Mock audio truth</li><li>No overclaiming</li></ul></article>
+    <article class="lane"><div class="tag">04 // MC</div><h3>Text‑First TTS Lane</h3><p>Talk breaks are generated as text first so voice output can be approved later.</p><ul><li>Hype mode</li><li>Lore mode</li><li>Survival mode</li><li>History mode</li></ul></article>
+    <article class="lane"><div class="tag">05 // VJ</div><h3>Terminal Visual Spell Engine</h3><p>Browser-first visualizer with ASIC-code, subtitle spell, EQ bands, code rain, and ASCII spectrograph modes.</p><ul><li>/visualizer</li><li>ASIC code spell</li><li>No mic</li><li>No recording</li></ul></article>
+    <article class="lane"><div class="tag">06 // Comfy</div><h3>Workflow Station</h3><p>ComfyUI is framed as a visual workflow engine with cards, registry, and model download ledger.</p><ul><li>Workflow cards</li><li>Model ledger</li><li>Read-only checks</li><li>POST /prompt blocked</li></ul></article>
+    <article class="lane"><div class="tag">07 // Ecosystem</div><h3>Forkable Agent Factory</h3><p>People can fork stations, create their own DJ/VJ agents, and share skills/plugins/workflow cards.</p><ul><li>Agent roster</li><li>Template agent</li><li>Skill/plugin bus</li><li>Payload mindset</li></ul></article>
+    <article class="lane"><div class="tag">08 // Party</div><h3>Party Mode + Care Layer</h3><p>Not just music: party concept, supplies, bartender/care defaults, accessibility, chill zone, and archive plan.</p><ul><li>All-ages first</li><li>Hydration/snacks</li><li>Buddy checks</li><li>Invites/archive</li></ul></article>
+    <article class="lane"><div class="tag">09 // Kandi</div><h3>PLUR / Kandi / RFID Concept</h3><p>Opt-in friendship-token layer for QR/NFC/RFID moments without identity tracking or surveillance vibes.</p><ul><li>No legal names</li><li>No location tracking</li><li>Local-first tokens</li><li>Party wall concept</li></ul></article>
+    <article class="lane"><div class="tag">10 // Manager</div><h3>Draft‑Only Agent Manager</h3><p>EPK/gig/booking/deal helper stays human-approved and draft-only.</p><ul><li>No auto-send</li><li>No spam</li><li>No payment automation</li><li>No revenue guarantees</li></ul></article>
+    <article class="lane future"><div class="tag">11 // Future Gate</div><h3>Model Customization Path</h3><p>Future training/fine-tuning exists as a gated lane: dataset cards, rights review, eval plan, explicit approval.</p><ul><li>No automatic training</li><li>No model downloads</li><li>Rights checklist</li><li>Eval before launch</li></ul></article>
+    <article class="lane safe"><div class="tag">12 // Proof</div><h3>Tested Launch Readiness</h3><p>Reusable checks now prove the launch path and real browser flow.</p><ul><li>153 route/safety checks</li><li>34 Chrome checks</li><li>Secret scan</li><li>Committed reports</li></ul></article>
+  </section>
+
+  <div class="section-title"><h2>Core Loop</h2></div>
+  <section class="flow">
+    <div class="step">Create Agent</div><div class="step">Create Party</div><div class="step">Generate Set</div><div class="step">Outfit Room</div><div class="step">Run Kandi Station</div><div class="step">Perform Party</div><div class="step">Archive Night</div><div class="step">Package Agent</div><div class="step">Fork New Station</div>
+  </section>
+
+  <div class="section-title"><h2>Safety Gates Holding</h2></div>
+  <section class="lanes">
+    <article class="lane blocked"><h3>Blocked by Default</h3><ul><li>Comfy POST /prompt</li><li>Model downloads</li><li>Public stream</li><li>Recording/uploading</li><li>Model training</li></ul></article>
+    <article class="lane safe"><h3>Allowed by Default</h3><ul><li>Static pages</li><li>Read-only API status</li><li>Mock segment planning</li><li>Browser visualizer</li><li>Local test reports</li></ul></article>
+    <article class="lane future"><h3>Human Approval Needed</h3><ul><li>Real Comfy execution</li><li>TTS voice output</li><li>GPU/provider calls</li><li>Open-source/public release</li><li>Training/fine-tune runs</li></ul></article>
+    <article class="lane"><h3>Launch Assets</h3><ul><li>Party AI OS banners</li><li>Parallel Party hero</li><li>DJ VANTA hero/logo</li><li>Movement docs</li><li>Testing manuals</li></ul></article>
+  </section>
+
+  <footer class="footer">
+    <div><strong>SonicForge Live:</strong> the world’s first forkable Party AI Operating System.</div>
+    <div class="legend"><span class="pill"><i class="dot pink"></i>DJ/VJ</span><span class="pill"><i class="dot cyan"></i>Forkable</span><span class="pill"><i class="dot green"></i>Safe/local</span><span class="pill"><i class="dot amber"></i>Human approved</span></div>
+    <div class="watermark">Generated as a local repo artifact — no external runtime required.</div>
+  </footer>
+</div>
+</body>
+</html>

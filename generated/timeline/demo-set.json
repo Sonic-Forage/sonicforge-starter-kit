@@ -1,0 +1,2528 @@
+{
+  "schema": "sonicforge.live.timeline.demo-set.v1",
+  "title": "DJ VANTA bounded dry-run set timeline",
+  "status": "local_plan_only_fail_closed",
+  "created_at_utc": "2026-05-01T10:08:51.359296+00:00",
+  "purpose": "Give the private demo operator 10/20/45 minute set arcs without starting providers, recording, or publishing.",
+  "operator_rule": "Review timeline as a run-of-show only; human approval is still required before live providers, GPU jobs, recording, uploads, or public streams.",
+  "plans": [
+    {
+      "id": "10_minute_private_demo",
+      "minutes": 10,
+      "segment_count": 3,
+      "segments": [
+        {
+          "segment_id": "10_minute_private_demo-segment-01",
+          "starts_at_seconds": 0,
+          "duration_seconds": 200,
+          "mode": "warmup",
+          "energy": 5,
+          "bpm": 128,
+          "track_title": "Warmup Signal 01",
+          "track_key": "A minor",
+          "talk_text": "This is DJ VANTA. Segment 1 is locked at 128 BPM. Energy 5. Stay hydrated and ride the next signal.",
+          "visual_scene": "warmup neon plasma tunnel with waveform gates and neon crowd ghosts",
+          "visual_spell_text": "WAREHOUSE_WARMUP // LOW_FOG // HUMAN_OVERRIDE_READY",
+          "crate_id": "pnw-warehouse-warmup-001",
+          "survival_ping": "SURVIVAL_PING BUDDY_CHECK",
+          "culture_mode": "history",
+          "transition_summary": "Warmup Signal 01: 128->128 BPM, 16-bar blend, bass swap on bar 17, VJ intensity 5, crowd warming.",
+          "beatmatch": {
+            "current_bpm": 128,
+            "next_bpm": 128,
+            "tempo_shift_percent": 0.0,
+            "compatible": true,
+            "notes": [
+              "Keep master clock stable for the localhost demo.",
+              "If tempo drift exceeds 4%, prefer phrase cut or energy reset instead of forced warp."
+            ]
+          },
+          "phrase": {
+            "intro_bars": 16,
+            "mix_in_bar": 1,
+            "bass_swap_bar": 17,
+            "drop_release_bar": 33,
+            "outro_bars": 16
+          },
+          "crossfader": {
+            "curve": "equal_power",
+            "formula": "gainA = cos((value + 1) / 2 * PI / 2); gainB = sin((value + 1) / 2 * PI / 2)",
+            "automation": [
+              {
+                "value": -1.0,
+                "gain_a": 1.0,
+                "gain_b": 0.0,
+                "note": "bar 1: Deck A full, Deck B preview/cued silently"
+              },
+              {
+                "value": -0.5,
+                "gain_a": 0.9239,
+                "gain_b": 0.3827,
+                "note": "bar 9: Deck B texture rises under Deck A"
+              },
+              {
+                "value": 0.0,
+                "gain_a": 0.7071,
+                "gain_b": 0.7071,
+                "note": "bar 17: equal-power midpoint for bass swap"
+              },
+              {
+                "value": 0.5,
+                "gain_a": 0.3827,
+                "gain_b": 0.9239,
+                "note": "bar 25: Deck B leads while Deck A tails"
+              },
+              {
+                "value": 1.0,
+                "gain_a": 0.0,
+                "gain_b": 1.0,
+                "note": "bar 33: Deck B full, Deck A released"
+              }
+            ],
+            "notes": [
+              "This is metadata only; no real continuous mixer is started.",
+              "Equal-power keeps perceived loudness steadier than linear fades during the handoff."
+            ]
+          },
+          "eq_moves": [
+            {
+              "bar": 1,
+              "low_db": -18.0,
+              "mid_db": -2.0,
+              "high_db": 1.5,
+              "filter": "highpass",
+              "note": "Introduce hats/texture over outgoing groove."
+            },
+            {
+              "bar": 9,
+              "low_db": -12.0,
+              "mid_db": 0.0,
+              "high_db": 1.0,
+              "filter": "highpass",
+              "note": "Open mids while confirming phrase alignment."
+            },
+            {
+              "bar": 17,
+              "low_db": 0.0,
+              "mid_db": 0.0,
+              "high_db": 0.0,
+              "filter": "none",
+              "note": "Bass swap: outgoing lows down, incoming lows to unity."
+            },
+            {
+              "bar": 33,
+              "low_db": 0.0,
+              "mid_db": 1.0,
+              "high_db": 1.0,
+              "filter": "none",
+              "note": "Release into drop; clear talk bed before impact."
+            }
+          ],
+          "comfyui_visual_spell": {
+            "ok": true,
+            "type": "comfyui.visual_spell.cue",
+            "mode": "dry_run",
+            "workflow": "intergalactic-djs-visual-spell",
+            "deck": "B",
+            "segment_id": "segment-001",
+            "client_route": "COMFYUI_DRY_RUN",
+            "api_routes_when_enabled": [
+              "/system_stats",
+              "/object_info",
+              "/prompt",
+              "/ws",
+              "/history/{prompt_id}",
+              "/view"
+            ],
+            "input": {
+              "workflow": "intergalactic-djs-visual-spell",
+              "mode": "dry_run",
+              "deck": "B",
+              "segment_id": "segment-001",
+              "prompt": "readable neon typography, ASCII spectrograph star gate, DJ VANTA signal, words WAREHOUSE_WARMUP // LOW_FOG // HUMAN_OVERRIDE_READY, warmup energy 5, underground rave flyer grain, clear survival/culture text overlay, browser-first VJ cue",
+              "negative_prompt": "illegible typography, watermark, extra logos, fake QR code, brand logos",
+              "width": 1024,
+              "height": 1024,
+              "seed": 1777,
+              "output_prefix": "vanta_visual_spell_segment_001"
+            },
+            "output": {
+              "prompt_id": null,
+              "files": [],
+              "warnings": [
+                "ComfyUI /prompt is not called unless a human explicitly enables the backend."
+              ]
+            },
+            "route_targets": [
+              "browser_visualizer",
+              "comfyui_adapter_contract",
+              "touchdesigner_contract"
+            ],
+            "starts_gpu": false,
+            "starts_paid_api": false,
+            "publishes_stream": false,
+            "requires_human_approval": true,
+            "safety": "dry-run visual-spell cue only; no Comfy Cloud, local GPU job, model download, or public publishing starts from this planner output"
+          },
+          "honest_status": "timeline_plan_only_no_generation_no_continuous_mixer"
+        },
+        {
+          "segment_id": "10_minute_private_demo-segment-02",
+          "starts_at_seconds": 200,
+          "duration_seconds": 200,
+          "mode": "build",
+          "energy": 7,
+          "bpm": 128,
+          "track_title": "Build Signal 02",
+          "track_key": "A minor",
+          "talk_text": "This is DJ VANTA. Segment 2 is locked at 128 BPM. Energy 8. Stay hydrated and ride the next signal.",
+          "visual_scene": "build neon plasma tunnel with waveform gates and neon crowd ghosts",
+          "visual_spell_text": "PHRASE_LOCK 32 // BASS_SWAP BAR_17 // PORTAL_OPEN",
+          "crate_id": "intergalactic-bass-handoff-002",
+          "survival_ping": "SURVIVAL_PING HYDRATION",
+          "culture_mode": "safety",
+          "transition_summary": "Build Signal 02: 128->128 BPM, 16-bar blend, bass swap on bar 17, VJ intensity 8, crowd locked_in.",
+          "beatmatch": {
+            "current_bpm": 128,
+            "next_bpm": 128,
+            "tempo_shift_percent": 0.0,
+            "compatible": true,
+            "notes": [
+              "Keep master clock stable for the localhost demo.",
+              "If tempo drift exceeds 4%, prefer phrase cut or energy reset instead of forced warp."
+            ]
+          },
+          "phrase": {
+            "intro_bars": 16,
+            "mix_in_bar": 1,
+            "bass_swap_bar": 17,
+            "drop_release_bar": 33,
+            "outro_bars": 16
+          },
+          "crossfader": {
+            "curve": "equal_power",
+            "formula": "gainA = cos((value + 1) / 2 * PI / 2); gainB = sin((value + 1) / 2 * PI / 2)",
+            "automation": [
+              {
+                "value": -1.0,
+                "gain_a": 1.0,
+                "gain_b": 0.0,
+                "note": "bar 1: Deck A full, Deck B preview/cued silently"
+              },
+              {
+                "value": -0.5,
+                "gain_a": 0.9239,
+                "gain_b": 0.3827,
+                "note": "bar 9: Deck B texture rises under Deck A"
+              },
+              {
+                "value": 0.0,
+                "gain_a": 0.7071,
+                "gain_b": 0.7071,
+                "note": "bar 17: equal-power midpoint for bass swap"
+              },
+              {
+                "value": 0.5,
+                "gain_a": 0.3827,
+                "gain_b": 0.9239,
+                "note": "bar 25: Deck B leads while Deck A tails"
+              },
+              {
+                "value": 1.0,
+                "gain_a": 0.0,
+                "gain_b": 1.0,
+                "note": "bar 33: Deck B full, Deck A released"
+              }
+            ],
+            "notes": [
+              "This is metadata only; no real continuous mixer is started.",
+              "Equal-power keeps perceived loudness steadier than linear fades during the handoff."
+            ]
+          },
+          "eq_moves": [
+            {
+              "bar": 1,
+              "low_db": -18.0,
+              "mid_db": -2.0,
+              "high_db": 1.5,
+              "filter": "highpass",
+              "note": "Introduce hats/texture over outgoing groove."
+            },
+            {
+              "bar": 9,
+              "low_db": -12.0,
+              "mid_db": 0.0,
+              "high_db": 1.0,
+              "filter": "highpass",
+              "note": "Open mids while confirming phrase alignment."
+            },
+            {
+              "bar": 17,
+              "low_db": 0.0,
+              "mid_db": 0.0,
+              "high_db": 0.0,
+              "filter": "none",
+              "note": "Bass swap: outgoing lows down, incoming lows to unity."
+            },
+            {
+              "bar": 33,
+              "low_db": 0.0,
+              "mid_db": 1.0,
+              "high_db": 1.0,
+              "filter": "none",
+              "note": "Release into drop; clear talk bed before impact."
+            }
+          ],
+          "comfyui_visual_spell": {
+            "ok": true,
+            "type": "comfyui.visual_spell.cue",
+            "mode": "dry_run",
+            "workflow": "intergalactic-djs-visual-spell",
+            "deck": "B",
+            "segment_id": "segment-002",
+            "client_route": "COMFYUI_DRY_RUN",
+            "api_routes_when_enabled": [
+              "/system_stats",
+              "/object_info",
+              "/prompt",
+              "/ws",
+              "/history/{prompt_id}",
+              "/view"
+            ],
+            "input": {
+              "workflow": "intergalactic-djs-visual-spell",
+              "mode": "dry_run",
+              "deck": "B",
+              "segment_id": "segment-002",
+              "prompt": "readable neon typography, ASCII spectrograph star gate, DJ VANTA signal, words PHRASE_LOCK 32 // BASS_SWAP BAR_17 // PORTAL_OPEN, build energy 8, underground rave flyer grain, clear survival/culture text overlay, browser-first VJ cue",
+              "negative_prompt": "illegible typography, watermark, extra logos, fake QR code, brand logos",
+              "width": 1024,
+              "height": 1024,
+              "seed": 1778,
+              "output_prefix": "vanta_visual_spell_segment_002"
+            },
+            "output": {
+              "prompt_id": null,
+              "files": [],
+              "warnings": [
+                "ComfyUI /prompt is not called unless a human explicitly enables the backend."
+              ]
+            },
+            "route_targets": [
+              "browser_visualizer",
+              "comfyui_adapter_contract",
+              "touchdesigner_contract"
+            ],
+            "starts_gpu": false,
+            "starts_paid_api": false,
+            "publishes_stream": false,
+            "requires_human_approval": true,
+            "safety": "dry-run visual-spell cue only; no Comfy Cloud, local GPU job, model download, or public publishing starts from this planner output"
+          },
+          "honest_status": "timeline_plan_only_no_generation_no_continuous_mixer"
+        },
+        {
+          "segment_id": "10_minute_private_demo-segment-03",
+          "starts_at_seconds": 400,
+          "duration_seconds": 200,
+          "mode": "comedown",
+          "energy": 4,
+          "bpm": 128,
+          "track_title": "Comedown Signal 03",
+          "track_key": "D minor",
+          "talk_text": "This is DJ VANTA. Segment 3 is locked at 128 BPM. Energy 4. Stay hydrated and ride the next signal.",
+          "visual_scene": "comedown neon plasma tunnel with waveform gates and neon crowd ghosts",
+          "visual_spell_text": "SURVIVAL_PING HYDRATE // CHILL_ZONE OPEN // LIGHTS_SOFT",
+          "crate_id": "rave-survival-cooldown-003",
+          "survival_ping": "SURVIVAL_PING CHILL_ZONE",
+          "culture_mode": "lore",
+          "transition_summary": "Comedown Signal 03: 128->128 BPM, 16-bar blend, bass swap on bar 17, VJ intensity 4, crowd warming.",
+          "beatmatch": {
+            "current_bpm": 128,
+            "next_bpm": 128,
+            "tempo_shift_percent": 0.0,
+            "compatible": true,
+            "notes": [
+              "Keep master clock stable for the localhost demo.",
+              "If tempo drift exceeds 4%, prefer phrase cut or energy reset instead of forced warp."
+            ]
+          },
+          "phrase": {
+            "intro_bars": 16,
+            "mix_in_bar": 1,
+            "bass_swap_bar": 17,
+            "drop_release_bar": 33,
+            "outro_bars": 16
+          },
+          "crossfader": {
+            "curve": "equal_power",
+            "formula": "gainA = cos((value + 1) / 2 * PI / 2); gainB = sin((value + 1) / 2 * PI / 2)",
+            "automation": [
+              {
+                "value": -1.0,
+                "gain_a": 1.0,
+                "gain_b": 0.0,
+                "note": "bar 1: Deck A full, Deck B preview/cued silently"
+              },
+              {
+                "value": -0.5,
+                "gain_a": 0.9239,
+                "gain_b": 0.3827,
+                "note": "bar 9: Deck B texture rises under Deck A"
+              },
+              {
+                "value": 0.0,
+                "gain_a": 0.7071,
+                "gain_b": 0.7071,
+                "note": "bar 17: equal-power midpoint for bass swap"
+              },
+              {
+                "value": 0.5,
+                "gain_a": 0.3827,
+                "gain_b": 0.9239,
+                "note": "bar 25: Deck B leads while Deck A tails"
+              },
+              {
+                "value": 1.0,
+                "gain_a": 0.0,
+                "gain_b": 1.0,
+                "note": "bar 33: Deck B full, Deck A released"
+              }
+            ],
+            "notes": [
+              "This is metadata only; no real continuous mixer is started.",
+              "Equal-power keeps perceived loudness steadier than linear fades during the handoff."
+            ]
+          },
+          "eq_moves": [
+            {
+              "bar": 1,
+              "low_db": -18.0,
+              "mid_db": -2.0,
+              "high_db": 1.5,
+              "filter": "highpass",
+              "note": "Introduce hats/texture over outgoing groove."
+            },
+            {
+              "bar": 9,
+              "low_db": -12.0,
+              "mid_db": 0.0,
+              "high_db": 1.0,
+              "filter": "highpass",
+              "note": "Open mids while confirming phrase alignment."
+            },
+            {
+              "bar": 17,
+              "low_db": 0.0,
+              "mid_db": 0.0,
+              "high_db": 0.0,
+              "filter": "none",
+              "note": "Bass swap: outgoing lows down, incoming lows to unity."
+            },
+            {
+              "bar": 33,
+              "low_db": 0.0,
+              "mid_db": 1.0,
+              "high_db": 1.0,
+              "filter": "none",
+              "note": "Release into drop; clear talk bed before impact."
+            }
+          ],
+          "comfyui_visual_spell": {
+            "ok": true,
+            "type": "comfyui.visual_spell.cue",
+            "mode": "dry_run",
+            "workflow": "intergalactic-djs-visual-spell",
+            "deck": "B",
+            "segment_id": "segment-003",
+            "client_route": "COMFYUI_DRY_RUN",
+            "api_routes_when_enabled": [
+              "/system_stats",
+              "/object_info",
+              "/prompt",
+              "/ws",
+              "/history/{prompt_id}",
+              "/view"
+            ],
+            "input": {
+              "workflow": "intergalactic-djs-visual-spell",
+              "mode": "dry_run",
+              "deck": "B",
+              "segment_id": "segment-003",
+              "prompt": "readable neon typography, ASCII spectrograph star gate, DJ VANTA signal, words SURVIVAL_PING HYDRATE // CHILL_ZONE OPEN // LIGHTS_SOFT, comedown energy 4, underground rave flyer grain, clear survival/culture text overlay, browser-first VJ cue",
+              "negative_prompt": "illegible typography, watermark, extra logos, fake QR code, brand logos",
+              "width": 1024,
+              "height": 1024,
+              "seed": 1779,
+              "output_prefix": "vanta_visual_spell_segment_003"
+            },
+            "output": {
+              "prompt_id": null,
+              "files": [],
+              "warnings": [
+                "ComfyUI /prompt is not called unless a human explicitly enables the backend."
+              ]
+            },
+            "route_targets": [
+              "browser_visualizer",
+              "comfyui_adapter_contract",
+              "touchdesigner_contract"
+            ],
+            "starts_gpu": false,
+            "starts_paid_api": false,
+            "publishes_stream": false,
+            "requires_human_approval": true,
+            "safety": "dry-run visual-spell cue only; no Comfy Cloud, local GPU job, model download, or public publishing starts from this planner output"
+          },
+          "honest_status": "timeline_plan_only_no_generation_no_continuous_mixer"
+        }
+      ]
+    },
+    {
+      "id": "20_minute_house_party_preview",
+      "minutes": 20,
+      "segment_count": 4,
+      "segments": [
+        {
+          "segment_id": "20_minute_house_party_preview-segment-01",
+          "starts_at_seconds": 0,
+          "duration_seconds": 300,
+          "mode": "warmup",
+          "energy": 5,
+          "bpm": 128,
+          "track_title": "Warmup Signal 01",
+          "track_key": "A minor",
+          "talk_text": "This is DJ VANTA. Segment 1 is locked at 128 BPM. Energy 5. Stay hydrated and ride the next signal.",
+          "visual_scene": "warmup neon plasma tunnel with waveform gates and neon crowd ghosts",
+          "visual_spell_text": "WAREHOUSE_WARMUP // LOW_FOG // HUMAN_OVERRIDE_READY",
+          "crate_id": "pnw-warehouse-warmup-001",
+          "survival_ping": "SURVIVAL_PING BUDDY_CHECK",
+          "culture_mode": "history",
+          "transition_summary": "Warmup Signal 01: 128->128 BPM, 16-bar blend, bass swap on bar 17, VJ intensity 5, crowd warming.",
+          "beatmatch": {
+            "current_bpm": 128,
+            "next_bpm": 128,
+            "tempo_shift_percent": 0.0,
+            "compatible": true,
+            "notes": [
+              "Keep master clock stable for the localhost demo.",
+              "If tempo drift exceeds 4%, prefer phrase cut or energy reset instead of forced warp."
+            ]
+          },
+          "phrase": {
+            "intro_bars": 16,
+            "mix_in_bar": 1,
+            "bass_swap_bar": 17,
+            "drop_release_bar": 33,
+            "outro_bars": 16
+          },
+          "crossfader": {
+            "curve": "equal_power",
+            "formula": "gainA = cos((value + 1) / 2 * PI / 2); gainB = sin((value + 1) / 2 * PI / 2)",
+            "automation": [
+              {
+                "value": -1.0,
+                "gain_a": 1.0,
+                "gain_b": 0.0,
+                "note": "bar 1: Deck A full, Deck B preview/cued silently"
+              },
+              {
+                "value": -0.5,
+                "gain_a": 0.9239,
+                "gain_b": 0.3827,
+                "note": "bar 9: Deck B texture rises under Deck A"
+              },
+              {
+                "value": 0.0,
+                "gain_a": 0.7071,
+                "gain_b": 0.7071,
+                "note": "bar 17: equal-power midpoint for bass swap"
+              },
+              {
+                "value": 0.5,
+                "gain_a": 0.3827,
+                "gain_b": 0.9239,
+                "note": "bar 25: Deck B leads while Deck A tails"
+              },
+              {
+                "value": 1.0,
+                "gain_a": 0.0,
+                "gain_b": 1.0,
+                "note": "bar 33: Deck B full, Deck A released"
+              }
+            ],
+            "notes": [
+              "This is metadata only; no real continuous mixer is started.",
+              "Equal-power keeps perceived loudness steadier than linear fades during the handoff."
+            ]
+          },
+          "eq_moves": [
+            {
+              "bar": 1,
+              "low_db": -18.0,
+              "mid_db": -2.0,
+              "high_db": 1.5,
+              "filter": "highpass",
+              "note": "Introduce hats/texture over outgoing groove."
+            },
+            {
+              "bar": 9,
+              "low_db": -12.0,
+              "mid_db": 0.0,
+              "high_db": 1.0,
+              "filter": "highpass",
+              "note": "Open mids while confirming phrase alignment."
+            },
+            {
+              "bar": 17,
+              "low_db": 0.0,
+              "mid_db": 0.0,
+              "high_db": 0.0,
+              "filter": "none",
+              "note": "Bass swap: outgoing lows down, incoming lows to unity."
+            },
+            {
+              "bar": 33,
+              "low_db": 0.0,
+              "mid_db": 1.0,
+              "high_db": 1.0,
+              "filter": "none",
+              "note": "Release into drop; clear talk bed before impact."
+            }
+          ],
+          "comfyui_visual_spell": {
+            "ok": true,
+            "type": "comfyui.visual_spell.cue",
+            "mode": "dry_run",
+            "workflow": "intergalactic-djs-visual-spell",
+            "deck": "B",
+            "segment_id": "segment-001",
+            "client_route": "COMFYUI_DRY_RUN",
+            "api_routes_when_enabled": [
+              "/system_stats",
+              "/object_info",
+              "/prompt",
+              "/ws",
+              "/history/{prompt_id}",
+              "/view"
+            ],
+            "input": {
+              "workflow": "intergalactic-djs-visual-spell",
+              "mode": "dry_run",
+              "deck": "B",
+              "segment_id": "segment-001",
+              "prompt": "readable neon typography, ASCII spectrograph star gate, DJ VANTA signal, words WAREHOUSE_WARMUP // LOW_FOG // HUMAN_OVERRIDE_READY, warmup energy 5, underground rave flyer grain, clear survival/culture text overlay, browser-first VJ cue",
+              "negative_prompt": "illegible typography, watermark, extra logos, fake QR code, brand logos",
+              "width": 1024,
+              "height": 1024,
+              "seed": 1777,
+              "output_prefix": "vanta_visual_spell_segment_001"
+            },
+            "output": {
+              "prompt_id": null,
+              "files": [],
+              "warnings": [
+                "ComfyUI /prompt is not called unless a human explicitly enables the backend."
+              ]
+            },
+            "route_targets": [
+              "browser_visualizer",
+              "comfyui_adapter_contract",
+              "touchdesigner_contract"
+            ],
+            "starts_gpu": false,
+            "starts_paid_api": false,
+            "publishes_stream": false,
+            "requires_human_approval": true,
+            "safety": "dry-run visual-spell cue only; no Comfy Cloud, local GPU job, model download, or public publishing starts from this planner output"
+          },
+          "honest_status": "timeline_plan_only_no_generation_no_continuous_mixer"
+        },
+        {
+          "segment_id": "20_minute_house_party_preview-segment-02",
+          "starts_at_seconds": 300,
+          "duration_seconds": 300,
+          "mode": "groove",
+          "energy": 6,
+          "bpm": 128,
+          "track_title": "Groove Signal 02",
+          "track_key": "A minor",
+          "talk_text": "This is DJ VANTA. Segment 2 is locked at 128 BPM. Energy 6. Stay hydrated and ride the next signal.",
+          "visual_scene": "groove neon plasma tunnel with waveform gates and neon crowd ghosts",
+          "visual_spell_text": "PHRASE_LOCK 32 // BASS_SWAP BAR_17 // PORTAL_OPEN",
+          "crate_id": "intergalactic-bass-handoff-002",
+          "survival_ping": "SURVIVAL_PING BUDDY_CHECK",
+          "culture_mode": "safety",
+          "transition_summary": "Groove Signal 02: 128->128 BPM, 16-bar blend, bass swap on bar 17, VJ intensity 6, crowd locked_in.",
+          "beatmatch": {
+            "current_bpm": 128,
+            "next_bpm": 128,
+            "tempo_shift_percent": 0.0,
+            "compatible": true,
+            "notes": [
+              "Keep master clock stable for the localhost demo.",
+              "If tempo drift exceeds 4%, prefer phrase cut or energy reset instead of forced warp."
+            ]
+          },
+          "phrase": {
+            "intro_bars": 16,
+            "mix_in_bar": 1,
+            "bass_swap_bar": 17,
+            "drop_release_bar": 33,
+            "outro_bars": 16
+          },
+          "crossfader": {
+            "curve": "equal_power",
+            "formula": "gainA = cos((value + 1) / 2 * PI / 2); gainB = sin((value + 1) / 2 * PI / 2)",
+            "automation": [
+              {
+                "value": -1.0,
+                "gain_a": 1.0,
+                "gain_b": 0.0,
+                "note": "bar 1: Deck A full, Deck B preview/cued silently"
+              },
+              {
+                "value": -0.5,
+                "gain_a": 0.9239,
+                "gain_b": 0.3827,
+                "note": "bar 9: Deck B texture rises under Deck A"
+              },
+              {
+                "value": 0.0,
+                "gain_a": 0.7071,
+                "gain_b": 0.7071,
+                "note": "bar 17: equal-power midpoint for bass swap"
+              },
+              {
+                "value": 0.5,
+                "gain_a": 0.3827,
+                "gain_b": 0.9239,
+                "note": "bar 25: Deck B leads while Deck A tails"
+              },
+              {
+                "value": 1.0,
+                "gain_a": 0.0,
+                "gain_b": 1.0,
+                "note": "bar 33: Deck B full, Deck A released"
+              }
+            ],
+            "notes": [
+              "This is metadata only; no real continuous mixer is started.",
+              "Equal-power keeps perceived loudness steadier than linear fades during the handoff."
+            ]
+          },
+          "eq_moves": [
+            {
+              "bar": 1,
+              "low_db": -18.0,
+              "mid_db": -2.0,
+              "high_db": 1.5,
+              "filter": "highpass",
+              "note": "Introduce hats/texture over outgoing groove."
+            },
+            {
+              "bar": 9,
+              "low_db": -12.0,
+              "mid_db": 0.0,
+              "high_db": 1.0,
+              "filter": "highpass",
+              "note": "Open mids while confirming phrase alignment."
+            },
+            {
+              "bar": 17,
+              "low_db": 0.0,
+              "mid_db": 0.0,
+              "high_db": 0.0,
+              "filter": "none",
+              "note": "Bass swap: outgoing lows down, incoming lows to unity."
+            },
+            {
+              "bar": 33,
+              "low_db": 0.0,
+              "mid_db": 1.0,
+              "high_db": 1.0,
+              "filter": "none",
+              "note": "Release into drop; clear talk bed before impact."
+            }
+          ],
+          "comfyui_visual_spell": {
+            "ok": true,
+            "type": "comfyui.visual_spell.cue",
+            "mode": "dry_run",
+            "workflow": "intergalactic-djs-visual-spell",
+            "deck": "B",
+            "segment_id": "segment-002",
+            "client_route": "COMFYUI_DRY_RUN",
+            "api_routes_when_enabled": [
+              "/system_stats",
+              "/object_info",
+              "/prompt",
+              "/ws",
+              "/history/{prompt_id}",
+              "/view"
+            ],
+            "input": {
+              "workflow": "intergalactic-djs-visual-spell",
+              "mode": "dry_run",
+              "deck": "B",
+              "segment_id": "segment-002",
+              "prompt": "readable neon typography, ASCII spectrograph star gate, DJ VANTA signal, words PHRASE_LOCK 32 // BASS_SWAP BAR_17 // PORTAL_OPEN, groove energy 6, underground rave flyer grain, clear survival/culture text overlay, browser-first VJ cue",
+              "negative_prompt": "illegible typography, watermark, extra logos, fake QR code, brand logos",
+              "width": 1024,
+              "height": 1024,
+              "seed": 1778,
+              "output_prefix": "vanta_visual_spell_segment_002"
+            },
+            "output": {
+              "prompt_id": null,
+              "files": [],
+              "warnings": [
+                "ComfyUI /prompt is not called unless a human explicitly enables the backend."
+              ]
+            },
+            "route_targets": [
+              "browser_visualizer",
+              "comfyui_adapter_contract",
+              "touchdesigner_contract"
+            ],
+            "starts_gpu": false,
+            "starts_paid_api": false,
+            "publishes_stream": false,
+            "requires_human_approval": true,
+            "safety": "dry-run visual-spell cue only; no Comfy Cloud, local GPU job, model download, or public publishing starts from this planner output"
+          },
+          "honest_status": "timeline_plan_only_no_generation_no_continuous_mixer"
+        },
+        {
+          "segment_id": "20_minute_house_party_preview-segment-03",
+          "starts_at_seconds": 600,
+          "duration_seconds": 300,
+          "mode": "build",
+          "energy": 7,
+          "bpm": 128,
+          "track_title": "Build Signal 03",
+          "track_key": "A minor",
+          "talk_text": "This is DJ VANTA. Segment 3 is locked at 128 BPM. Energy 8. Stay hydrated and ride the next signal.",
+          "visual_scene": "build neon plasma tunnel with waveform gates and neon crowd ghosts",
+          "visual_spell_text": "PHRASE_LOCK 32 // BASS_SWAP BAR_17 // PORTAL_OPEN",
+          "crate_id": "intergalactic-bass-handoff-002",
+          "survival_ping": "SURVIVAL_PING HYDRATION",
+          "culture_mode": "lore",
+          "transition_summary": "Build Signal 03: 128->128 BPM, 16-bar blend, bass swap on bar 17, VJ intensity 8, crowd locked_in.",
+          "beatmatch": {
+            "current_bpm": 128,
+            "next_bpm": 128,
+            "tempo_shift_percent": 0.0,
+            "compatible": true,
+            "notes": [
+              "Keep master clock stable for the localhost demo.",
+              "If tempo drift exceeds 4%, prefer phrase cut or energy reset instead of forced warp."
+            ]
+          },
+          "phrase": {
+            "intro_bars": 16,
+            "mix_in_bar": 1,
+            "bass_swap_bar": 17,
+            "drop_release_bar": 33,
+            "outro_bars": 16
+          },
+          "crossfader": {
+            "curve": "equal_power",
+            "formula": "gainA = cos((value + 1) / 2 * PI / 2); gainB = sin((value + 1) / 2 * PI / 2)",
+            "automation": [
+              {
+                "value": -1.0,
+                "gain_a": 1.0,
+                "gain_b": 0.0,
+                "note": "bar 1: Deck A full, Deck B preview/cued silently"
+              },
+              {
+                "value": -0.5,
+                "gain_a": 0.9239,
+                "gain_b": 0.3827,
+                "note": "bar 9: Deck B texture rises under Deck A"
+              },
+              {
+                "value": 0.0,
+                "gain_a": 0.7071,
+                "gain_b": 0.7071,
+                "note": "bar 17: equal-power midpoint for bass swap"
+              },
+              {
+                "value": 0.5,
+                "gain_a": 0.3827,
+                "gain_b": 0.9239,
+                "note": "bar 25: Deck B leads while Deck A tails"
+              },
+              {
+                "value": 1.0,
+                "gain_a": 0.0,
+                "gain_b": 1.0,
+                "note": "bar 33: Deck B full, Deck A released"
+              }
+            ],
+            "notes": [
+              "This is metadata only; no real continuous mixer is started.",
+              "Equal-power keeps perceived loudness steadier than linear fades during the handoff."
+            ]
+          },
+          "eq_moves": [
+            {
+              "bar": 1,
+              "low_db": -18.0,
+              "mid_db": -2.0,
+              "high_db": 1.5,
+              "filter": "highpass",
+              "note": "Introduce hats/texture over outgoing groove."
+            },
+            {
+              "bar": 9,
+              "low_db": -12.0,
+              "mid_db": 0.0,
+              "high_db": 1.0,
+              "filter": "highpass",
+              "note": "Open mids while confirming phrase alignment."
+            },
+            {
+              "bar": 17,
+              "low_db": 0.0,
+              "mid_db": 0.0,
+              "high_db": 0.0,
+              "filter": "none",
+              "note": "Bass swap: outgoing lows down, incoming lows to unity."
+            },
+            {
+              "bar": 33,
+              "low_db": 0.0,
+              "mid_db": 1.0,
+              "high_db": 1.0,
+              "filter": "none",
+              "note": "Release into drop; clear talk bed before impact."
+            }
+          ],
+          "comfyui_visual_spell": {
+            "ok": true,
+            "type": "comfyui.visual_spell.cue",
+            "mode": "dry_run",
+            "workflow": "intergalactic-djs-visual-spell",
+            "deck": "B",
+            "segment_id": "segment-003",
+            "client_route": "COMFYUI_DRY_RUN",
+            "api_routes_when_enabled": [
+              "/system_stats",
+              "/object_info",
+              "/prompt",
+              "/ws",
+              "/history/{prompt_id}",
+              "/view"
+            ],
+            "input": {
+              "workflow": "intergalactic-djs-visual-spell",
+              "mode": "dry_run",
+              "deck": "B",
+              "segment_id": "segment-003",
+              "prompt": "readable neon typography, ASCII spectrograph star gate, DJ VANTA signal, words PHRASE_LOCK 32 // BASS_SWAP BAR_17 // PORTAL_OPEN, build energy 8, underground rave flyer grain, clear survival/culture text overlay, browser-first VJ cue",
+              "negative_prompt": "illegible typography, watermark, extra logos, fake QR code, brand logos",
+              "width": 1024,
+              "height": 1024,
+              "seed": 1779,
+              "output_prefix": "vanta_visual_spell_segment_003"
+            },
+            "output": {
+              "prompt_id": null,
+              "files": [],
+              "warnings": [
+                "ComfyUI /prompt is not called unless a human explicitly enables the backend."
+              ]
+            },
+            "route_targets": [
+              "browser_visualizer",
+              "comfyui_adapter_contract",
+              "touchdesigner_contract"
+            ],
+            "starts_gpu": false,
+            "starts_paid_api": false,
+            "publishes_stream": false,
+            "requires_human_approval": true,
+            "safety": "dry-run visual-spell cue only; no Comfy Cloud, local GPU job, model download, or public publishing starts from this planner output"
+          },
+          "honest_status": "timeline_plan_only_no_generation_no_continuous_mixer"
+        },
+        {
+          "segment_id": "20_minute_house_party_preview-segment-04",
+          "starts_at_seconds": 900,
+          "duration_seconds": 300,
+          "mode": "comedown",
+          "energy": 4,
+          "bpm": 128,
+          "track_title": "Comedown Signal 04",
+          "track_key": "D minor",
+          "talk_text": "This is DJ VANTA. Segment 4 is locked at 128 BPM. Energy 4. Stay hydrated and ride the next signal.",
+          "visual_scene": "comedown neon plasma tunnel with waveform gates and neon crowd ghosts",
+          "visual_spell_text": "SURVIVAL_PING HYDRATE // CHILL_ZONE OPEN // LIGHTS_SOFT",
+          "crate_id": "rave-survival-cooldown-003",
+          "survival_ping": "SURVIVAL_PING CHILL_ZONE",
+          "culture_mode": "history",
+          "transition_summary": "Comedown Signal 04: 128->128 BPM, 16-bar blend, bass swap on bar 17, VJ intensity 4, crowd warming.",
+          "beatmatch": {
+            "current_bpm": 128,
+            "next_bpm": 128,
+            "tempo_shift_percent": 0.0,
+            "compatible": true,
+            "notes": [
+              "Keep master clock stable for the localhost demo.",
+              "If tempo drift exceeds 4%, prefer phrase cut or energy reset instead of forced warp."
+            ]
+          },
+          "phrase": {
+            "intro_bars": 16,
+            "mix_in_bar": 1,
+            "bass_swap_bar": 17,
+            "drop_release_bar": 33,
+            "outro_bars": 16
+          },
+          "crossfader": {
+            "curve": "equal_power",
+            "formula": "gainA = cos((value + 1) / 2 * PI / 2); gainB = sin((value + 1) / 2 * PI / 2)",
+            "automation": [
+              {
+                "value": -1.0,
+                "gain_a": 1.0,
+                "gain_b": 0.0,
+                "note": "bar 1: Deck A full, Deck B preview/cued silently"
+              },
+              {
+                "value": -0.5,
+                "gain_a": 0.9239,
+                "gain_b": 0.3827,
+                "note": "bar 9: Deck B texture rises under Deck A"
+              },
+              {
+                "value": 0.0,
+                "gain_a": 0.7071,
+                "gain_b": 0.7071,
+                "note": "bar 17: equal-power midpoint for bass swap"
+              },
+              {
+                "value": 0.5,
+                "gain_a": 0.3827,
+                "gain_b": 0.9239,
+                "note": "bar 25: Deck B leads while Deck A tails"
+              },
+              {
+                "value": 1.0,
+                "gain_a": 0.0,
+                "gain_b": 1.0,
+                "note": "bar 33: Deck B full, Deck A released"
+              }
+            ],
+            "notes": [
+              "This is metadata only; no real continuous mixer is started.",
+              "Equal-power keeps perceived loudness steadier than linear fades during the handoff."
+            ]
+          },
+          "eq_moves": [
+            {
+              "bar": 1,
+              "low_db": -18.0,
+              "mid_db": -2.0,
+              "high_db": 1.5,
+              "filter": "highpass",
+              "note": "Introduce hats/texture over outgoing groove."
+            },
+            {
+              "bar": 9,
+              "low_db": -12.0,
+              "mid_db": 0.0,
+              "high_db": 1.0,
+              "filter": "highpass",
+              "note": "Open mids while confirming phrase alignment."
+            },
+            {
+              "bar": 17,
+              "low_db": 0.0,
+              "mid_db": 0.0,
+              "high_db": 0.0,
+              "filter": "none",
+              "note": "Bass swap: outgoing lows down, incoming lows to unity."
+            },
+            {
+              "bar": 33,
+              "low_db": 0.0,
+              "mid_db": 1.0,
+              "high_db": 1.0,
+              "filter": "none",
+              "note": "Release into drop; clear talk bed before impact."
+            }
+          ],
+          "comfyui_visual_spell": {
+            "ok": true,
+            "type": "comfyui.visual_spell.cue",
+            "mode": "dry_run",
+            "workflow": "intergalactic-djs-visual-spell",
+            "deck": "B",
+            "segment_id": "segment-004",
+            "client_route": "COMFYUI_DRY_RUN",
+            "api_routes_when_enabled": [
+              "/system_stats",
+              "/object_info",
+              "/prompt",
+              "/ws",
+              "/history/{prompt_id}",
+              "/view"
+            ],
+            "input": {
+              "workflow": "intergalactic-djs-visual-spell",
+              "mode": "dry_run",
+              "deck": "B",
+              "segment_id": "segment-004",
+              "prompt": "readable neon typography, ASCII spectrograph star gate, DJ VANTA signal, words SURVIVAL_PING HYDRATE // CHILL_ZONE OPEN // LIGHTS_SOFT, comedown energy 4, underground rave flyer grain, clear survival/culture text overlay, browser-first VJ cue",
+              "negative_prompt": "illegible typography, watermark, extra logos, fake QR code, brand logos",
+              "width": 1024,
+              "height": 1024,
+              "seed": 1780,
+              "output_prefix": "vanta_visual_spell_segment_004"
+            },
+            "output": {
+              "prompt_id": null,
+              "files": [],
+              "warnings": [
+                "ComfyUI /prompt is not called unless a human explicitly enables the backend."
+              ]
+            },
+            "route_targets": [
+              "browser_visualizer",
+              "comfyui_adapter_contract",
+              "touchdesigner_contract"
+            ],
+            "starts_gpu": false,
+            "starts_paid_api": false,
+            "publishes_stream": false,
+            "requires_human_approval": true,
+            "safety": "dry-run visual-spell cue only; no Comfy Cloud, local GPU job, model download, or public publishing starts from this planner output"
+          },
+          "honest_status": "timeline_plan_only_no_generation_no_continuous_mixer"
+        }
+      ]
+    },
+    {
+      "id": "45_minute_full_arc_dry_run",
+      "minutes": 45,
+      "segment_count": 9,
+      "segments": [
+        {
+          "segment_id": "45_minute_full_arc_dry_run-segment-01",
+          "starts_at_seconds": 0,
+          "duration_seconds": 300,
+          "mode": "warmup",
+          "energy": 5,
+          "bpm": 128,
+          "track_title": "Warmup Signal 01",
+          "track_key": "A minor",
+          "talk_text": "This is DJ VANTA. Segment 1 is locked at 128 BPM. Energy 5. Stay hydrated and ride the next signal.",
+          "visual_scene": "warmup neon plasma tunnel with waveform gates and neon crowd ghosts",
+          "visual_spell_text": "WAREHOUSE_WARMUP // LOW_FOG // HUMAN_OVERRIDE_READY",
+          "crate_id": "pnw-warehouse-warmup-001",
+          "survival_ping": "SURVIVAL_PING BUDDY_CHECK",
+          "culture_mode": "history",
+          "transition_summary": "Warmup Signal 01: 128->128 BPM, 16-bar blend, bass swap on bar 17, VJ intensity 5, crowd warming.",
+          "beatmatch": {
+            "current_bpm": 128,
+            "next_bpm": 128,
+            "tempo_shift_percent": 0.0,
+            "compatible": true,
+            "notes": [
+              "Keep master clock stable for the localhost demo.",
+              "If tempo drift exceeds 4%, prefer phrase cut or energy reset instead of forced warp."
+            ]
+          },
+          "phrase": {
+            "intro_bars": 16,
+            "mix_in_bar": 1,
+            "bass_swap_bar": 17,
+            "drop_release_bar": 33,
+            "outro_bars": 16
+          },
+          "crossfader": {
+            "curve": "equal_power",
+            "formula": "gainA = cos((value + 1) / 2 * PI / 2); gainB = sin((value + 1) / 2 * PI / 2)",
+            "automation": [
+              {
+                "value": -1.0,
+                "gain_a": 1.0,
+                "gain_b": 0.0,
+                "note": "bar 1: Deck A full, Deck B preview/cued silently"
+              },
+              {
+                "value": -0.5,
+                "gain_a": 0.9239,
+                "gain_b": 0.3827,
+                "note": "bar 9: Deck B texture rises under Deck A"
+              },
+              {
+                "value": 0.0,
+                "gain_a": 0.7071,
+                "gain_b": 0.7071,
+                "note": "bar 17: equal-power midpoint for bass swap"
+              },
+              {
+                "value": 0.5,
+                "gain_a": 0.3827,
+                "gain_b": 0.9239,
+                "note": "bar 25: Deck B leads while Deck A tails"
+              },
+              {
+                "value": 1.0,
+                "gain_a": 0.0,
+                "gain_b": 1.0,
+                "note": "bar 33: Deck B full, Deck A released"
+              }
+            ],
+            "notes": [
+              "This is metadata only; no real continuous mixer is started.",
+              "Equal-power keeps perceived loudness steadier than linear fades during the handoff."
+            ]
+          },
+          "eq_moves": [
+            {
+              "bar": 1,
+              "low_db": -18.0,
+              "mid_db": -2.0,
+              "high_db": 1.5,
+              "filter": "highpass",
+              "note": "Introduce hats/texture over outgoing groove."
+            },
+            {
+              "bar": 9,
+              "low_db": -12.0,
+              "mid_db": 0.0,
+              "high_db": 1.0,
+              "filter": "highpass",
+              "note": "Open mids while confirming phrase alignment."
+            },
+            {
+              "bar": 17,
+              "low_db": 0.0,
+              "mid_db": 0.0,
+              "high_db": 0.0,
+              "filter": "none",
+              "note": "Bass swap: outgoing lows down, incoming lows to unity."
+            },
+            {
+              "bar": 33,
+              "low_db": 0.0,
+              "mid_db": 1.0,
+              "high_db": 1.0,
+              "filter": "none",
+              "note": "Release into drop; clear talk bed before impact."
+            }
+          ],
+          "comfyui_visual_spell": {
+            "ok": true,
+            "type": "comfyui.visual_spell.cue",
+            "mode": "dry_run",
+            "workflow": "intergalactic-djs-visual-spell",
+            "deck": "B",
+            "segment_id": "segment-001",
+            "client_route": "COMFYUI_DRY_RUN",
+            "api_routes_when_enabled": [
+              "/system_stats",
+              "/object_info",
+              "/prompt",
+              "/ws",
+              "/history/{prompt_id}",
+              "/view"
+            ],
+            "input": {
+              "workflow": "intergalactic-djs-visual-spell",
+              "mode": "dry_run",
+              "deck": "B",
+              "segment_id": "segment-001",
+              "prompt": "readable neon typography, ASCII spectrograph star gate, DJ VANTA signal, words WAREHOUSE_WARMUP // LOW_FOG // HUMAN_OVERRIDE_READY, warmup energy 5, underground rave flyer grain, clear survival/culture text overlay, browser-first VJ cue",
+              "negative_prompt": "illegible typography, watermark, extra logos, fake QR code, brand logos",
+              "width": 1024,
+              "height": 1024,
+              "seed": 1777,
+              "output_prefix": "vanta_visual_spell_segment_001"
+            },
+            "output": {
+              "prompt_id": null,
+              "files": [],
+              "warnings": [
+                "ComfyUI /prompt is not called unless a human explicitly enables the backend."
+              ]
+            },
+            "route_targets": [
+              "browser_visualizer",
+              "comfyui_adapter_contract",
+              "touchdesigner_contract"
+            ],
+            "starts_gpu": false,
+            "starts_paid_api": false,
+            "publishes_stream": false,
+            "requires_human_approval": true,
+            "safety": "dry-run visual-spell cue only; no Comfy Cloud, local GPU job, model download, or public publishing starts from this planner output"
+          },
+          "honest_status": "timeline_plan_only_no_generation_no_continuous_mixer"
+        },
+        {
+          "segment_id": "45_minute_full_arc_dry_run-segment-02",
+          "starts_at_seconds": 300,
+          "duration_seconds": 300,
+          "mode": "warmup",
+          "energy": 5,
+          "bpm": 128,
+          "track_title": "Warmup Signal 02",
+          "track_key": "A minor",
+          "talk_text": "This is DJ VANTA. Segment 2 is locked at 128 BPM. Energy 5. Stay hydrated and ride the next signal.",
+          "visual_scene": "warmup neon plasma tunnel with waveform gates and neon crowd ghosts",
+          "visual_spell_text": "WAREHOUSE_WARMUP // LOW_FOG // HUMAN_OVERRIDE_READY",
+          "crate_id": "pnw-warehouse-warmup-001",
+          "survival_ping": "SURVIVAL_PING BUDDY_CHECK",
+          "culture_mode": "safety",
+          "transition_summary": "Warmup Signal 02: 128->128 BPM, 16-bar blend, bass swap on bar 17, VJ intensity 5, crowd warming.",
+          "beatmatch": {
+            "current_bpm": 128,
+            "next_bpm": 128,
+            "tempo_shift_percent": 0.0,
+            "compatible": true,
+            "notes": [
+              "Keep master clock stable for the localhost demo.",
+              "If tempo drift exceeds 4%, prefer phrase cut or energy reset instead of forced warp."
+            ]
+          },
+          "phrase": {
+            "intro_bars": 16,
+            "mix_in_bar": 1,
+            "bass_swap_bar": 17,
+            "drop_release_bar": 33,
+            "outro_bars": 16
+          },
+          "crossfader": {
+            "curve": "equal_power",
+            "formula": "gainA = cos((value + 1) / 2 * PI / 2); gainB = sin((value + 1) / 2 * PI / 2)",
+            "automation": [
+              {
+                "value": -1.0,
+                "gain_a": 1.0,
+                "gain_b": 0.0,
+                "note": "bar 1: Deck A full, Deck B preview/cued silently"
+              },
+              {
+                "value": -0.5,
+                "gain_a": 0.9239,
+                "gain_b": 0.3827,
+                "note": "bar 9: Deck B texture rises under Deck A"
+              },
+              {
+                "value": 0.0,
+                "gain_a": 0.7071,
+                "gain_b": 0.7071,
+                "note": "bar 17: equal-power midpoint for bass swap"
+              },
+              {
+                "value": 0.5,
+                "gain_a": 0.3827,
+                "gain_b": 0.9239,
+                "note": "bar 25: Deck B leads while Deck A tails"
+              },
+              {
+                "value": 1.0,
+                "gain_a": 0.0,
+                "gain_b": 1.0,
+                "note": "bar 33: Deck B full, Deck A released"
+              }
+            ],
+            "notes": [
+              "This is metadata only; no real continuous mixer is started.",
+              "Equal-power keeps perceived loudness steadier than linear fades during the handoff."
+            ]
+          },
+          "eq_moves": [
+            {
+              "bar": 1,
+              "low_db": -18.0,
+              "mid_db": -2.0,
+              "high_db": 1.5,
+              "filter": "highpass",
+              "note": "Introduce hats/texture over outgoing groove."
+            },
+            {
+              "bar": 9,
+              "low_db": -12.0,
+              "mid_db": 0.0,
+              "high_db": 1.0,
+              "filter": "highpass",
+              "note": "Open mids while confirming phrase alignment."
+            },
+            {
+              "bar": 17,
+              "low_db": 0.0,
+              "mid_db": 0.0,
+              "high_db": 0.0,
+              "filter": "none",
+              "note": "Bass swap: outgoing lows down, incoming lows to unity."
+            },
+            {
+              "bar": 33,
+              "low_db": 0.0,
+              "mid_db": 1.0,
+              "high_db": 1.0,
+              "filter": "none",
+              "note": "Release into drop; clear talk bed before impact."
+            }
+          ],
+          "comfyui_visual_spell": {
+            "ok": true,
+            "type": "comfyui.visual_spell.cue",
+            "mode": "dry_run",
+            "workflow": "intergalactic-djs-visual-spell",
+            "deck": "B",
+            "segment_id": "segment-002",
+            "client_route": "COMFYUI_DRY_RUN",
+            "api_routes_when_enabled": [
+              "/system_stats",
+              "/object_info",
+              "/prompt",
+              "/ws",
+              "/history/{prompt_id}",
+              "/view"
+            ],
+            "input": {
+              "workflow": "intergalactic-djs-visual-spell",
+              "mode": "dry_run",
+              "deck": "B",
+              "segment_id": "segment-002",
+              "prompt": "readable neon typography, ASCII spectrograph star gate, DJ VANTA signal, words WAREHOUSE_WARMUP // LOW_FOG // HUMAN_OVERRIDE_READY, warmup energy 5, underground rave flyer grain, clear survival/culture text overlay, browser-first VJ cue",
+              "negative_prompt": "illegible typography, watermark, extra logos, fake QR code, brand logos",
+              "width": 1024,
+              "height": 1024,
+              "seed": 1778,
+              "output_prefix": "vanta_visual_spell_segment_002"
+            },
+            "output": {
+              "prompt_id": null,
+              "files": [],
+              "warnings": [
+                "ComfyUI /prompt is not called unless a human explicitly enables the backend."
+              ]
+            },
+            "route_targets": [
+              "browser_visualizer",
+              "comfyui_adapter_contract",
+              "touchdesigner_contract"
+            ],
+            "starts_gpu": false,
+            "starts_paid_api": false,
+            "publishes_stream": false,
+            "requires_human_approval": true,
+            "safety": "dry-run visual-spell cue only; no Comfy Cloud, local GPU job, model download, or public publishing starts from this planner output"
+          },
+          "honest_status": "timeline_plan_only_no_generation_no_continuous_mixer"
+        },
+        {
+          "segment_id": "45_minute_full_arc_dry_run-segment-03",
+          "starts_at_seconds": 600,
+          "duration_seconds": 300,
+          "mode": "groove",
+          "energy": 6,
+          "bpm": 128,
+          "track_title": "Groove Signal 03",
+          "track_key": "A minor",
+          "talk_text": "This is DJ VANTA. Segment 3 is locked at 128 BPM. Energy 6. Stay hydrated and ride the next signal.",
+          "visual_scene": "groove neon plasma tunnel with waveform gates and neon crowd ghosts",
+          "visual_spell_text": "PHRASE_LOCK 32 // BASS_SWAP BAR_17 // PORTAL_OPEN",
+          "crate_id": "intergalactic-bass-handoff-002",
+          "survival_ping": "SURVIVAL_PING BUDDY_CHECK",
+          "culture_mode": "lore",
+          "transition_summary": "Groove Signal 03: 128->128 BPM, 16-bar blend, bass swap on bar 17, VJ intensity 6, crowd locked_in.",
+          "beatmatch": {
+            "current_bpm": 128,
+            "next_bpm": 128,
+            "tempo_shift_percent": 0.0,
+            "compatible": true,
+            "notes": [
+              "Keep master clock stable for the localhost demo.",
+              "If tempo drift exceeds 4%, prefer phrase cut or energy reset instead of forced warp."
+            ]
+          },
+          "phrase": {
+            "intro_bars": 16,
+            "mix_in_bar": 1,
+            "bass_swap_bar": 17,
+            "drop_release_bar": 33,
+            "outro_bars": 16
+          },
+          "crossfader": {
+            "curve": "equal_power",
+            "formula": "gainA = cos((value + 1) / 2 * PI / 2); gainB = sin((value + 1) / 2 * PI / 2)",
+            "automation": [
+              {
+                "value": -1.0,
+                "gain_a": 1.0,
+                "gain_b": 0.0,
+                "note": "bar 1: Deck A full, Deck B preview/cued silently"
+              },
+              {
+                "value": -0.5,
+                "gain_a": 0.9239,
+                "gain_b": 0.3827,
+                "note": "bar 9: Deck B texture rises under Deck A"
+              },
+              {
+                "value": 0.0,
+                "gain_a": 0.7071,
+                "gain_b": 0.7071,
+                "note": "bar 17: equal-power midpoint for bass swap"
+              },
+              {
+                "value": 0.5,
+                "gain_a": 0.3827,
+                "gain_b": 0.9239,
+                "note": "bar 25: Deck B leads while Deck A tails"
+              },
+              {
+                "value": 1.0,
+                "gain_a": 0.0,
+                "gain_b": 1.0,
+                "note": "bar 33: Deck B full, Deck A released"
+              }
+            ],
+            "notes": [
+              "This is metadata only; no real continuous mixer is started.",
+              "Equal-power keeps perceived loudness steadier than linear fades during the handoff."
+            ]
+          },
+          "eq_moves": [
+            {
+              "bar": 1,
+              "low_db": -18.0,
+              "mid_db": -2.0,
+              "high_db": 1.5,
+              "filter": "highpass",
+              "note": "Introduce hats/texture over outgoing groove."
+            },
+            {
+              "bar": 9,
+              "low_db": -12.0,
+              "mid_db": 0.0,
+              "high_db": 1.0,
+              "filter": "highpass",
+              "note": "Open mids while confirming phrase alignment."
+            },
+            {
+              "bar": 17,
+              "low_db": 0.0,
+              "mid_db": 0.0,
+              "high_db": 0.0,
+              "filter": "none",
+              "note": "Bass swap: outgoing lows down, incoming lows to unity."
+            },
+            {
+              "bar": 33,
+              "low_db": 0.0,
+              "mid_db": 1.0,
+              "high_db": 1.0,
+              "filter": "none",
+              "note": "Release into drop; clear talk bed before impact."
+            }
+          ],
+          "comfyui_visual_spell": {
+            "ok": true,
+            "type": "comfyui.visual_spell.cue",
+            "mode": "dry_run",
+            "workflow": "intergalactic-djs-visual-spell",
+            "deck": "B",
+            "segment_id": "segment-003",
+            "client_route": "COMFYUI_DRY_RUN",
+            "api_routes_when_enabled": [
+              "/system_stats",
+              "/object_info",
+              "/prompt",
+              "/ws",
+              "/history/{prompt_id}",
+              "/view"
+            ],
+            "input": {
+              "workflow": "intergalactic-djs-visual-spell",
+              "mode": "dry_run",
+              "deck": "B",
+              "segment_id": "segment-003",
+              "prompt": "readable neon typography, ASCII spectrograph star gate, DJ VANTA signal, words PHRASE_LOCK 32 // BASS_SWAP BAR_17 // PORTAL_OPEN, groove energy 6, underground rave flyer grain, clear survival/culture text overlay, browser-first VJ cue",
+              "negative_prompt": "illegible typography, watermark, extra logos, fake QR code, brand logos",
+              "width": 1024,
+              "height": 1024,
+              "seed": 1779,
+              "output_prefix": "vanta_visual_spell_segment_003"
+            },
+            "output": {
+              "prompt_id": null,
+              "files": [],
+              "warnings": [
+                "ComfyUI /prompt is not called unless a human explicitly enables the backend."
+              ]
+            },
+            "route_targets": [
+              "browser_visualizer",
+              "comfyui_adapter_contract",
+              "touchdesigner_contract"
+            ],
+            "starts_gpu": false,
+            "starts_paid_api": false,
+            "publishes_stream": false,
+            "requires_human_approval": true,
+            "safety": "dry-run visual-spell cue only; no Comfy Cloud, local GPU job, model download, or public publishing starts from this planner output"
+          },
+          "honest_status": "timeline_plan_only_no_generation_no_continuous_mixer"
+        },
+        {
+          "segment_id": "45_minute_full_arc_dry_run-segment-04",
+          "starts_at_seconds": 900,
+          "duration_seconds": 300,
+          "mode": "groove",
+          "energy": 6,
+          "bpm": 128,
+          "track_title": "Groove Signal 04",
+          "track_key": "A minor",
+          "talk_text": "This is DJ VANTA. Segment 4 is locked at 128 BPM. Energy 6. Stay hydrated and ride the next signal.",
+          "visual_scene": "groove neon plasma tunnel with waveform gates and neon crowd ghosts",
+          "visual_spell_text": "PHRASE_LOCK 32 // BASS_SWAP BAR_17 // PORTAL_OPEN",
+          "crate_id": "intergalactic-bass-handoff-002",
+          "survival_ping": "SURVIVAL_PING BUDDY_CHECK",
+          "culture_mode": "history",
+          "transition_summary": "Groove Signal 04: 128->128 BPM, 16-bar blend, bass swap on bar 17, VJ intensity 6, crowd locked_in.",
+          "beatmatch": {
+            "current_bpm": 128,
+            "next_bpm": 128,
+            "tempo_shift_percent": 0.0,
+            "compatible": true,
+            "notes": [
+              "Keep master clock stable for the localhost demo.",
+              "If tempo drift exceeds 4%, prefer phrase cut or energy reset instead of forced warp."
+            ]
+          },
+          "phrase": {
+            "intro_bars": 16,
+            "mix_in_bar": 1,
+            "bass_swap_bar": 17,
+            "drop_release_bar": 33,
+            "outro_bars": 16
+          },
+          "crossfader": {
+            "curve": "equal_power",
+            "formula": "gainA = cos((value + 1) / 2 * PI / 2); gainB = sin((value + 1) / 2 * PI / 2)",
+            "automation": [
+              {
+                "value": -1.0,
+                "gain_a": 1.0,
+                "gain_b": 0.0,
+                "note": "bar 1: Deck A full, Deck B preview/cued silently"
+              },
+              {
+                "value": -0.5,
+                "gain_a": 0.9239,
+                "gain_b": 0.3827,
+                "note": "bar 9: Deck B texture rises under Deck A"
+              },
+              {
+                "value": 0.0,
+                "gain_a": 0.7071,
+                "gain_b": 0.7071,
+                "note": "bar 17: equal-power midpoint for bass swap"
+              },
+              {
+                "value": 0.5,
+                "gain_a": 0.3827,
+                "gain_b": 0.9239,
+                "note": "bar 25: Deck B leads while Deck A tails"
+              },
+              {
+                "value": 1.0,
+                "gain_a": 0.0,
+                "gain_b": 1.0,
+                "note": "bar 33: Deck B full, Deck A released"
+              }
+            ],
+            "notes": [
+              "This is metadata only; no real continuous mixer is started.",
+              "Equal-power keeps perceived loudness steadier than linear fades during the handoff."
+            ]
+          },
+          "eq_moves": [
+            {
+              "bar": 1,
+              "low_db": -18.0,
+              "mid_db": -2.0,
+              "high_db": 1.5,
+              "filter": "highpass",
+              "note": "Introduce hats/texture over outgoing groove."
+            },
+            {
+              "bar": 9,
+              "low_db": -12.0,
+              "mid_db": 0.0,
+              "high_db": 1.0,
+              "filter": "highpass",
+              "note": "Open mids while confirming phrase alignment."
+            },
+            {
+              "bar": 17,
+              "low_db": 0.0,
+              "mid_db": 0.0,
+              "high_db": 0.0,
+              "filter": "none",
+              "note": "Bass swap: outgoing lows down, incoming lows to unity."
+            },
+            {
+              "bar": 33,
+              "low_db": 0.0,
+              "mid_db": 1.0,
+              "high_db": 1.0,
+              "filter": "none",
+              "note": "Release into drop; clear talk bed before impact."
+            }
+          ],
+          "comfyui_visual_spell": {
+            "ok": true,
+            "type": "comfyui.visual_spell.cue",
+            "mode": "dry_run",
+            "workflow": "intergalactic-djs-visual-spell",
+            "deck": "B",
+            "segment_id": "segment-004",
+            "client_route": "COMFYUI_DRY_RUN",
+            "api_routes_when_enabled": [
+              "/system_stats",
+              "/object_info",
+              "/prompt",
+              "/ws",
+              "/history/{prompt_id}",
+              "/view"
+            ],
+            "input": {
+              "workflow": "intergalactic-djs-visual-spell",
+              "mode": "dry_run",
+              "deck": "B",
+              "segment_id": "segment-004",
+              "prompt": "readable neon typography, ASCII spectrograph star gate, DJ VANTA signal, words PHRASE_LOCK 32 // BASS_SWAP BAR_17 // PORTAL_OPEN, groove energy 6, underground rave flyer grain, clear survival/culture text overlay, browser-first VJ cue",
+              "negative_prompt": "illegible typography, watermark, extra logos, fake QR code, brand logos",
+              "width": 1024,
+              "height": 1024,
+              "seed": 1780,
+              "output_prefix": "vanta_visual_spell_segment_004"
+            },
+            "output": {
+              "prompt_id": null,
+              "files": [],
+              "warnings": [
+                "ComfyUI /prompt is not called unless a human explicitly enables the backend."
+              ]
+            },
+            "route_targets": [
+              "browser_visualizer",
+              "comfyui_adapter_contract",
+              "touchdesigner_contract"
+            ],
+            "starts_gpu": false,
+            "starts_paid_api": false,
+            "publishes_stream": false,
+            "requires_human_approval": true,
+            "safety": "dry-run visual-spell cue only; no Comfy Cloud, local GPU job, model download, or public publishing starts from this planner output"
+          },
+          "honest_status": "timeline_plan_only_no_generation_no_continuous_mixer"
+        },
+        {
+          "segment_id": "45_minute_full_arc_dry_run-segment-05",
+          "starts_at_seconds": 1200,
+          "duration_seconds": 300,
+          "mode": "build",
+          "energy": 7,
+          "bpm": 128,
+          "track_title": "Build Signal 05",
+          "track_key": "A minor",
+          "talk_text": "This is DJ VANTA. Segment 5 is locked at 128 BPM. Energy 8. Stay hydrated and ride the next signal.",
+          "visual_scene": "build neon plasma tunnel with waveform gates and neon crowd ghosts",
+          "visual_spell_text": "PHRASE_LOCK 32 // BASS_SWAP BAR_17 // PORTAL_OPEN",
+          "crate_id": "intergalactic-bass-handoff-002",
+          "survival_ping": "SURVIVAL_PING HYDRATION",
+          "culture_mode": "safety",
+          "transition_summary": "Build Signal 05: 128->128 BPM, 16-bar blend, bass swap on bar 17, VJ intensity 8, crowd locked_in.",
+          "beatmatch": {
+            "current_bpm": 128,
+            "next_bpm": 128,
+            "tempo_shift_percent": 0.0,
+            "compatible": true,
+            "notes": [
+              "Keep master clock stable for the localhost demo.",
+              "If tempo drift exceeds 4%, prefer phrase cut or energy reset instead of forced warp."
+            ]
+          },
+          "phrase": {
+            "intro_bars": 16,
+            "mix_in_bar": 1,
+            "bass_swap_bar": 17,
+            "drop_release_bar": 33,
+            "outro_bars": 16
+          },
+          "crossfader": {
+            "curve": "equal_power",
+            "formula": "gainA = cos((value + 1) / 2 * PI / 2); gainB = sin((value + 1) / 2 * PI / 2)",
+            "automation": [
+              {
+                "value": -1.0,
+                "gain_a": 1.0,
+                "gain_b": 0.0,
+                "note": "bar 1: Deck A full, Deck B preview/cued silently"
+              },
+              {
+                "value": -0.5,
+                "gain_a": 0.9239,
+                "gain_b": 0.3827,
+                "note": "bar 9: Deck B texture rises under Deck A"
+              },
+              {
+                "value": 0.0,
+                "gain_a": 0.7071,
+                "gain_b": 0.7071,
+                "note": "bar 17: equal-power midpoint for bass swap"
+              },
+              {
+                "value": 0.5,
+                "gain_a": 0.3827,
+                "gain_b": 0.9239,
+                "note": "bar 25: Deck B leads while Deck A tails"
+              },
+              {
+                "value": 1.0,
+                "gain_a": 0.0,
+                "gain_b": 1.0,
+                "note": "bar 33: Deck B full, Deck A released"
+              }
+            ],
+            "notes": [
+              "This is metadata only; no real continuous mixer is started.",
+              "Equal-power keeps perceived loudness steadier than linear fades during the handoff."
+            ]
+          },
+          "eq_moves": [
+            {
+              "bar": 1,
+              "low_db": -18.0,
+              "mid_db": -2.0,
+              "high_db": 1.5,
+              "filter": "highpass",
+              "note": "Introduce hats/texture over outgoing groove."
+            },
+            {
+              "bar": 9,
+              "low_db": -12.0,
+              "mid_db": 0.0,
+              "high_db": 1.0,
+              "filter": "highpass",
+              "note": "Open mids while confirming phrase alignment."
+            },
+            {
+              "bar": 17,
+              "low_db": 0.0,
+              "mid_db": 0.0,
+              "high_db": 0.0,
+              "filter": "none",
+              "note": "Bass swap: outgoing lows down, incoming lows to unity."
+            },
+            {
+              "bar": 33,
+              "low_db": 0.0,
+              "mid_db": 1.0,
+              "high_db": 1.0,
+              "filter": "none",
+              "note": "Release into drop; clear talk bed before impact."
+            }
+          ],
+          "comfyui_visual_spell": {
+            "ok": true,
+            "type": "comfyui.visual_spell.cue",
+            "mode": "dry_run",
+            "workflow": "intergalactic-djs-visual-spell",
+            "deck": "B",
+            "segment_id": "segment-005",
+            "client_route": "COMFYUI_DRY_RUN",
+            "api_routes_when_enabled": [
+              "/system_stats",
+              "/object_info",
+              "/prompt",
+              "/ws",
+              "/history/{prompt_id}",
+              "/view"
+            ],
+            "input": {
+              "workflow": "intergalactic-djs-visual-spell",
+              "mode": "dry_run",
+              "deck": "B",
+              "segment_id": "segment-005",
+              "prompt": "readable neon typography, ASCII spectrograph star gate, DJ VANTA signal, words PHRASE_LOCK 32 // BASS_SWAP BAR_17 // PORTAL_OPEN, build energy 8, underground rave flyer grain, clear survival/culture text overlay, browser-first VJ cue",
+              "negative_prompt": "illegible typography, watermark, extra logos, fake QR code, brand logos",
+              "width": 1024,
+              "height": 1024,
+              "seed": 1781,
+              "output_prefix": "vanta_visual_spell_segment_005"
+            },
+            "output": {
+              "prompt_id": null,
+              "files": [],
+              "warnings": [
+                "ComfyUI /prompt is not called unless a human explicitly enables the backend."
+              ]
+            },
+            "route_targets": [
+              "browser_visualizer",
+              "comfyui_adapter_contract",
+              "touchdesigner_contract"
+            ],
+            "starts_gpu": false,
+            "starts_paid_api": false,
+            "publishes_stream": false,
+            "requires_human_approval": true,
+            "safety": "dry-run visual-spell cue only; no Comfy Cloud, local GPU job, model download, or public publishing starts from this planner output"
+          },
+          "honest_status": "timeline_plan_only_no_generation_no_continuous_mixer"
+        },
+        {
+          "segment_id": "45_minute_full_arc_dry_run-segment-06",
+          "starts_at_seconds": 1500,
+          "duration_seconds": 300,
+          "mode": "build",
+          "energy": 7,
+          "bpm": 128,
+          "track_title": "Build Signal 06",
+          "track_key": "A minor",
+          "talk_text": "This is DJ VANTA. Segment 6 is locked at 128 BPM. Energy 8. Stay hydrated and ride the next signal.",
+          "visual_scene": "build neon plasma tunnel with waveform gates and neon crowd ghosts",
+          "visual_spell_text": "PHRASE_LOCK 32 // BASS_SWAP BAR_17 // PORTAL_OPEN",
+          "crate_id": "intergalactic-bass-handoff-002",
+          "survival_ping": "SURVIVAL_PING HYDRATION",
+          "culture_mode": "lore",
+          "transition_summary": "Build Signal 06: 128->128 BPM, 16-bar blend, bass swap on bar 17, VJ intensity 8, crowd locked_in.",
+          "beatmatch": {
+            "current_bpm": 128,
+            "next_bpm": 128,
+            "tempo_shift_percent": 0.0,
+            "compatible": true,
+            "notes": [
+              "Keep master clock stable for the localhost demo.",
+              "If tempo drift exceeds 4%, prefer phrase cut or energy reset instead of forced warp."
+            ]
+          },
+          "phrase": {
+            "intro_bars": 16,
+            "mix_in_bar": 1,
+            "bass_swap_bar": 17,
+            "drop_release_bar": 33,
+            "outro_bars": 16
+          },
+          "crossfader": {
+            "curve": "equal_power",
+            "formula": "gainA = cos((value + 1) / 2 * PI / 2); gainB = sin((value + 1) / 2 * PI / 2)",
+            "automation": [
+              {
+                "value": -1.0,
+                "gain_a": 1.0,
+                "gain_b": 0.0,
+                "note": "bar 1: Deck A full, Deck B preview/cued silently"
+              },
+              {
+                "value": -0.5,
+                "gain_a": 0.9239,
+                "gain_b": 0.3827,
+                "note": "bar 9: Deck B texture rises under Deck A"
+              },
+              {
+                "value": 0.0,
+                "gain_a": 0.7071,
+                "gain_b": 0.7071,
+                "note": "bar 17: equal-power midpoint for bass swap"
+              },
+              {
+                "value": 0.5,
+                "gain_a": 0.3827,
+                "gain_b": 0.9239,
+                "note": "bar 25: Deck B leads while Deck A tails"
+              },
+              {
+                "value": 1.0,
+                "gain_a": 0.0,
+                "gain_b": 1.0,
+                "note": "bar 33: Deck B full, Deck A released"
+              }
+            ],
+            "notes": [
+              "This is metadata only; no real continuous mixer is started.",
+              "Equal-power keeps perceived loudness steadier than linear fades during the handoff."
+            ]
+          },
+          "eq_moves": [
+            {
+              "bar": 1,
+              "low_db": -18.0,
+              "mid_db": -2.0,
+              "high_db": 1.5,
+              "filter": "highpass",
+              "note": "Introduce hats/texture over outgoing groove."
+            },
+            {
+              "bar": 9,
+              "low_db": -12.0,
+              "mid_db": 0.0,
+              "high_db": 1.0,
+              "filter": "highpass",
+              "note": "Open mids while confirming phrase alignment."
+            },
+            {
+              "bar": 17,
+              "low_db": 0.0,
+              "mid_db": 0.0,
+              "high_db": 0.0,
+              "filter": "none",
+              "note": "Bass swap: outgoing lows down, incoming lows to unity."
+            },
+            {
+              "bar": 33,
+              "low_db": 0.0,
+              "mid_db": 1.0,
+              "high_db": 1.0,
+              "filter": "none",
+              "note": "Release into drop; clear talk bed before impact."
+            }
+          ],
+          "comfyui_visual_spell": {
+            "ok": true,
+            "type": "comfyui.visual_spell.cue",
+            "mode": "dry_run",
+            "workflow": "intergalactic-djs-visual-spell",
+            "deck": "B",
+            "segment_id": "segment-006",
+            "client_route": "COMFYUI_DRY_RUN",
+            "api_routes_when_enabled": [
+              "/system_stats",
+              "/object_info",
+              "/prompt",
+              "/ws",
+              "/history/{prompt_id}",
+              "/view"
+            ],
+            "input": {
+              "workflow": "intergalactic-djs-visual-spell",
+              "mode": "dry_run",
+              "deck": "B",
+              "segment_id": "segment-006",
+              "prompt": "readable neon typography, ASCII spectrograph star gate, DJ VANTA signal, words PHRASE_LOCK 32 // BASS_SWAP BAR_17 // PORTAL_OPEN, build energy 8, underground rave flyer grain, clear survival/culture text overlay, browser-first VJ cue",
+              "negative_prompt": "illegible typography, watermark, extra logos, fake QR code, brand logos",
+              "width": 1024,
+              "height": 1024,
+              "seed": 1782,
+              "output_prefix": "vanta_visual_spell_segment_006"
+            },
+            "output": {
+              "prompt_id": null,
+              "files": [],
+              "warnings": [
+                "ComfyUI /prompt is not called unless a human explicitly enables the backend."
+              ]
+            },
+            "route_targets": [
+              "browser_visualizer",
+              "comfyui_adapter_contract",
+              "touchdesigner_contract"
+            ],
+            "starts_gpu": false,
+            "starts_paid_api": false,
+            "publishes_stream": false,
+            "requires_human_approval": true,
+            "safety": "dry-run visual-spell cue only; no Comfy Cloud, local GPU job, model download, or public publishing starts from this planner output"
+          },
+          "honest_status": "timeline_plan_only_no_generation_no_continuous_mixer"
+        },
+        {
+          "segment_id": "45_minute_full_arc_dry_run-segment-07",
+          "starts_at_seconds": 1800,
+          "duration_seconds": 300,
+          "mode": "peak",
+          "energy": 9,
+          "bpm": 128,
+          "track_title": "Peak Signal 07",
+          "track_key": "F minor",
+          "talk_text": "This is DJ VANTA. Segment 7 is locked at 128 BPM. Energy 10. Stay hydrated and ride the next signal.",
+          "visual_scene": "peak neon plasma tunnel with waveform gates and neon crowd ghosts",
+          "visual_spell_text": "VANTA_SIGNAL // CODE_RAIN // CROWD_LOCKED_IN",
+          "crate_id": "vanta-peak-transmission-004",
+          "survival_ping": "SURVIVAL_PING HYDRATION",
+          "culture_mode": "history",
+          "transition_summary": "Peak Signal 07: 128->128 BPM, 16-bar blend, bass swap on bar 17, VJ intensity 10, crowd peaking.",
+          "beatmatch": {
+            "current_bpm": 128,
+            "next_bpm": 128,
+            "tempo_shift_percent": 0.0,
+            "compatible": true,
+            "notes": [
+              "Keep master clock stable for the localhost demo.",
+              "If tempo drift exceeds 4%, prefer phrase cut or energy reset instead of forced warp."
+            ]
+          },
+          "phrase": {
+            "intro_bars": 16,
+            "mix_in_bar": 1,
+            "bass_swap_bar": 17,
+            "drop_release_bar": 33,
+            "outro_bars": 16
+          },
+          "crossfader": {
+            "curve": "equal_power",
+            "formula": "gainA = cos((value + 1) / 2 * PI / 2); gainB = sin((value + 1) / 2 * PI / 2)",
+            "automation": [
+              {
+                "value": -1.0,
+                "gain_a": 1.0,
+                "gain_b": 0.0,
+                "note": "bar 1: Deck A full, Deck B preview/cued silently"
+              },
+              {
+                "value": -0.5,
+                "gain_a": 0.9239,
+                "gain_b": 0.3827,
+                "note": "bar 9: Deck B texture rises under Deck A"
+              },
+              {
+                "value": 0.0,
+                "gain_a": 0.7071,
+                "gain_b": 0.7071,
+                "note": "bar 17: equal-power midpoint for bass swap"
+              },
+              {
+                "value": 0.5,
+                "gain_a": 0.3827,
+                "gain_b": 0.9239,
+                "note": "bar 25: Deck B leads while Deck A tails"
+              },
+              {
+                "value": 1.0,
+                "gain_a": 0.0,
+                "gain_b": 1.0,
+                "note": "bar 33: Deck B full, Deck A released"
+              }
+            ],
+            "notes": [
+              "This is metadata only; no real continuous mixer is started.",
+              "Equal-power keeps perceived loudness steadier than linear fades during the handoff."
+            ]
+          },
+          "eq_moves": [
+            {
+              "bar": 1,
+              "low_db": -18.0,
+              "mid_db": -2.0,
+              "high_db": 1.5,
+              "filter": "highpass",
+              "note": "Introduce hats/texture over outgoing groove."
+            },
+            {
+              "bar": 9,
+              "low_db": -12.0,
+              "mid_db": 0.0,
+              "high_db": 1.0,
+              "filter": "highpass",
+              "note": "Open mids while confirming phrase alignment."
+            },
+            {
+              "bar": 17,
+              "low_db": 0.0,
+              "mid_db": 0.0,
+              "high_db": 0.0,
+              "filter": "none",
+              "note": "Bass swap: outgoing lows down, incoming lows to unity."
+            },
+            {
+              "bar": 33,
+              "low_db": 0.0,
+              "mid_db": 1.0,
+              "high_db": 1.0,
+              "filter": "none",
+              "note": "Release into drop; clear talk bed before impact."
+            }
+          ],
+          "comfyui_visual_spell": {
+            "ok": true,
+            "type": "comfyui.visual_spell.cue",
+            "mode": "dry_run",
+            "workflow": "intergalactic-djs-visual-spell",
+            "deck": "B",
+            "segment_id": "segment-007",
+            "client_route": "COMFYUI_DRY_RUN",
+            "api_routes_when_enabled": [
+              "/system_stats",
+              "/object_info",
+              "/prompt",
+              "/ws",
+              "/history/{prompt_id}",
+              "/view"
+            ],
+            "input": {
+              "workflow": "intergalactic-djs-visual-spell",
+              "mode": "dry_run",
+              "deck": "B",
+              "segment_id": "segment-007",
+              "prompt": "readable neon typography, ASCII spectrograph star gate, DJ VANTA signal, words VANTA_SIGNAL // CODE_RAIN // CROWD_LOCKED_IN, peak energy 10, underground rave flyer grain, clear survival/culture text overlay, browser-first VJ cue",
+              "negative_prompt": "illegible typography, watermark, extra logos, fake QR code, brand logos",
+              "width": 1024,
+              "height": 1024,
+              "seed": 1783,
+              "output_prefix": "vanta_visual_spell_segment_007"
+            },
+            "output": {
+              "prompt_id": null,
+              "files": [],
+              "warnings": [
+                "ComfyUI /prompt is not called unless a human explicitly enables the backend."
+              ]
+            },
+            "route_targets": [
+              "browser_visualizer",
+              "comfyui_adapter_contract",
+              "touchdesigner_contract"
+            ],
+            "starts_gpu": false,
+            "starts_paid_api": false,
+            "publishes_stream": false,
+            "requires_human_approval": true,
+            "safety": "dry-run visual-spell cue only; no Comfy Cloud, local GPU job, model download, or public publishing starts from this planner output"
+          },
+          "honest_status": "timeline_plan_only_no_generation_no_continuous_mixer"
+        },
+        {
+          "segment_id": "45_minute_full_arc_dry_run-segment-08",
+          "starts_at_seconds": 2100,
+          "duration_seconds": 300,
+          "mode": "comedown",
+          "energy": 4,
+          "bpm": 128,
+          "track_title": "Comedown Signal 08",
+          "track_key": "D minor",
+          "talk_text": "This is DJ VANTA. Segment 8 is locked at 128 BPM. Energy 4. Stay hydrated and ride the next signal.",
+          "visual_scene": "comedown neon plasma tunnel with waveform gates and neon crowd ghosts",
+          "visual_spell_text": "SURVIVAL_PING HYDRATE // CHILL_ZONE OPEN // LIGHTS_SOFT",
+          "crate_id": "rave-survival-cooldown-003",
+          "survival_ping": "SURVIVAL_PING CHILL_ZONE",
+          "culture_mode": "safety",
+          "transition_summary": "Comedown Signal 08: 128->128 BPM, 16-bar blend, bass swap on bar 17, VJ intensity 4, crowd warming.",
+          "beatmatch": {
+            "current_bpm": 128,
+            "next_bpm": 128,
+            "tempo_shift_percent": 0.0,
+            "compatible": true,
+            "notes": [
+              "Keep master clock stable for the localhost demo.",
+              "If tempo drift exceeds 4%, prefer phrase cut or energy reset instead of forced warp."
+            ]
+          },
+          "phrase": {
+            "intro_bars": 16,
+            "mix_in_bar": 1,
+            "bass_swap_bar": 17,
+            "drop_release_bar": 33,
+            "outro_bars": 16
+          },
+          "crossfader": {
+            "curve": "equal_power",
+            "formula": "gainA = cos((value + 1) / 2 * PI / 2); gainB = sin((value + 1) / 2 * PI / 2)",
+            "automation": [
+              {
+                "value": -1.0,
+                "gain_a": 1.0,
+                "gain_b": 0.0,
+                "note": "bar 1: Deck A full, Deck B preview/cued silently"
+              },
+              {
+                "value": -0.5,
+                "gain_a": 0.9239,
+                "gain_b": 0.3827,
+                "note": "bar 9: Deck B texture rises under Deck A"
+              },
+              {
+                "value": 0.0,
+                "gain_a": 0.7071,
+                "gain_b": 0.7071,
+                "note": "bar 17: equal-power midpoint for bass swap"
+              },
+              {
+                "value": 0.5,
+                "gain_a": 0.3827,
+                "gain_b": 0.9239,
+                "note": "bar 25: Deck B leads while Deck A tails"
+              },
+              {
+                "value": 1.0,
+                "gain_a": 0.0,
+                "gain_b": 1.0,
+                "note": "bar 33: Deck B full, Deck A released"
+              }
+            ],
+            "notes": [
+              "This is metadata only; no real continuous mixer is started.",
+              "Equal-power keeps perceived loudness steadier than linear fades during the handoff."
+            ]
+          },
+          "eq_moves": [
+            {
+              "bar": 1,
+              "low_db": -18.0,
+              "mid_db": -2.0,
+              "high_db": 1.5,
+              "filter": "highpass",
+              "note": "Introduce hats/texture over outgoing groove."
+            },
+            {
+              "bar": 9,
+              "low_db": -12.0,
+              "mid_db": 0.0,
+              "high_db": 1.0,
+              "filter": "highpass",
+              "note": "Open mids while confirming phrase alignment."
+            },
+            {
+              "bar": 17,
+              "low_db": 0.0,
+              "mid_db": 0.0,
+              "high_db": 0.0,
+              "filter": "none",
+              "note": "Bass swap: outgoing lows down, incoming lows to unity."
+            },
+            {
+              "bar": 33,
+              "low_db": 0.0,
+              "mid_db": 1.0,
+              "high_db": 1.0,
+              "filter": "none",
+              "note": "Release into drop; clear talk bed before impact."
+            }
+          ],
+          "comfyui_visual_spell": {
+            "ok": true,
+            "type": "comfyui.visual_spell.cue",
+            "mode": "dry_run",
+            "workflow": "intergalactic-djs-visual-spell",
+            "deck": "B",
+            "segment_id": "segment-008",
+            "client_route": "COMFYUI_DRY_RUN",
+            "api_routes_when_enabled": [
+              "/system_stats",
+              "/object_info",
+              "/prompt",
+              "/ws",
+              "/history/{prompt_id}",
+              "/view"
+            ],
+            "input": {
+              "workflow": "intergalactic-djs-visual-spell",
+              "mode": "dry_run",
+              "deck": "B",
+              "segment_id": "segment-008",
+              "prompt": "readable neon typography, ASCII spectrograph star gate, DJ VANTA signal, words SURVIVAL_PING HYDRATE // CHILL_ZONE OPEN // LIGHTS_SOFT, comedown energy 4, underground rave flyer grain, clear survival/culture text overlay, browser-first VJ cue",
+              "negative_prompt": "illegible typography, watermark, extra logos, fake QR code, brand logos",
+              "width": 1024,
+              "height": 1024,
+              "seed": 1784,
+              "output_prefix": "vanta_visual_spell_segment_008"
+            },
+            "output": {
+              "prompt_id": null,
+              "files": [],
+              "warnings": [
+                "ComfyUI /prompt is not called unless a human explicitly enables the backend."
+              ]
+            },
+            "route_targets": [
+              "browser_visualizer",
+              "comfyui_adapter_contract",
+              "touchdesigner_contract"
+            ],
+            "starts_gpu": false,
+            "starts_paid_api": false,
+            "publishes_stream": false,
+            "requires_human_approval": true,
+            "safety": "dry-run visual-spell cue only; no Comfy Cloud, local GPU job, model download, or public publishing starts from this planner output"
+          },
+          "honest_status": "timeline_plan_only_no_generation_no_continuous_mixer"
+        },
+        {
+          "segment_id": "45_minute_full_arc_dry_run-segment-09",
+          "starts_at_seconds": 2400,
+          "duration_seconds": 300,
+          "mode": "comedown",
+          "energy": 4,
+          "bpm": 128,
+          "track_title": "Comedown Signal 09",
+          "track_key": "D minor",
+          "talk_text": "This is DJ VANTA. Segment 9 is locked at 128 BPM. Energy 4. Stay hydrated and ride the next signal.",
+          "visual_scene": "comedown neon plasma tunnel with waveform gates and neon crowd ghosts",
+          "visual_spell_text": "SURVIVAL_PING HYDRATE // CHILL_ZONE OPEN // LIGHTS_SOFT",
+          "crate_id": "rave-survival-cooldown-003",
+          "survival_ping": "SURVIVAL_PING CHILL_ZONE",
+          "culture_mode": "lore",
+          "transition_summary": "Comedown Signal 09: 128->128 BPM, 16-bar blend, bass swap on bar 17, VJ intensity 4, crowd warming.",
+          "beatmatch": {
+            "current_bpm": 128,
+            "next_bpm": 128,
+            "tempo_shift_percent": 0.0,
+            "compatible": true,
+            "notes": [
+              "Keep master clock stable for the localhost demo.",
+              "If tempo drift exceeds 4%, prefer phrase cut or energy reset instead of forced warp."
+            ]
+          },
+          "phrase": {
+            "intro_bars": 16,
+            "mix_in_bar": 1,
+            "bass_swap_bar": 17,
+            "drop_release_bar": 33,
+            "outro_bars": 16
+          },
+          "crossfader": {
+            "curve": "equal_power",
+            "formula": "gainA = cos((value + 1) / 2 * PI / 2); gainB = sin((value + 1) / 2 * PI / 2)",
+            "automation": [
+              {
+                "value": -1.0,
+                "gain_a": 1.0,
+                "gain_b": 0.0,
+                "note": "bar 1: Deck A full, Deck B preview/cued silently"
+              },
+              {
+                "value": -0.5,
+                "gain_a": 0.9239,
+                "gain_b": 0.3827,
+                "note": "bar 9: Deck B texture rises under Deck A"
+              },
+              {
+                "value": 0.0,
+                "gain_a": 0.7071,
+                "gain_b": 0.7071,
+                "note": "bar 17: equal-power midpoint for bass swap"
+              },
+              {
+                "value": 0.5,
+                "gain_a": 0.3827,
+                "gain_b": 0.9239,
+                "note": "bar 25: Deck B leads while Deck A tails"
+              },
+              {
+                "value": 1.0,
+                "gain_a": 0.0,
+                "gain_b": 1.0,
+                "note": "bar 33: Deck B full, Deck A released"
+              }
+            ],
+            "notes": [
+              "This is metadata only; no real continuous mixer is started.",
+              "Equal-power keeps perceived loudness steadier than linear fades during the handoff."
+            ]
+          },
+          "eq_moves": [
+            {
+              "bar": 1,
+              "low_db": -18.0,
+              "mid_db": -2.0,
+              "high_db": 1.5,
+              "filter": "highpass",
+              "note": "Introduce hats/texture over outgoing groove."
+            },
+            {
+              "bar": 9,
+              "low_db": -12.0,
+              "mid_db": 0.0,
+              "high_db": 1.0,
+              "filter": "highpass",
+              "note": "Open mids while confirming phrase alignment."
+            },
+            {
+              "bar": 17,
+              "low_db": 0.0,
+              "mid_db": 0.0,
+              "high_db": 0.0,
+              "filter": "none",
+              "note": "Bass swap: outgoing lows down, incoming lows to unity."
+            },
+            {
+              "bar": 33,
+              "low_db": 0.0,
+              "mid_db": 1.0,
+              "high_db": 1.0,
+              "filter": "none",
+              "note": "Release into drop; clear talk bed before impact."
+            }
+          ],
+          "comfyui_visual_spell": {
+            "ok": true,
+            "type": "comfyui.visual_spell.cue",
+            "mode": "dry_run",
+            "workflow": "intergalactic-djs-visual-spell",
+            "deck": "B",
+            "segment_id": "segment-009",
+            "client_route": "COMFYUI_DRY_RUN",
+            "api_routes_when_enabled": [
+              "/system_stats",
+              "/object_info",
+              "/prompt",
+              "/ws",
+              "/history/{prompt_id}",
+              "/view"
+            ],
+            "input": {
+              "workflow": "intergalactic-djs-visual-spell",
+              "mode": "dry_run",
+              "deck": "B",
+              "segment_id": "segment-009",
+              "prompt": "readable neon typography, ASCII spectrograph star gate, DJ VANTA signal, words SURVIVAL_PING HYDRATE // CHILL_ZONE OPEN // LIGHTS_SOFT, comedown energy 4, underground rave flyer grain, clear survival/culture text overlay, browser-first VJ cue",
+              "negative_prompt": "illegible typography, watermark, extra logos, fake QR code, brand logos",
+              "width": 1024,
+              "height": 1024,
+              "seed": 1785,
+              "output_prefix": "vanta_visual_spell_segment_009"
+            },
+            "output": {
+              "prompt_id": null,
+              "files": [],
+              "warnings": [
+                "ComfyUI /prompt is not called unless a human explicitly enables the backend."
+              ]
+            },
+            "route_targets": [
+              "browser_visualizer",
+              "comfyui_adapter_contract",
+              "touchdesigner_contract"
+            ],
+            "starts_gpu": false,
+            "starts_paid_api": false,
+            "publishes_stream": false,
+            "requires_human_approval": true,
+            "safety": "dry-run visual-spell cue only; no Comfy Cloud, local GPU job, model download, or public publishing starts from this planner output"
+          },
+          "honest_status": "timeline_plan_only_no_generation_no_continuous_mixer"
+        }
+      ]
+    }
+  ],
+  "closed_gates": [
+    "public_deployment",
+    "payment_or_revenue_claim",
+    "outbound_outreach",
+    "dataset_upload_or_model_training",
+    "gpu_video_or_matrix_generation",
+    "live_provider_activation",
+    "private_media_upload",
+    "voice_to_shell",
+    "recursive_cron_creation"
+  ],
+  "starts_gpu": false,
+  "starts_paid_api": false,
+  "publishes_stream": false,
+  "records_audio": false,
+  "uploads_private_media": false,
+  "timeline_path": "generated/timeline/demo-set.json"
+}

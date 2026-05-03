@@ -1,0 +1,96 @@
+{
+  "schema": "sonicforge.prompt_crate_cache.v1",
+  "status": "local_seed_only",
+  "purpose": "Seed prompt/crate memory for DJ VANTA dual-deck planning without calling paid music, image, or realtime providers.",
+  "safety": {
+    "starts_gpu": false,
+    "starts_paid_api": false,
+    "publishes_stream": false,
+    "notes": [
+      "Prompt packs are local planning hints only.",
+      "Generated artifacts remain mock/dry-run unless a human explicitly enables a backend lane."
+    ]
+  },
+  "entries": [
+    {
+      "id": "pnw-warehouse-warmup-001",
+      "name": "PNW Warehouse Warmup",
+      "mode": "warmup",
+      "genre_tags": ["deep house", "techno", "warehouse", "PNW"],
+      "energy": 5,
+      "bpm": 124,
+      "key_hint": "A minor",
+      "prompt_stack": [
+        "foggy PNW warehouse warmup, clean 16-bar intro, rubbery sub restrained, brushed hats, room-tone ghosts",
+        "DJ-friendly outro tail, no muddy master, leave space for a text-first VANTA check-in"
+      ],
+      "visual_spell_text": "WAREHOUSE_WARMUP // LOW_FOG // HUMAN_OVERRIDE_READY",
+      "survival_ping": "earplug_check",
+      "lineage_note": "Respect to warehouse and sound-system culture; keep care visible before the room peaks."
+    },
+    {
+      "id": "intergalactic-bass-handoff-002",
+      "name": "Intergalactic Bass Handoff",
+      "mode": "build",
+      "genre_tags": ["electro house", "breaks", "bass", "cyber-rave"],
+      "energy": 7,
+      "bpm": 128,
+      "key_hint": "A minor",
+      "prompt_stack": [
+        "intergalactic bass handoff, sidechained bass, metallic percussion, phrase-locked 32-bar transition",
+        "make Deck B feel like a portal opening under Deck A, clean bass swap at bar 17"
+      ],
+      "visual_spell_text": "PHRASE_LOCK 32 // BASS_SWAP BAR_17 // PORTAL_OPEN",
+      "survival_ping": "buddy_check",
+      "lineage_note": "This is a handoff, not replacement: human selectors taught the machine the grammar."
+    },
+    {
+      "id": "rave-survival-cooldown-003",
+      "name": "Rave Survival Cooldown",
+      "mode": "comedown",
+      "genre_tags": ["breakbeat", "ambient techno", "afterglow", "community-care"],
+      "energy": 4,
+      "bpm": 122,
+      "key_hint": "D minor",
+      "prompt_stack": [
+        "rave survival cooldown, warm pads, soft breakbeat, lower visual intensity, room reset without killing the vibe",
+        "leave a 10-second intro bed for hydration, chill-zone, exits, and buddy-check reminder"
+      ],
+      "visual_spell_text": "SURVIVAL_PING HYDRATE // CHILL_ZONE OPEN // LIGHTS_SOFT",
+      "survival_ping": "hydration",
+      "lineage_note": "Care infrastructure is part of responsible dance culture, not an interruption."
+    },
+    {
+      "id": "vanta-peak-transmission-004",
+      "name": "VANTA Peak Transmission",
+      "mode": "peak",
+      "genre_tags": ["techno", "rave stabs", "AI ritual", "VJ code rain"],
+      "energy": 9,
+      "bpm": 132,
+      "key_hint": "F minor",
+      "prompt_stack": [
+        "peak-time DJ VANTA transmission, rave stabs, tight kick, code-rain hook, readable call-and-response motif",
+        "keep intro/outro mixable and reserve midrange space for a short MC tag"
+      ],
+      "visual_spell_text": "VANTA_SIGNAL // CODE_RAIN // CROWD_LOCKED_IN",
+      "survival_ping": "water_air_buddy",
+      "lineage_note": "AI is a guest at peak time; the room and the humans stay in charge."
+    },
+    {
+      "id": "afterglow-lineage-005",
+      "name": "Afterglow Lineage Card",
+      "mode": "afterglow",
+      "genre_tags": ["downtempo", "disco echo", "history", "warm closure"],
+      "energy": 3,
+      "bpm": 112,
+      "key_hint": "C minor",
+      "prompt_stack": [
+        "afterglow closer with disco echo, slow neon pads, gentle kick, reflective culture cue",
+        "make space for a respectful lineage talk-break and final human check-out"
+      ],
+      "visual_spell_text": "LINEAGE_CARD // DISCO_HOUSE_TECHNO_RAVE_VJ_AI // GET_HOME_SAFE",
+      "survival_ping": "exit_buddy_charger",
+      "lineage_note": "Respect the communities that made room for the weird kids and future sounds."
+    }
+  ]
+}

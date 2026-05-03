@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fresh Hermes Setup — SonicForge Live</title><link rel="stylesheet" href="/static/styles.css"></head><body><main class="deck hub-deck"><nav class="signal-nav"><a href="/">Control Deck</a><a href="/parallel-party">Parallel Party</a><a href="/setup">Setup</a><a href="/agents">Agents</a><a href="/workflows">Workflows</a><a href="/terminal-visuals">Terminal Visuals</a><a href="/station">Station</a><a href="/vanta">VANTA</a><a href="/about">About</a></nav>
+<section class="hub-hero setup-hero"><p class="eyebrow">Fresh Hermes payload installer</p><h1>Install the station. Arm nothing by accident.</h1><p class="tagline">A cloneable setup surface for fresh Hermes + SonicForge Live: local API keys, provider checks, ComfyUI endpoint, workflow registry, model ledger, custom DJ/VJ agent.</p><div class="button-row"><a class="button" href="/agents">Next: agents</a><a class="button" href="/workflows">Next: workflows</a></div></section>
+<section class="setup-steps">
+  <article class="card"><span class="step-num">01</span><h2>Clone repo</h2><p><code>git clone git@github.com:TheMindExpansionNetwork/sonicforge-live.git</code></p><p>Private-first repo payload; secrets stay in local env files only.</p></article>
+  <article class="card"><span class="step-num">02</span><h2>Add keys locally</h2><p>Copy <code>.env.example</code>; add provider keys on your machine. The app never asks you to paste secrets into the browser page.</p></article>
+  <article class="card"><span class="step-num">03</span><h2>Connect ComfyUI</h2><p><code>COMFYUI_BASE_URL=http://127.0.0.1:8188</code></p><p>Only read-only checks are allowed by default: <code>/system_stats</code>, <code>/object_info</code>, <code>/prompt</code>, <code>/queue</code>.</p></article>
+  <article class="card"><span class="step-num">04</span><h2>Review model ledger</h2><p>Missing models create a plan first. Downloads require explicit operator approval and should record source URL, license, size, and checksum.</p></article>
+  <article class="card"><span class="step-num">05</span><h2>Create DJ agent</h2><p>Choose name, personality, crate profile, safety sheet, visual profile, station signal, and workflow bindings.</p></article>
+  <article class="card"><span class="step-num">06</span><h2>Run dry-run demo</h2><p>Acquire station signal, show Deck A/B, fire terminal visuals, and keep all provider lanes closed until a human arms them.</p></article>
+</section>
+<section class="card"><p class="microcopy">Environment defaults</p><h2>Fail-closed flags</h2><pre>SONICFORGE_COMFY_DRY_RUN=1
+SONICFORGE_ALLOW_COMFY_PROMPT=0
+SONICFORGE_ALLOW_MODEL_DOWNLOADS=0
+SONICFORGE_ALLOW_REMOTE_ENDPOINT=0
+SONICFORGE_ALLOW_GPU=false
+SONICFORGE_ALLOW_PUBLIC_STREAM=false</pre></section>
+<section class="card safety-ledger"><p class="microcopy">Closed-gate safety ledger</p><h2>Builder party, human-armed</h2><p>Server-enforced policy blocks known dangerous action routes unless matching approval flags are set: ComfyUI <code>POST /prompt</code>, model downloads, public stream publishing, mic recording, and uploads. This hub is repo-backed, local-first, and approval-gated; inspect <code>/api/safety-policy</code>.</p><div class="signal-badges"><span>starts_gpu=false</span><span>starts_paid_api=false</span><span>publishes_stream=false</span><span>records_audio=false</span><span>uploads_private_media=false</span></div></section></main></body></html>

@@ -1,0 +1,9 @@
+profile: sonicforge-creator
+closed_by_default: true
+requires_human_approval:
+  - workflow_prompt
+  - gpu
+  - paid_api
+  - public_posting
+  - training
+  - private_upload

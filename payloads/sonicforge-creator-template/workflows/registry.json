@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "prompt_post_enabled": false,
+  "starts_gpu": false,
+  "publishes_stream": false,
+  "workflows": [
+    {
+      "id": "voice-design-placeholder",
+      "kind": "voice",
+      "endpoint_env": "COMFYUI_BASE_URL",
+      "execution_enabled_by": "ALLOW_WORKFLOW_PROMPT"
+    },
+    {
+      "id": "music-generation-placeholder",
+      "kind": "music",
+      "endpoint_env": "COMFYUI_BASE_URL",
+      "execution_enabled_by": "ALLOW_WORKFLOW_PROMPT"
+    }
+  ]
+}

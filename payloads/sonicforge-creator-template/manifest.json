@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "name": "sonicforge-creator-template",
+  "version": "0.1.0",
+  "purpose": "Forkable payload for creating a custom AI DJ / creative-agent performer.",
+  "closed_gates": [
+    "ALLOW_GPU",
+    "ALLOW_PAID_API",
+    "ALLOW_PUBLIC_POSTING",
+    "ALLOW_PRIVATE_UPLOAD",
+    "ALLOW_TRAINING",
+    "ALLOW_WORKFLOW_PROMPT",
+    "ALLOW_MODEL_DOWNLOADS",
+    "ALLOW_REMOTE_ENDPOINT",
+    "ALLOW_RECORDING",
+    "ALLOW_PUBLIC_STREAM",
+    "ALLOW_CRON_MUTATION"
+  ],
+  "secret_policy": "placeholder_only_no_real_keys",
+  "required_files": [
+    "PAYLOAD.md",
+    "manifest.json",
+    "config.template.yaml",
+    "docs/OPERATING_MANUAL.md",
+    "docs/SAFETY_BOUNDARIES.md",
+    "agents/template-agent/manifest.json",
+    "agents/template-agent/persona.md",
+    "agents/template-agent/safety.md",
+    "workflows/registry.json",
+    "models/ledger/MODEL_DOWNLOAD_PLAN.md",
+    "schemas/manifest.schema.json"
+  ]
+}

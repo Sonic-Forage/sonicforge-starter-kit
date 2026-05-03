@@ -1,0 +1,14 @@
+from pathlib import Path
+from playwright.sync_api import sync_playwright
+
+root = Path(__file__).resolve().parents[1]
+html = root / 'docs/visuals/SONICFORGE_LIVE_FEATURE_MAP.html'
+out = root / 'site/data/sonicforge-live-feature-map-screenshot.png'
+out.parent.mkdir(parents=True, exist_ok=True)
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=True)
+    page = browser.new_page(viewport={'width': 1440, 'height': 1800}, device_scale_factor=1)
+    page.goto(html.as_uri(), wait_until='networkidle')
+    page.screenshot(path=str(out), full_page=True)
+    browser.close()
+print(out)

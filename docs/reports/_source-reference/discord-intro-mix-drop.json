@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "channel_id": "1500311683996844164",
+  "message_id": "1500313295322615949",
+  "attachment_count": 1,
+  "final_audio": "/opt/data/audio_cache/sonicforge_discord_intro_mix/20260503T014645Z/FULL_trippy_pizza_omnivoice_acestep_radio_duck_safe.mp3",
+  "duration_seconds": 174.816,
+  "sha256": "32eb80344410df00b1ebf564e0aea2e88e9fbbbb764c2876a7c8ede78a726345",
+  "non_destructive": true
+}

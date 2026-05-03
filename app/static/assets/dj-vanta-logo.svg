@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">DJ VANTA logo</title>
+  <desc id="desc">A neon black-star DJ emblem with a sharp VA monogram, headphones, waveform horns, and Intergalactic DJs / SonicForge Live text.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="62%">
+      <stop offset="0" stop-color="#20103b"/>
+      <stop offset="0.36" stop-color="#070013"/>
+      <stop offset="1" stop-color="#000000"/>
+    </radialGradient>
+    <linearGradient id="neon" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#12f7ff"/>
+      <stop offset="0.48" stop-color="#ff2bd6"/>
+      <stop offset="1" stop-color="#ffd166"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" x2="1">
+      <stop offset="0" stop-color="#f8f2ff"/>
+      <stop offset="0.5" stop-color="#9dfaff"/>
+      <stop offset="1" stop-color="#ff75e5"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.08 0 0 0 0 0.96 0 0 0 0 1 0 0 0 .95 0" result="cyan"/>
+      <feMerge><feMergeNode in="cyan"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="hotGlow" x="-45%" y="-45%" width="190%" height="190%">
+      <feGaussianBlur stdDeviation="11" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 1 0 0 0 0 .1 0 0 0 0 .82 0 0 0 .9 0" result="hot"/>
+      <feMerge><feMergeNode in="hot"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.88" numOctaves="2" stitchTiles="stitch" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <pattern id="scan" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M0 1H16" stroke="#fff" stroke-opacity=".09"/>
+      <path d="M0 8H16" stroke="#12f7ff" stroke-opacity=".04"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="1200" fill="url(#bg)"/>
+  <rect width="1200" height="1200" fill="url(#scan)" opacity=".6"/>
+  <g opacity=".18" stroke="#12f7ff" stroke-width="2">
+    <path d="M80 600H1120M600 80V1120M175 175L1025 1025M1025 175L175 1025"/>
+    <circle cx="600" cy="600" r="500" fill="none"/>
+    <circle cx="600" cy="600" r="390" fill="none"/>
+  </g>
+
+  <g filter="url(#hotGlow)" opacity=".85">
+    <path d="M600 116 672 394 952 286 806 536 1086 610 806 684 952 934 672 826 600 1104 528 826 248 934 394 684 114 610 394 536 248 286 528 394Z" fill="#050008" stroke="url(#neon)" stroke-width="10"/>
+  </g>
+
+  <g filter="url(#glow)">
+    <circle cx="600" cy="600" r="342" fill="rgba(0,0,0,.78)" stroke="#12f7ff" stroke-width="8"/>
+    <circle cx="600" cy="600" r="292" fill="none" stroke="#ff2bd6" stroke-width="5" stroke-dasharray="34 18"/>
+    <path d="M310 566c26-160 132-262 290-262s264 102 290 262" fill="none" stroke="url(#steel)" stroke-width="34" stroke-linecap="round"/>
+    <rect x="260" y="548" width="92" height="176" rx="38" fill="#050008" stroke="#12f7ff" stroke-width="12"/>
+    <rect x="848" y="548" width="92" height="176" rx="38" fill="#050008" stroke="#ff2bd6" stroke-width="12"/>
+    <path d="M318 770c74 92 168 138 282 138s208-46 282-138" fill="none" stroke="#ffd166" stroke-width="8" stroke-dasharray="18 18" opacity=".9"/>
+  </g>
+
+  <g filter="url(#rough)">
+    <path d="M350 780 513 388h94L435 780Z" fill="url(#steel)"/>
+    <path d="M850 780 687 388h-94l172 392Z" fill="url(#steel)"/>
+    <path d="M482 678h236l-40-92H522Z" fill="#050008" stroke="#12f7ff" stroke-width="10"/>
+    <path d="M600 374 684 780H516Z" fill="#050008" stroke="#ff2bd6" stroke-width="12"/>
+    <path d="M596 468 552 704h96Z" fill="#12f7ff" opacity=".8"/>
+  </g>
+
+  <g stroke-linecap="round" filter="url(#glow)">
+    <path d="M166 640c42-22 74-22 116 0s74 22 116 0 74-22 116 0 74 22 116 0 74-22 116 0 74 22 116 0 74-22 116 0 74 22 116 0" fill="none" stroke="#12f7ff" stroke-width="10" opacity=".82"/>
+    <path d="M188 704c58-34 92-34 150 0s92 34 150 0 92-34 150 0 92 34 150 0 92-34 150 0" fill="none" stroke="#ff2bd6" stroke-width="8" opacity=".72"/>
+  </g>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" text-anchor="middle" font-weight="900" letter-spacing="8">
+    <text x="600" y="1006" fill="#fff7ff" font-size="86" filter="url(#hotGlow)">DJ VANTA</text>
+    <text x="600" y="1062" fill="#12f7ff" font-size="25">VIRTUAL AUTONOMOUS NOCTURNAL TRANSMISSION ARTIST</text>
+    <text x="600" y="1106" fill="#ffd166" font-size="23" letter-spacing="5">INTERGALACTIC DJS // SONICFORGE LIVE</text>
+  </g>
+</svg>

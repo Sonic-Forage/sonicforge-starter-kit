@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SonicForge Visualizer — dual ASCII spectrograph / code rain</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <style>
+    .vjHud{position:fixed;left:18px;right:18px;bottom:18px;display:grid;grid-template-columns:1.2fr 1fr;gap:12px;z-index:5;font:12px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;color:#dff;pointer-events:none}
+    .vjHud pre,.vjHud div{margin:0;padding:12px;border:1px solid rgba(0,255,255,.28);background:rgba(0,6,18,.72);box-shadow:0 0 30px rgba(255,0,180,.16);white-space:pre-wrap;text-shadow:0 0 8px rgba(0,255,255,.75)}
+    .vjModes{position:fixed;top:18px;right:18px;z-index:7;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:520px}
+    .vjModes button{pointer-events:auto;border:1px solid rgba(0,255,255,.35);background:rgba(3,0,18,.82);color:#e8ffff;border-radius:999px;padding:8px 11px;font:11px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 0 18px rgba(0,255,255,.12)}
+    .vjModes button.active{background:linear-gradient(90deg,#00f5ff,#ff2bd6);color:#05000a}
+    .vjLabel{max-width:560px}.vjLabel small{display:block;color:#b9fffe;margin-top:3px}
+  </style>
+</head>
+<body class="vj">
+<canvas id="vj"></canvas>
+<div class="vjLabel"><b>DJ VANTA//SonicForge</b><span id="vibe">browser window / OBS capture / Resolume source</span><small>Dual ASCII spectrograph + code_rain / eq_bands / subtitle_spell / sdf_text_fallback browser fallback. SDF/MSDF atlas work, ComfyUI, and TouchDesigner remain dry-run cue contracts.</small></div>
+<div class="vjModes" aria-label="browser visualizer modes">
+  <button data-mode="plasma" class="active">plasma</button>
+  <button data-mode="code_rain">code_rain</button>
+  <button data-mode="eq_bands">eq_bands</button>
+  <button data-mode="subtitle_spell">subtitle_spell</button>
+  <button data-mode="sdf_text_fallback">SDF/MSDF text fallback</button>
+  <button data-mode="asic_code_spell">ASIC code spell</button>
+  <button data-mode="dual_ascii_spectrograph">dual ASCII spectrograph</button>
+</div>
+<div class="vjHud">
+  <pre id="asciiDecks">Deck A ▓▓▓▓▓░░░░░ LOW/MID/HIGH\nDeck B ░░▒▒▓▓████ incoming portal</pre>
+  <div id="spellHud">PHRASE_LOCK 32 // BASS_SWAP BAR_17 // SURVIVAL_PING HYDRATE</div>
+</div>
+<script>
+const c=document.getElementById('vj'),x=c.getContext('2d');
+const asciiDecks=document.getElementById('asciiDecks'),spellHud=document.getElementById('spellHud'),vibe=document.getElementById('vibe');
+let t=0,mode='plasma';
+const glyphs='VANTA 128BPM DECK_A DECK_B PHRASE_LOCK BASS_SWAP SURVIVAL_PING COMFYUI_DRY_RUN TOUCHDESIGNER_CONTRACT SDF_TEXT_FALLBACK MSDF_ATLAS_DRY_RUN EQ_LOW EQ_MID EQ_HIGH '.split('');
+const rain=Array.from({length:150},(_,i)=>({x:Math.random(),y:Math.random(),speed:.18+Math.random()*.7,phase:i*.173}));
+function fit(){c.width=innerWidth;c.height=innerHeight}addEventListener('resize',fit);fit();
+document.querySelectorAll('.vjModes button').forEach(btn=>btn.onclick=()=>{mode=btn.dataset.mode;document.querySelectorAll('.vjModes button').forEach(b=>b.classList.toggle('active',b===btn));vibe.textContent=`mode=${mode} · browser-first visual spell · no provider call`;});
+function bg(w,h){let g=x.createLinearGradient(0,0,w,h);g.addColorStop(0,'#05000a');g.addColorStop(.45,'#160033');g.addColorStop(1,'#001822');x.fillStyle=g;x.fillRect(0,0,w,h);}
+function deckLevels(deck){return Array.from({length:48},(_,i)=>{const base=deck==='A'?Math.sin(t*2+i*.31):Math.cos(t*2.4+i*.27);return Math.max(0,Math.min(1,.45+.4*base+.25*Math.sin(t*.7+i*.09)));});}
+function renderHud(){const a=deckLevels('A'),b=deckLevels('B');const chars=' ▁▂▃▄▅▆▇█';const lineA=a.map(v=>chars[Math.floor(v*(chars.length-1))]).join('');const lineB=b.map(v=>chars[Math.floor(v*(chars.length-1))]).join('');asciiDecks.textContent=`Dual ASCII spectrograph / Careless-inspired, original UI\nDeck A current  ${lineA}  gain=cos(x)\nDeck B incoming ${lineB}  gain=sin(x)\nEQ shrine LOW:${Math.round(a[3]*99)} MID:${Math.round(a[20]*99)} HIGH:${Math.round(a[40]*99)} // generated_mock metadata only`;spellHud.textContent=`${mode.toUpperCase()} // PHRASE_LOCK 32 // BASS_SWAP BAR_17 // SURVIVAL_PING HYDRATE // COMFYUI_DRY_RUN // TOUCHDESIGNER_CONTRACT`;}
+function drawPlasma(w,h){x.save();x.translate(w/2,h/2);for(let i=0;i<96;i++){let a=i/96*Math.PI*2+t*.4;let r=80+Math.sin(t*2+i*.3)*40+i*5;let px=Math.cos(a)*r,py=Math.sin(a)*r;x.strokeStyle=`hsla(${(i*4+t*60)%360},100%,60%,.45)`;x.lineWidth=2;x.beginPath();x.arc(px,py,18+Math.sin(t*3+i)*8,0,Math.PI*2);x.stroke()}x.restore();}
+function drawCodeRain(w,h){x.font='15px ui-monospace,monospace';x.textAlign='center';rain.forEach((r,i)=>{r.y=(r.y+r.speed*.006*(1+.6*Math.sin(t+i)))%1.12;const xx=r.x*w,yy=(r.y-.06)*h;const ch=glyphs[(i+Math.floor(t*16+r.phase*9))%glyphs.length];x.fillStyle=`hsla(${170+80*Math.sin(t+i)},100%,${55+35*Math.sin(t*2+i)}%,${.22+.55*Math.random()})`;x.fillText(ch,xx,yy);if(i%17===0){x.fillText('SURVIVAL_PING',xx,yy+18)}});}
+function drawEqBands(w,h){const bands=['LOW','MID','HIGH'];bands.forEach((label,i)=>{const level=.25+.65*Math.abs(Math.sin(t*(1.2+i*.3)+i));const bw=w/3;const x0=i*bw;x.fillStyle=`hsla(${190+i*55+t*20},100%,50%,.16)`;x.fillRect(x0,h*(1-level),bw-6,h*level);x.strokeStyle=`hsla(${190+i*55},100%,70%,.65)`;x.lineWidth=3;x.strokeRect(x0+8,h*(1-level),bw-22,h*level);x.fillStyle='rgba(235,255,255,.92)';x.font='bold 54px ui-monospace,monospace';x.fillText(label,x0+32,h*(1-level)+72);});}
+function drawSubtitle(w,h){x.save();x.textAlign='center';x.fillStyle='rgba(0,0,0,.38)';x.fillRect(w*.08,h*.37,w*.84,h*.26);x.strokeStyle='rgba(255,43,214,.75)';x.strokeRect(w*.08,h*.37,w*.84,h*.26);x.font='bold 62px ui-monospace,monospace';x.fillStyle='rgba(238,255,255,.96)';x.fillText('DJ VANTA VISUAL SPELL',w/2,h*.47);x.font='28px ui-monospace,monospace';x.fillStyle='rgba(0,245,255,.95)';x.fillText('PHRASE_LOCK 32  //  BASS_SWAP BAR_17  //  COMMUNITY CARE ONLINE',w/2,h*.55);x.restore();}
+function drawSdfTextFallback(w,h){x.save();x.textAlign='center';x.textBaseline='middle';const phrase='SDF/MSDF TEXT SHADER FUTURE LANE';for(let i=0;i<9;i++){const scale=1+i*.045+Math.sin(t*1.4+i)*.015;const alpha=.06+i*.045;x.save();x.translate(w/2,h*.42+i*9);x.scale(scale,scale);x.font='900 54px ui-monospace,monospace';x.strokeStyle=`hsla(${190+i*12+t*28},100%,62%,${alpha})`;x.lineWidth=10-i*.7;x.strokeText(phrase,0,0);x.restore();}x.font='bold 36px ui-monospace,monospace';x.fillStyle='rgba(238,255,255,.98)';x.fillText('CRISP TYPOGRAPHY CONTRACT // CANVAS NOW // WEBGL SDF LATER',w/2,h*.58);x.font='20px ui-monospace,monospace';x.fillStyle='rgba(0,245,255,.88)';x.fillText('MSDF_ATLAS_DRY_RUN · no remote shader downloads · no GPU provider · browser fallback active',w/2,h*.65);x.strokeStyle='rgba(255,43,214,.55)';x.strokeRect(w*.12,h*.31,w*.76,h*.42);x.restore();}
+function drawDualAscii(w,h){drawEqBands(w,h);x.font='18px ui-monospace,monospace';const a=deckLevels('A'),b=deckLevels('B');for(let row=0;row<22;row++){for(let col=0;col<64;col++){const av=a[col%a.length],bv=b[col%b.length];const on=(row<11?av:bv)>(row%11)/11;const ch=on?(row<11?'█':'▓'):'·';x.fillStyle=row<11?'rgba(0,245,255,.62)':'rgba(255,43,214,.62)';x.fillText(ch,60+col*15,120+row*20);}}x.fillStyle='rgba(255,255,255,.9)';x.fillText('DECK A CURRENT GROOVE',60,94);x.fillText('DECK B INCOMING PORTAL // generated_mock',60,364);}
+function drawAsicCodeSpell(w,h){x.save();x.font='13px ui-monospace,monospace';x.textAlign='left';for(let y=70;y<h-40;y+=26){for(let x0=40;x0<w-40;x0+=92){const pulse=Math.sin(t*3+x0*.021+y*.017);x.fillStyle=pulse>0?'rgba(0,245,255,.34)':'rgba(255,43,214,.22)';x.fillRect(x0,y,54+pulse*8,2);x.fillRect(x0,y,2,18);if((x0+y+Math.floor(t*60))%7<1)x.fillText('0x'+(((x0*y+t*999)|0)&0xffff).toString(16).padStart(4,'0'),x0+8,y+16);}}
+const labels=['TEAM_FIRST','FORKABLE_OS','AGENT_CLONE','SKILL_PLUGIN_BUS','MODEL_TRAINING_GATE','COMFYUI_DRY_RUN','TTS_TEXT_FIRST','AUDIO_TRUTH_PANEL','NO_GPU_NO_STREAM'];x.textAlign='center';labels.forEach((label,i)=>{const yy=h*.13+i*38;const xx=w*.5+Math.sin(t*1.4+i)*72;x.fillStyle='rgba(0,0,0,.62)';x.fillRect(xx-210,yy-19,420,36);x.strokeStyle='rgba(0,245,255,.62)';x.strokeRect(xx-210,yy-19,420,36);x.fillStyle=i%2?'rgba(255,209,102,.98)':'rgba(238,255,255,.98)';x.font='bold 20px ui-monospace,monospace';x.fillText(label,xx,yy+6);});x.fillStyle='rgba(0,0,0,.68)';x.fillRect(w*.12,h*.64,w*.76,92);x.strokeStyle='rgba(255,43,214,.68)';x.strokeRect(w*.12,h*.64,w*.76,92);x.font='900 42px ui-monospace,monospace';x.fillStyle='rgba(255,43,214,.96)';x.fillText('INTERGALACTIC DJ ASIC-CODE VISUAL SPELL',w/2,h*.69);x.font='20px ui-monospace,monospace';x.fillStyle='rgba(0,245,255,.98)';x.fillText('browser-only shader illusion · no hardware · no provider · no recording · no stream',w/2,h*.75);x.restore();}
+function draw(){t+=0.016;let w=c.width,h=c.height;bg(w,h);if(mode==='plasma'||mode==='code_rain'||mode==='subtitle_spell'||mode==='sdf_text_fallback')drawPlasma(w,h);if(mode==='code_rain')drawCodeRain(w,h);if(mode==='eq_bands')drawEqBands(w,h);if(mode==='subtitle_spell')drawSubtitle(w,h);if(mode==='sdf_text_fallback')drawSdfTextFallback(w,h);if(mode==='asic_code_spell')drawAsicCodeSpell(w,h);if(mode==='dual_ascii_spectrograph')drawDualAscii(w,h);if(mode==='plasma'){drawCodeRain(w,h);drawSubtitle(w,h)}renderHud();requestAnimationFrame(draw)}draw();
+</script>
+</body>
+</html>

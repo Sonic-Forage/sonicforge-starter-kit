@@ -1,0 +1,172 @@
+{
+  "generated_at_utc": "2026-05-02T23:28:42.621711+00:00",
+  "status": "local_private_demo_assets_saved",
+  "active_backend": "comfyui_runpod_api_operator_supplied",
+  "workflow_exact_path": "workflows/comfyui/omni_voice_design_api.keep_model_unloaded.json",
+  "workflow_reusable_path": "workflows/comfyui/omni_voice_design_api.reusable.json",
+  "keep_model_loaded": false,
+  "notes": [
+    "Exact uploaded workflow preserved, including current audioUI preview field.",
+    "Reusable workflow clears audioUI so future API runs do not point at a stale UI preview.",
+    "Scripts should default to ComfyUI and keep OmniVoice model unloaded between demo calls.",
+    "Endpoint values are intentionally not committed."
+  ],
+  "demo_assets_count": 31,
+  "demo_assets": [
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T230727Z/endpoint_probe_redacted.json",
+      "bytes": 219,
+      "sha256": "113c6d4a2abf989944c6c99b8b0671e74f656bcb7959c462e42d2dc9ff610dc7"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T231719Z/01_starport_mc-Starport-MC.wav",
+      "bytes": 327884,
+      "sha256": "0a6591c59b45300220e4a5d47dce7ddbac6dd7816435a8f630be9f9810a6c7a4"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T231719Z/01_starport_mc.review.json",
+      "bytes": 589,
+      "sha256": "b32f8ab0ec6649cf25bafcaf10685b1f9f21da5cacccefbcdab611a662951a56"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T231719Z/02_nebula_oracle-Nebula-Oracle.wav",
+      "bytes": 368684,
+      "sha256": "840b650f20af3171d375cc351c40d32570c928f88bf2c9e0858a6c4adec69bf4"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T231719Z/02_nebula_oracle.review.json",
+      "bytes": 616,
+      "sha256": "4b0dfe562a5618780b450213c9b19147cae5443d25b85b2f8e5e39712c8663e0"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T231719Z/03_asteroid_hype_captain-Asteroid-Hype-Captain.wav",
+      "bytes": 362924,
+      "sha256": "793b17df662dbb680dc22cd84a2bda38b5ba357df28efb091f04af7045860539"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T231719Z/03_asteroid_hype_captain.review.json",
+      "bytes": 650,
+      "sha256": "8577b9f201a17dda341b9040e8c09434c4910384df6daef1eeb3c388a22be077"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T231719Z/OMNIVOICE_HF_SPACE_REPORT.json",
+      "bytes": 2088,
+      "sha256": "fe0ec02f07e9b960d922089d021732042c5885ac872b28f7f0b925f30b78066a"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T232001Z/endpoint_probe_redacted.json",
+      "bytes": 219,
+      "sha256": "113c6d4a2abf989944c6c99b8b0671e74f656bcb7959c462e42d2dc9ff610dc7"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T232156Z/01_starport_mc-Starport-MC.mp3",
+      "bytes": 98853,
+      "sha256": "10d1575b515e20f4187646c5dce97f06e05588979b1427bed64e39ea708cdede"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T232156Z/01_starport_mc.history.json",
+      "bytes": 2426,
+      "sha256": "2136208799844a502bb7fadf2a48a693267a3afbe784727b1dba0ba8095d0ce3"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T232156Z/01_starport_mc.review.json",
+      "bytes": 563,
+      "sha256": "ac28abea890f12c3c32b419ad347e4b0ec057830f880dc642b53463b960b8f9b"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T232156Z/01_starport_mc.workflow.json",
+      "bytes": 1088,
+      "sha256": "0e8bf8588b16c6486743cd7a1b0fd2e7394357b29b2921c42944fde979502bdd"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T232156Z/02_nebula_oracle-Nebula-Oracle.mp3",
+      "bytes": 90460,
+      "sha256": "704a71819f2d465f0e19da2a481066186d54d021cf9ee3c659f164ef33f366e7"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T232156Z/02_nebula_oracle.history.json",
+      "bytes": 2437,
+      "sha256": "6f43d7d2b43a080633a69206d9fbff080e9cd4b64390a303831eca54920db41b"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T232156Z/02_nebula_oracle.review.json",
+      "bytes": 576,
+      "sha256": "ef46c8ef517a28b28bc966641f50677b88f4c74019702f0bb08ec65117657085"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T232156Z/02_nebula_oracle.workflow.json",
+      "bytes": 1095,
+      "sha256": "ee094268766e6aee228641dab5975697789ac0e153337d861e1ee7bdd7c8b7d3"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T232156Z/03_asteroid_hype_captain-Asteroid-Hype-Captain.mp3",
+      "bytes": 89922,
+      "sha256": "41f28d4e6282da028ad39bc64fb07a225282c1d9d0be6d9777037eb4066cef51"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T232156Z/03_asteroid_hype_captain.history.json",
+      "bytes": 2467,
+      "sha256": "3cc9218079fe91d9f4588a09dccda3922b3502ccfcd4b8bbe38221f4179dafe7"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T232156Z/03_asteroid_hype_captain.review.json",
+      "bytes": 614,
+      "sha256": "1143f2f13c2af24bb8e7207792f27bd767637b186905aaaace42ba10e42c2c5f"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T232156Z/03_asteroid_hype_captain.workflow.json",
+      "bytes": 1109,
+      "sha256": "4b279832698db7c06dcb68378ddce516db1f18d10cb0400eed62d1ec066eca90"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T232156Z/OMNIVOICE_POEM_REPORT.json",
+      "bytes": 1926,
+      "sha256": "d7208904026f1f9ed929bdfb8cb1bdfcdb6e22be9998ac0e5bfa8d45f4125f40"
+    },
+    {
+      "path": "/opt/data/audio_cache/omnivoice_voice_design_poem/20260502T232156Z/endpoint_probe_redacted.json",
+      "bytes": 234,
+      "sha256": "1daabde6bdc5efa5aeadebf4a2367386c9e2feb5acb31625ea6b69a3558f5470"
+    },
+    {
+      "path": "/opt/data/audio_cache/sonicforge_space_juice/20260502T232445Z/01_space_juice_intro.mp3",
+      "bytes": 200214,
+      "sha256": "27e2966da00da5d073fb8875e64fd091569655d167d0e6ed648e90b83db7137f"
+    },
+    {
+      "path": "/opt/data/audio_cache/sonicforge_space_juice/20260502T232445Z/02_space_juice_rave_rescue_song.mp3",
+      "bytes": 1447072,
+      "sha256": "c5856f59bc0fbe247957436761f2eba22adaff4ba6c186eb0770747c96f3a610"
+    },
+    {
+      "path": "/opt/data/audio_cache/sonicforge_space_juice/20260502T232445Z/03_space_juice_outro.mp3",
+      "bytes": 157216,
+      "sha256": "f39fba5f874a92d7d6fee7376354f9b1b5ae03f9e077d17044dcf68e3ab24ffd"
+    },
+    {
+      "path": "/opt/data/audio_cache/sonicforge_space_juice/20260502T232445Z/FULL_space_juice_rave_rescue_intro_song_outro.mp3",
+      "bytes": 1472903,
+      "sha256": "7c424e55a237af29c8d8facf87c3bef28f40823add178e73e03077d9e7cb36da"
+    },
+    {
+      "path": "/opt/data/audio_cache/sonicforge_space_juice/20260502T232445Z/SPACE_JUICE_RAVE_RESCUE_REPORT.json",
+      "bytes": 3275,
+      "sha256": "4995b468d722b7aa7e88549869f82a7a575672bd17bd7d76f3aaf371b31fa339"
+    },
+    {
+      "path": "/opt/data/audio_cache/sonicforge_space_juice/20260502T232445Z/part_00.wav",
+      "bytes": 2667246,
+      "sha256": "7da1cf13e4e2cf8cdaa0e8f0bd96d61abed62f402f58dadfdc10bb95f152f05e"
+    },
+    {
+      "path": "/opt/data/audio_cache/sonicforge_space_juice/20260502T232445Z/part_01.wav",
+      "bytes": 7938078,
+      "sha256": "65a0df7e2d1efe73bb4d4be99b6286d64b596e6d3ff84435de642c3128826004"
+    },
+    {
+      "path": "/opt/data/audio_cache/sonicforge_space_juice/20260502T232445Z/part_02.wav",
+      "bytes": 2286222,
+      "sha256": "84628bc6cab481857045bd0359882f14fe200993d0f972414c7c6bda73359dde"
+    }
+  ]
+}

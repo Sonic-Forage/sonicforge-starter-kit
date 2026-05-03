@@ -1,0 +1,20 @@
+{
+  "id": "dj-vanta",
+  "display_name": "DJ VANTA",
+  "expanded_name": "Virtual Autonomous Nocturnal Transmission Artist",
+  "product": "SonicForge Live",
+  "show": "Intergalactic DJs",
+  "status": "canonical_first_clone",
+  "starts_gpu": false,
+  "starts_paid_api": false,
+  "publishes_stream": false,
+  "records_audio": false,
+  "files": [
+    "persona.md",
+    "safety.md",
+    "crate-profile.json",
+    "visual-profile.json",
+    "station-signal.json",
+    "workflow-bindings.json"
+  ]
+}

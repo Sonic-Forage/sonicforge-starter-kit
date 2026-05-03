@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "action": "small_discord_drop_spot_created_or_reused",
+  "guild_id": "1465968549226090629",
+  "guild_name": "The Mind Expansion Network // Jimsky HQ",
+  "category_id": "1497891361742000169",
+  "category_name": "\ud83e\udec2 HUMAN LOUNGE",
+  "channel_id": "1500311683996844164",
+  "channel_name": "sonicforge-drops",
+  "created": true,
+  "intro_message_id": "1500311684907139152",
+  "non_destructive": true,
+  "notes": [
+    "Created/reused one small text channel only.",
+    "No channels/roles/messages deleted.",
+    "No secrets or private endpoints posted."
+  ]
+}

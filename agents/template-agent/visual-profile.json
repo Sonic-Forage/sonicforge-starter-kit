@@ -1,0 +1,20 @@
+{
+  "palette": [
+    "void black",
+    "neon cyan",
+    "hot magenta",
+    "warning amber"
+  ],
+  "spells": [
+    "YOUR_AGENT_SIGNAL",
+    "DECK_B_PORTAL",
+    "SURVIVAL_PING",
+    "PHRASE_LOCK"
+  ],
+  "routes": [
+    "browser_visualizer",
+    "terminal_visual_spell_engine",
+    "comfyui_dry_run",
+    "touchdesigner_contract"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "station_id": "YOUR_AGENT-555",
+  "default_duration_minutes": 25,
+  "modes": [
+    "single_dj",
+    "intergalactic_mix",
+    "crate_prep",
+    "album_festival_mix"
+  ],
+  "all_lanes_fail_closed": true
+}

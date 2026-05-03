@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "required": [
+    "schema_version",
+    "name",
+    "version",
+    "purpose",
+    "closed_gates",
+    "secret_policy",
+    "required_files"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "closed_gates": {
+      "type": "array"
+    },
+    "secret_policy": {
+      "type": "string"
+    },
+    "required_files": {
+      "type": "array"
+    }
+  }
+}

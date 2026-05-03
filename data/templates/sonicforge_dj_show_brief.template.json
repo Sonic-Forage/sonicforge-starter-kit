@@ -1,0 +1,65 @@
+{
+  "theme_title": "Intergalactic Candy-Rave Rescue Mission",
+  "one_sentence_story": "A rotating crew of SonicForge hosts guides the crowd through a funny but badass space-rave emergency where the bass saves the party.",
+  "mood_words": [
+    "playful",
+    "badass",
+    "alien radio",
+    "glitch-funk",
+    "festival rescue",
+    "warm PLUR chaos"
+  ],
+  "track_count": 4,
+  "song_seconds": 60,
+  "host_count": 5,
+  "mix_mode": "radio_duck_safe",
+  "host_personas": [
+    {
+      "name": "Velvet Orbit MC",
+      "role": "opens the portal and welcomes the crowd"
+    },
+    {
+      "name": "Prism Auntie",
+      "role": "keeps everyone calm while the lasers wobble"
+    },
+    {
+      "name": "Glitch Deck Cadet",
+      "role": "reports chaotic system updates from the booth"
+    },
+    {
+      "name": "Neon Pearl Dispatch",
+      "role": "signals the final bass rescue protocol"
+    },
+    {
+      "name": "Sub Bass Elder",
+      "role": "closes the show with cosmic relief and lore"
+    }
+  ],
+  "must_include_phrases": [
+    "SonicForge",
+    "DJ VANTA",
+    "Mind Expansion",
+    "the bass saved the party"
+  ],
+  "avoid": [
+    "fake celebrity voice cloning",
+    "claiming endorsement by named artists or companies",
+    "multiple hosts speaking at the same time",
+    "two full songs overlapping unless transition lab has already passed",
+    "silent fallback to procedural garbage when generation fails"
+  ],
+  "offline_asset_strategy": {
+    "preferred_song_source": "downloaded/cached generated tracks",
+    "preferred_voice_source": "cached reviewed OmniVoice or fresh approved ComfyUI OmniVoice",
+    "remote_gpu_required_for_mixing": false,
+    "remote_gpu_required_for_new_generation": "only with explicit approval/fresh endpoint"
+  },
+  "qa_required": [
+    "timeline.json",
+    "manifest.json",
+    "qa_report.json",
+    "duration check",
+    "no forbidden overlaps",
+    "secret scan"
+  ]
+}

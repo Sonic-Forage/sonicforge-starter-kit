@@ -1,0 +1,34 @@
+{
+  "status": "dry_run_registry_only",
+  "starts_gpu": false,
+  "starts_paid_api": false,
+  "publishes_stream": false,
+  "records_audio": false,
+  "workflows": [
+    {
+      "id": "visual-spell-portal-v1",
+      "name": "Intergalactic Visual Spell",
+      "route": "/workflows#visual-spell-portal-v1",
+      "mode": "dry_run_card_only",
+      "blocked": [
+        "POST /prompt",
+        "model downloads",
+        "uploads",
+        "streaming"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "id": "agent-id-badge-v1",
+      "name": "DJ Agent Badge",
+      "mode": "design_contract_only",
+      "requires_human_approval": true
+    },
+    {
+      "id": "survival-overlay-v1",
+      "name": "Rave Survival Overlay",
+      "mode": "browser_first_no_comfy_required",
+      "requires_human_approval": false
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Intergalactic DJs presents DJ VANTA — SonicForge Live</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<main class="deck">
+  <section class="hero vanta-hero">
+    <p class="eyebrow">Intergalactic DJs presents</p>
+    <p><img src="/static/assets/dj-vanta-gpt-image-2-hero.png" alt="Generated DJ VANTA cyber-rave hero logo concept" style="max-width:min(100%,340px);border:1px solid rgba(20,245,255,.18);border-radius:24px;background:rgba(0,0,0,.28);box-shadow:0 0 36px rgba(255,43,214,.18)"></p>
+    <h1>DJ VANTA</h1>
+    <p class="tagline">Powered by <b>SonicForge Live</b>: the first Hermes-native autonomous AI DJ/VJ for local house parties, livestreams, clubs, and future festival stages.</p>
+    <div class="identity-grid" aria-label="Locked brand hierarchy">
+      <div><span>Platform</span><b>SonicForge Live</b><small>local-first runtime + control deck</small></div>
+      <div><span>Show</span><b>Intergalactic DJs</b><small>party / collective / future lineup</small></div>
+      <div><span>Performer</span><b>DJ VANTA//SonicForge</b><small>Virtual Autonomous Nocturnal Transmission Artist</small></div>
+    </div>
+    <p class="safety-strip">Local-first demo mode: mock adapters by default · no paid GPU · no public RTMP · no provider starts without human approval.</p>
+    <section class="collective-strip" id="collective-ecosystem-strip" aria-label="Intergalactic DJs collective ecosystem">
+      <p class="microcopy">Collective-first launch frame</p>
+      <h2>Intergalactic DJs is the team. SonicForge Live is the universe. DJ VANTA is the first clone.</h2>
+      <p id="ecosystemPositioning">Loading forkable_collective_ecosystem_map_read_only…</p>
+      <div id="ecosystemRoleList" class="ecosystem-role-list">Team roles loading…</div>
+      <p class="microcopy" id="ecosystemShareModel">Agents · skills · plugins · workflows · model-training plans stay shareable, local-first, and approval-gated.</p>
+    </section>
+    <p><a class="button" href="/launch">🚀 Open Launch Cockpit</a> <a class="button" href="/parallel-party">Open Parallel Party Hub</a> <a class="button" href="/setup">Fresh Hermes Setup</a> <a class="button" href="/agents">Agent Factory</a> <a class="button" href="/workflows">Workflow Registry</a> <a class="button" href="/terminal-visuals">Terminal Visuals</a> <a class="button" href="/station">Acquire Station Signal</a> <a class="button" href="/about">Open Project Explainer</a> <a class="button" href="/vanta">Open DJ VANTA Lore</a> <a class="button" target="_blank" href="/visualizer">Open VJ Window</a></p>
+  </section>
+
+  <section class="grid">
+    <div class="card"><h2>Guide the set</h2><p class="microcopy">Tell VANTA where to steer the room.</p><textarea id="guide">Take it darker, 128 BPM cyber-rave, clean DJ-friendly transitions, cosmic talk-breaks between tracks.</textarea><button id="sendGuide">Update VANTA Guide</button></div>
+    <div class="card"><h2>Generate mock track</h2><p class="microcopy">Local WAV sketch only — not a paid music backend.</p><input id="title" value="Vanta Signal One"><input id="bpm" type="number" value="128"><input id="style" value="rave-cyberpunk electro house, clean intro/outro"><button id="genTrack">Generate Local WAV Sketch</button></div>
+    <div class="card"><h2>DJ VANTA talk break</h2><p class="microcopy">Text-first MC presence; TTS stays opt-in.</p><textarea id="talk">This is DJ VANTA. Hydrate, breathe, and follow the neon thread into the next drop.</textarea><button id="queueTalk">Queue Text Talk Cue</button></div>
+    <div class="card mc-break-panel" id="text-first-mc-breaks"><h2>Text-first MC break generator</h2><p class="microcopy">Modes: survival · history · hype · lore · technical. Preview-only copy backed by <code>/api/mc-breaks/preview</code>; TTS/audio output remains closed.</p><div class="culture-mode-selector" id="culture-mode-selector"><label for="cultureModeSelect">Culture mode selector</label><select id="cultureModeSelect"><option value="history">history</option><option value="hype">hype</option><option value="survival">safety / survival</option><option value="lore">lore</option><option value="technical">technical</option></select><button id="applyCultureMode">Preview Selected Culture Mode</button><small>history · hype · safety · lore selector only updates text-first preview copy; no voice, provider, recording, or stream starts.</small></div><div id="mcBreakPreview" class="mc-break-preview">Loading text_first_mc_break_generator_fail_closed preview…</div><p id="mcBreakStatus">mock-text-talk-break · text_first_no_audio_output · sends_voice_message=false · records_audio=false</p></div>
+    <div class="card"><h2>VJ output</h2><p class="microcopy">Browser visualizer for OBS capture, Resolume, or projector routing.</p><input id="scene" value="ultraviolet plasma tunnel with waveform ghosts"><button id="visual">Cue VANTA Visual</button><a class="button" target="_blank" href="/visualizer">Open VJ Window</a></div>
+    <div class="card"><h2>Autopilot segment</h2><p>Plans the next track + talk-break + visual + clean mix notes from the current guide.</p><button id="nextSegment">Plan Next Continuous Segment</button></div>
+    <div class="card persona-card"><h2>Who is alive?</h2><p><b>VANTA</b> = Virtual Autonomous Nocturnal Transmission Artist.</p><p>DJ VANTA models crate digging, beatmatching, phrasing, EQ moves, cue points, crowd state, MC breaks, and visual cues — with every live backend closed until the operator arms it.</p><p><a class="button" href="/vanta">Read the soul/personality sheet</a></p></div>
+  </section>
+  <section class="card survival-panel" id="lineage-survival-kit">
+    <p class="microcopy">Lineage + Rave Survival Kit</p>
+    <h2>Community-care drawer</h2>
+    <p>This panel renders the latest <code>survival_kit</code> and <code>culture_cue</code> from <b>Plan Next Continuous Segment</b>. Practical community-care reminders only — no medical/legal/drug-use instructions, and human override stays visible.</p>
+    <div class="survival-grid">
+      <div><b>Survival ping</b><p id="survivalMessage">Plan a segment to load hydration, earplug, buddy-check, exit, chill-zone, and human-override cues.</p><small id="survivalChecklist">water station · earplugs · buddy check · exits clear · chill zone · human override</small></div>
+      <div><b>Culture cue</b><p id="cultureMessage">Respect to dance-music lineage; AI is a guest in the room.</p><small id="cultureLineage">disco-house-techno-rave-vj-ai</small></div>
+      <div><b>Deck handoff</b><p id="deckStatus">Deck A current groove → Deck B incoming portal. Press the planner for the dry-run visual spell.</p><small id="visualSpellStatus">ComfyUI/TouchDesigner: dry-run contract only</small><small id="comfySpellStatus">ComfyUI visual-spell cue: /system_stats /object_info /prompt /ws /history /view stay disabled until explicit approval.</small><small id="crossfaderStatus">Equal-power crossfader metadata appears after planning.</small><small id="eqMoveScheduleStatus">EQ move schedule metadata appears after planning: low swap · mid carve · high shimmer.</small><small id="talkDuckingStatus">Talk-over-intro ducking plan metadata appears after planning: talk_over_intro_ducking_plan_metadata_only.</small></div>
+    </div>
+  </section>
+  <section class="card dj-brain-panel" id="dj-brain-status-panel">
+    <p class="microcopy">DJ Brain read-only preview</p>
+    <h2>BPM / phrase / EQ / crowd signal</h2>
+    <p>This panel loads <code>/api/dj-brain/state</code> without generating audio, appending manifests, calling providers, recording, or publishing. It exposes DJ VANTA's performer-brain preview for judges before any live backend is armed.</p>
+    <div class="brain-grid">
+      <div><b>BPM · Key · Energy</b><p id="brainBpmKeyEnergy">Loading read-only state…</p></div>
+      <div><b>Phrase count</b><p id="brainPhraseCount">Phrase plan pending.</p></div>
+      <div><b>Current EQ move</b><p id="brainEqMove">EQ schedule pending.</p></div>
+      <div><b>Crowd signal</b><p id="brainCrowdSignal">Synthetic crowd state only — no hidden mic/crowd recording.</p></div>
+      <div><b>Beatmatch</b><p id="brainBeatmatch">Stable-grid preview pending.</p></div>
+      <div><b>Read-only safety</b><p id="brainSafetyStatus">read_only_preview_no_generation_no_continuous_mixer · starts_gpu=false · records_audio=false</p></div>
+    </div>
+  </section>
+  <section class="card deck-ab-panel" id="deck-ab-status-cards">
+    <p class="microcopy">Careless-LiveDJ-inspired dual-deck framework · ethically adapted</p>
+    <h2>Deck A / Deck B handoff cards</h2>
+    <p>Dedicated UI cards expose the current groove and incoming portal without claiming a real continuous mixer. Deck B stays <b>generated_mock</b> / dry-run until an approved local adapter returns an artifact.</p>
+    <div class="deck-card-grid">
+      <article class="deck-card deck-a-card" id="deckACard">
+        <span class="deck-role">Deck A</span>
+        <h3 id="deckATitle">Current groove</h3>
+        <p id="deckAStatus">Status: waiting for planner state.</p>
+        <dl><dt>BPM/key/energy</dt><dd id="deckAMeta">—</dd><dt>Prompt stack</dt><dd id="deckAPrompt">Guide prompt appears after planning.</dd><dt>Safety</dt><dd id="deckASafety">Mock/local state only.</dd></dl>
+      </article>
+      <article class="deck-card deck-b-card" id="deckBCard">
+        <span class="deck-role incoming">Deck B</span>
+        <h3 id="deckBTitle">Incoming portal</h3>
+        <p id="deckBStatus">Status: awaiting crate selection and visual spell.</p>
+        <dl><dt>BPM/key/energy</dt><dd id="deckBMeta">—</dd><dt>Deck B crate</dt><dd id="deckBCrate">Local prompt crate not selected yet.</dd><dt>Visual spell</dt><dd id="deckBSpell">ComfyUI/TouchDesigner cue remains dry-run.</dd></dl>
+      </article>
+    </div>
+  </section>
+  <section class="card crate-panel" id="prompt-crate-cache">
+    <p class="microcopy">Prompt Crate Cache</p>
+    <h2>Deck B crate-digging memory</h2>
+    <p>Local seed memory only: genre tags, energy, visual spell, survival ping, and lineage note travel with the incoming deck. Provider lanes remain closed by default.</p>
+    <div id="crateCacheList" class="crate-list">Loading local prompt crate cache…</div>
+    <p class="microcopy" id="crateSelectionStatus">Plan a segment to see the selected crate in Deck B.</p>
+  </section>
+  <section class="card sample-pad-panel" id="sample-pad-rituals">
+    <p class="microcopy">Sample-pad ritual buttons</p>
+    <h2>VANTA / HYDRATE / BUDDY / DROP / PORTAL / CHILL / AIRHORN / RECORD</h2>
+    <p>These pads emit local dry-run cue packets for talk-breaks, survival reminders, text visual spells, and future set-manifest markers. They do not play audio samples, start recording, call ComfyUI, publish streams, or open paid providers.</p>
+    <div class="pad-grid" aria-label="Local dry-run sample pad rituals">
+      <button class="pad-button" data-pad="VANTA">VANTA</button>
+      <button class="pad-button" data-pad="HYDRATE">HYDRATE</button>
+      <button class="pad-button" data-pad="BUDDY">BUDDY</button>
+      <button class="pad-button" data-pad="DROP">DROP</button>
+      <button class="pad-button" data-pad="PORTAL">PORTAL</button>
+      <button class="pad-button" data-pad="CHILL">CHILL</button>
+      <button class="pad-button" data-pad="AIRHORN">AIRHORN</button>
+      <button class="pad-button" data-pad="RECORD">RECORD</button>
+    </div>
+    <p id="samplePadStatus" class="pad-status">No pad fired yet. All ritual triggers are metadata-only dry runs.</p>
+  </section>
+  <section class="card set-manifest-panel" id="local-set-manifest">
+    <p class="microcopy">Local Set Manifest Writer</p>
+    <h2>Never lose the take — metadata only</h2>
+    <p>Each planned segment appends crossfade, ducking, LUFS, talk, visual-spell, survival, culture, and Deck B metadata to <code>generated/sets/&lt;set_id&gt;/manifest.json</code>. This does not start recording, public streaming, ComfyUI, paid APIs, or a continuous mixer.</p>
+    <p id="setManifestStatus">Plan a segment to create the local set manifest.</p>
+  </section>
+  <section class="card program-status-panel" id="honest-program-status">
+    <p class="microcopy">Honest status: mock audio vs real generated audio vs rendered program</p>
+    <h2>Program audio truth panel</h2>
+    <p>This panel separates <b>mock audio sketches</b>, <b>real generated audio</b>, and <b>rendered program mix</b>. It is backed by <code>/api/program-status</code> and refuses to imply a continuous mixer, recording, provider generation, upload, or stream exists before verification.</p>
+    <div class="program-status-grid">
+      <div><b>Mock audio sketch</b><p id="mockAudioStatus">Waiting for local mock generation.</p></div>
+      <div><b>Real generated audio</b><p id="realGeneratedAudioStatus">closed_until_human_approval · RunPod/Modal/ACE-Step contracts only.</p></div>
+      <div><b>Rendered program mix</b><p id="renderedProgramStatus">not_rendered · no continuous stitched/crossfaded program audio.</p></div>
+      <div><b>Recording / stream</b><p id="recordingStreamStatus">closed_until_human_approval · RECORD is metadata only.</p></div>
+    </div>
+    <p id="programStatusSummary">honest_program_status_mock_audio_no_rendered_program · starts_gpu=false · records_audio=false · publishes_stream=false</p>
+  </section>
+  <section class="card program-manifest-panel" id="program-manifest-renderer">
+    <p class="microcopy">Local program manifest renderer with crossfade/ducking/LUFS metadata</p>
+    <h2>Program run sheet — metadata only</h2>
+    <p>This <code>/api/program-manifest</code> view renders the local set manifest into a segment-by-segment run sheet for crossfade seconds, talk-over-intro ducking, target LUFS, equal-power crossfader notes, EQ move schedule, survival pings, and culture cues. It does <b>not</b> render audio, record, upload, call providers, start GPUs, or publish streams.</p>
+    <div id="programManifestList" class="program-manifest-list">local_program_manifest_renderer_metadata_only · plan a segment to populate the run sheet.</div>
+    <p id="programManifestSummary">renders_program_audio=false · records_audio=false · publishes_stream=false · requires_human_approval=true</p>
+  </section>
+  <section class="card backend-status-panel" id="backend-status-card">
+    <p class="microcopy">Backend status card endpoint/UI · closed/open provider lanes</p>
+    <h2>Provider lanes stay closed until a human says yes</h2>
+    <p>Read-only <code>/api/backends</code> status for ComfyUI, RunPod ACE-Step, Modal, TouchDesigner, Resolume, OBS/RTMP, and TTS. This panel does not preflight providers, call <code>/prompt</code>, start GPUs, record, upload, publish, or open voice output; required human inputs and blocked-action lists are review-only.</p>
+    <div id="backendStatusList" class="backend-status-list">Loading backend_status_card_fail_closed_no_provider_calls…</div>
+    <p id="backendStatusSummary">closed_until_human_yes · starts_gpu=false · starts_paid_api=false · publishes_stream=false · records_audio=false · uploads_private_media=false</p>
+  </section>
+  <section class="card text-shader-panel" id="sdf-msdf-text-shader-lane">
+    <p class="microcopy">SDF/MSDF text shader future lane</p>
+    <h2>Crisp visual-spell typography — browser fallback now</h2>
+    <p>DJ VANTA's text/code visual spells need readable typography for OBS, projectors, deck art, and future ComfyUI/TouchDesigner loops. Tonight's safe implementation is a Canvas 2D <code>sdf_text_fallback</code> mode in <a href="/visualizer" target="_blank">/visualizer</a>; future WebGL SDF/MSDF atlas rendering remains a contract until a human approves local graphics work.</p>
+    <ul class="micro-list">
+      <li><b>Now:</b> canvas fallback renders <code>PHRASE_LOCK</code>, <code>BASS_SWAP</code>, <code>SURVIVAL_PING</code>, and <code>MSDF_ATLAS_DRY_RUN</code> labels without providers.</li>
+      <li><b>Later:</b> WebGL SDF/MSDF atlas lane for crisp scalable type, with no remote shader downloads and no model/provider calls by default.</li>
+      <li><b>Closed gates:</b> starts_gpu=false · starts_paid_api=false · publishes_stream=false · records_audio=false · requires_human_approval=true.</li>
+    </ul>
+  </section>
+  <section class="card timeline-panel" id="dry-run-autopilot-controls">
+    <p class="microcopy">Dry-run autopilot controls</p>
+    <h2>Bounded run-of-show planner — no live scheduler</h2>
+    <p>Build, load, preview, start, or stop the local demo timeline without generating media, recording audio, starting ComfyUI/RunPod/Modal, or publishing streams. The “start” button only marks a browser-side rehearsal state for the operator; it does not run a timer or autonomous mixer.</p>
+    <div class="button-row" aria-label="Start/stop dry-run autopilot controls">
+      <button id="buildTimeline">Build Timeline Plan</button>
+      <button id="loadTimeline">Load Timeline</button>
+      <button id="startDryRunAutopilot">Start Dry-Run Autopilot Preview</button>
+      <button id="stopDryRunAutopilot">Stop Dry-Run Autopilot Preview</button>
+    </div>
+    <p id="autopilotStatus">timeline_plan_only_no_generation_no_continuous_mixer · starts_gpu=false · records_audio=false · publishes_stream=false</p>
+    <div id="timelinePreview" class="timeline-preview">Load a timeline to preview 10/20/45 minute plans.</div>
+  </section>
+  <section class="card"><h2>Live events</h2><pre id="log"></pre></section>
+</main>
+<script src="/static/main.js"></script>
+</body>
+</html>

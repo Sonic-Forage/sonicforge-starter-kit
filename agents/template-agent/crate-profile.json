@@ -1,0 +1,26 @@
+{
+  "genres": [
+    "cyber-rave",
+    "electro house",
+    "techno",
+    "breaks",
+    "cosmic club"
+  ],
+  "bpm_range": [
+    124,
+    140
+  ],
+  "energy_arc": [
+    "warmup",
+    "curious",
+    "locked-in",
+    "peak",
+    "cooldown"
+  ],
+  "care_cues": [
+    "hydrate",
+    "buddy_check",
+    "earplugs",
+    "chill_zone"
+  ]
+}

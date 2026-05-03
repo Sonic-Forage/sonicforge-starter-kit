@@ -1,0 +1,18 @@
+{
+  "agent_id": "template-agent",
+  "display_name": "Your SonicForge Performer",
+  "closed_gates": [
+    "ALLOW_GPU",
+    "ALLOW_PAID_API",
+    "ALLOW_PUBLIC_POSTING",
+    "ALLOW_PRIVATE_UPLOAD",
+    "ALLOW_TRAINING",
+    "ALLOW_WORKFLOW_PROMPT",
+    "ALLOW_MODEL_DOWNLOADS",
+    "ALLOW_REMOTE_ENDPOINT",
+    "ALLOW_RECORDING",
+    "ALLOW_PUBLIC_STREAM",
+    "ALLOW_CRON_MUTATION"
+  ],
+  "workflow_binding_file": "../../workflows/registry.json"
+}
